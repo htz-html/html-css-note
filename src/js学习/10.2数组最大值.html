@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" content="text/html">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var shuzu = [2,22,20,13,9];
+			var max1 = shuzu[0];
+			for(var i = 0; i < shuzu.length; i++) {
+				// max1 = max1 > shuzu[i] ? max1: shuzu[i];  这是用三元表达式来比较
+				if (shuzu[i] > max1) {
+					max1 = shuzu[i];
+				}
+			}
+			console.log(max1)
+		</script>              
+	</body>
+</html>

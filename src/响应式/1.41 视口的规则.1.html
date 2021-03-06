@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>视口的规则</title>
+		<link id="mylink" rel="stylesheet" type="text/css" href="css/1.css"/>
+		<style type="text/css">
+			p{
+				text-indent: 24px;
+			}
+			b{
+				color: red;
+			}
+		</style>
+		<script type="text/javascript">
+			
+		</script>
+	</head>
+	<body>
+		<p><b>先来讲讲什么是视口：当我们的浏览器最大化的时候，此时屏幕的宽度，就是我们桌面的分辨率。这个规则仅仅适用于PC。</b></p>
+		<p><b>我们试图在iPhone中输出屏幕宽度，你会发现屏幕宽度是980！居然和PC屏幕差不多大！怎么可能？！</b></p>
+		<p><i><b>*注意：一定要注意，这个980是人为规定的，跟分辨率没有任何关系</b></i></p>
+		<p><b>苹果主导的这些手机厂商，为了使用户获得完整的web体验（就是让用户在手机屏幕上，也能够看见完整的PC网页)，很多设备都会欺骗浏览器返回一个数值较大的“视口”(viewport)，告诉浏览器，
+			别以为的身子小，但是我想以980px宽度来显示这个页面。iphone分辨率是1136*640，三星note3的分辨率是1920*1080。但是分辨率跟视口没有关系。
+			他们的视口都是980px，也就是说，一个width值为980px的盒子，能够在这样的手机中撑满整个页面，并且恰好不出现滚动条。
+		</b></p>
+		<p>在1.32中，因为这个视口的原因导致。视口对于我们实现响应式是很不方便的。980太大，不符合我们心中的期待，我们心中认为手机屏幕尺寸大小应该在300-400之间：<b>所以才有了一下的meta标签</b></p>
+		<p><b>改变视口的方法：</b>《meta content= "width=decice-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport"》</p>
+		<p>一个id和name为viewport的meta元标记，就是表示要约束视口了。具体约束规则，写在content 中，每个约束规则，用逗号隔开。</p>
+		<p>width=decice-width:命令视口的宽度，变为设备的宽度<b>（以1024*768屏幕为标准。）</b></p>
+		<p>initial-scale=1.0:命令视口默认的缩放等级为1</p>
+		<p>minimum-scale=1.0:命令视口最小的缩放等级为1</p>
+		<p>maximum-scale=1.0:命令视口最大的缩放等级为1</p>
+		<p>user-scalable=no:不允许页面缩放</p>
+	</body>
+</html>

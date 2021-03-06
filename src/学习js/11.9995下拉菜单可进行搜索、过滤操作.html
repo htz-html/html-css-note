@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			body{margin: 0;}
+			.dropbtn{
+				background-color: #09BB5E;
+				color: white;
+				padding: 16px;
+				border: none;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			.dropbtn:hover,.dropbtn:focus{background-color: #008000;}
+			#myInput{
+				border-box: box-sizing;
+				padding: 14px;
+				border: none;
+			}
+			.dropdown{
+				position: relative;
+				display: inline-block;
+			}
+			.dropdown-content{
+				display: none;
+				position: absolute;
+				background-color: #ddd;
+				min-width: 200px;
+				overflow: auto;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,.2);
+				z-index: 1;
+			}
+			.dropdown-content a {
+				text-decoration: none;
+				color: #333;
+				padding: 14px;
+				display: block;
+			}
+			.dropdown-content a:hover{background-color: #aaa;}
+			.show{display: block;}
+		</style>
+	</head>
+	<body>
+		<h2>搜索/过滤</h2>
+		<p>点击按钮显示下拉菜单，输入框可以搜索过滤内容</p>
+		
+		<div class="dropdown">
+			<button class="dropbtn" onclick="myFunction()">下拉菜单</button>
+			<div id="myDropdown" class="dropdown-content">
+				<input type="text" id="myInput" placeholder="搜索..." onkeyup="filterFunction()" />
+				<a href="#about">About</a>
+				<a href="#base">Base</a>
+				<a href="#blog">Blog</a>
+				<a href="#contact">Contact</a>
+				<a href="#custom">Custom</a>
+				<a href="#support">Support</a>
+				<a href="#tools">Tools</a>
+			</div>
+		</div>
+		
+		<script>
+			//点击按钮可以显示或隐藏下拉菜单
+			function myFunction() {
+				document.getElementById("myDropdown").classList.toggle("show");
+			}
+			function filterFunction() {
+				var input,filter,ul,li,a,i;
+				input= document.getElementById("myInput");
+				filter= input.value.toUpperCase();
+				div= document.getElementById("myDropdown");
+				a=div.getElementsByTagName("a");
+				for(i=0;i<a.length;i++) {
+					if(a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+						a[i].style.display = "";
+					}else{
+						a[i].style.display="none";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

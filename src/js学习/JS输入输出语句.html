@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var str = 'absojcosojohoiuoeroi';
+			var o = {};
+			for( var i = 0; i < str.length; i++) {
+				var chars = str.charAt(i);
+				if (o[chars]) {
+					o[chars]++;
+				} else {
+					o[chars] = 1;
+				}
+			}
+			var max = 0;
+			var ch = '';
+			for(var k in o) {
+				if(o[k] > max) {
+					max = o[k];
+					ch = k;
+				}
+			}
+			console.log(ch);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

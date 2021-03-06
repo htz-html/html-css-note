@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../响应式/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				width: 300px;
+				height: 300px;
+				background: #0000FF;
+			}
+			.aaa{
+				width: 150px;
+				height: 150px;
+				background: #09B75C;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="aaa"></div>
+		</div>
+		<script>
+			var box = document.querySelector(".box");
+			var aaa = document.querySelector(".aaa");
+			// mouseover鼠标经过自身盒子和子盒子都会触发
+			// mouseenter 自由经过自身盒子才会触发
+			box.addEventListener("mouseover", function(){
+				console.log(11)
+			})
+		</script>
+	</body>
+</html>

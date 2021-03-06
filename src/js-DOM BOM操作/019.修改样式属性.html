@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.demo {
+				width: 400px;
+				height: 250px;
+				background-color: #007EFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="demo"></div>
+		<script>
+			var div = document.querySelector('.demo')
+			div.onclick = function() {
+				this.style.width = '500px';
+				this.style.backgroundColor = '#ff4862';
+			}
+			
+		</script>
+	</body>
+</html>

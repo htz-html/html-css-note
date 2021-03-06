@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			body{margin: 0;}
+			
+			.row{display: flex;}
+			.left{flex: 35%;}
+			.left h2{padding-left: 10px;}
+			.right{flex: 65%;padding: 10px;}
+			#mySearch{
+				width: 100%;
+				font-size: 14px;
+				padding: 10px;
+				border: 1px solid #ddd;
+			}
+			#myMenu{list-style: none;margin: 0;padding: 0;}
+			#myMenu li a{
+				background-color: #bbb;
+				text-decoration: none;
+				color: black;
+				padding: 10px;
+				display: block;
+			}
+			#myMenu li a:hover{background-color: #eee;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="row">
+			<div class="left" style="background-color: #bbb;">
+				<h2>MENU</h2>
+				<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="输入分类"/>
+				<ul id="myMenu">
+					<li><a href="#">HTML</a></li>
+					<li><a href="#">CSS</a></li>
+					<li><a href="#">JS</a></li>
+					<li><a href="#">PHP</a></li>
+					<li><a href="#">.NET</a></li>
+					<li><a href="#">SQL</a></li>
+					<li><a href="#">BootStrap</a></li>
+				</ul>
+			</div>
+			
+			<div class="right" style="background-color: #ddd;">
+				<h2>Content</h2>
+				<p>在搜索框输入菜单列表的分类名搜索对应的内容</p>
+				<p>就是来获取你的信任的，所以一个人在外面要机智一点，路上的路人都要利用好</p>
+				<p>思维要敏捷一点才行。一个男生去网吧上网打游戏，旁边的女孩子喊他一起开黑，这种女孩子的邀请是个男生都拒绝不了的吧
+				，然后坐在对面的一个男人说一起来，然后三个人就一起开黑。游戏结束男生要去上厕所，回来就发现不对。自己的饮料杯有一些
+				不对劲，还有就是之前开黑对面那个男的要一起，女生都没有问游戏id就一起了，说明他们之前就认识，但是他们装作不认识，并且
+				男生都是后面来的，旁边有空位，既然认识为什么不坐一起。种种迹象表明他们是不正常的</p>
+			</div>
+		</div>
+		
+		<script>
+			function myFunction() {
+				var input,filter,ul,li,a,i;
+				input=document.getElementById("mySearch");
+				filter=input.value.toUpperCase();
+				ul=document.getElementById("myMenu");
+				li=ul.getElementsByTagName("li");
+				for(i=0;i<li.length;i++) {
+					a=li[i].getElementsByTagName("a")[0];
+					if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display="";
+					} else {
+						li[i].style.display="none";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

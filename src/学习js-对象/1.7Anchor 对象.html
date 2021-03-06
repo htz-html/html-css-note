@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<div style="background-color: #09BB5E;padding: 10px;">
+			<img src="../img/1.jpg" style="width: 200px;" usemap="#planetmap" >
+			<map name="planetmap">
+				<area id="demo" shape="circle" coords="80,90,40" href="http://baidu.com#dddd" alt="我的老阔" target="_blank" />
+			</map>
+			<p>
+				
+				<script>
+					document.write("返回图像映射某个区域的替代文字：")
+					document.write(document.getElementById("demo").alt);
+					document.write("<br>返回图像映射某个区域的坐标：")
+					document.write(document.getElementById("demo").coords);
+					document.write("<br>返回一个区域的href属性的锚部分：")
+					document.write(document.getElementById("demo").hash);
+					document.write("<br>返回的主机名：图像映射的某个区域的端口：")
+					document.write(document.getElementById("demo").host);
+					document.write("<br>返回图像映射的某个区域的hostname：")
+					document.write(document.getElementById("demo").hostname);
+					document.write("<br>返回图像映射的某个区域的port(注意:如果没有指定端口部分的URL,或者是80(默认),一些浏览器会显示0或什么都没有。)：")
+					document.write(document.getElementById("demo").port);
+					document.write("<br>返回图像映射的某个区域的href：")
+					document.write(document.getElementById("demo").href);
+					document.write("<br>返回图像映射的某个区域的pathname：")
+					document.write(document.getElementById("demo").pathname);
+					document.write("<br>返回图像映射的某个区域的protocol：")
+					document.write(document.getElementById("demo").protocol);
+					document.write("<br>返回图像映射的某个区域的shape：")
+					document.write(document.getElementById("demo").shape);
+					document.write("<br>返回图像映射的某个区域的target的值：")
+					document.write(document.getElementById("demo").target);
+				</script>
+			</p>
+		</div>
+		<div style="background: #10C768;padding: 10px;">
+			<p>Button 对象</p>
+			<input type="button" id="a" value="OK" />
+			<input type="button" id="b" value="NO" />	
+			<p>点击下面的按钮取消上面的OK按钮</p>
+			<button id="c" type="button" name="button1" onclick="Ok()">取消按钮</button>
+			<script>
+				function Ok(){
+					document.getElementById("a").disabled=true;//当点击完button不可用
+				}
+				document.write("<p>返回一个button的name</p>");
+				document.write(document.getElementById("c").name);//返回一个button的name
+				document.write("<p>返回一个button的type</p>");
+				document.write(document.getElementById("c").type);//返回一个button的type
+				document.write("<p>返回一个button的value</p>");
+				document.write(document.getElementById("b").value);//返回一个button的type
+			</script>
+		</div>
+		<div style="background: #007AFF;padding: 10px;">
+			<form id="form1">
+				<button type="button" id="btn">点击我</button>
+			</form>
+			<p>含有按钮的表单ID：</p>
+			<script>
+				document.write(document.getElementById("btn").form.id);
+			</script>
+		</div>
+	</body>
+</html>

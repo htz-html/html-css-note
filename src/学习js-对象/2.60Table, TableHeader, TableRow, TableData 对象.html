@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+		</style>
+	</head>
+	<body>
+		<div style="background: #ffd8e4;padding: 10px;">
+			<p>改变表格边框的宽度/改变表格的cellpadding和cellspacing</p>
+			<table border="1" id="demo">
+				<tr><th>Header</th><th>Header</th></tr>
+				<tr><td>Data</td><td>Data</td></tr>
+			</table>
+			<br>
+			<input type="button" value="修改边框" onclick="borDer()" />
+			<input type="button" value="修改单元格边距" onclick="aa()" />
+			<input type="button" value="修改单元格间距" onclick="bb()" />
+			<script>
+				function borDer(){
+					document.getElementById("demo").border="10";
+				}
+				function aa(){
+					document.getElementById("demo").cellPadding="15";
+				}
+				function bb(){
+					document.getElementById("demo").cellSpacing="15";
+				}
+			</script>
+		</div>
+		<div style="background: #f6cbf1;padding: 10px;">
+			<p>指定表格的frame</p>
+			<table id="demo1">
+				<tr><th>Header</th><th>Header</th></tr>
+				<tr><td>Data</td><td>Data</td></tr>
+			</table>
+			<br>
+			<input type="button" value="显示上frames" onclick="toppp()" /><input type="button" value="显示上frames" onclick="downpp()" />
+			<script>
+				function toppp(){
+					document.getElementById("demo1").frame="above";
+				}
+				function downpp(){
+					document.getElementById("demo1").frame="below";
+				}
+			</script>
+		</div>
+		<div style="background: #e5c0ff;padding: 10px;">
+			<p>为表格指定规则</p>
+			<table border="1" id="demo2">
+				<tr><th>Header</th><th>Header</th></tr>
+				<tr><td>Data</td><td>Data</td></tr>
+			</table>
+			<br>
+			<input type="button" value="只显示行边框" onclick="hang()" /><input type="button" value="只显示列边框" onclick="lie()" />
+			
+			<script>
+				function hang(){
+					document.getElementById("demo2").rules="rows";
+				}
+				function lie(){
+					document.getElementById("demo2").rules="cols";
+				}
+				
+			</script>
+		</div>
+		<div style="background: #c9c0ff;padding: 10px;">
+			<p>一个行的innerHTML/一个单元格的innerHTML</p>
+			<table border="1" id="demo3">
+				<tr><th>Header</th><th>Header</th></tr>
+				<tr><td>Data</td><td>Data</td></tr>
+			</table>
+			<br>
+			<input type="button" value="显示第一行的HTML文本" onclick="wenben()" />
+			<input type="button" value="第一个单元格HTML文本" onclick="danyuan()" />
+			<script>
+				function wenben(){
+					alert(document.getElementById('demo3').rows[0].innerHTML);
+				}
+				function danyuan(){
+					var x=document.getElementById("demo3").rows[0].cells;
+					alert(x[0].innerHTML);
+				}
+			</script>
+		</div>
+		<div style="background: #8f7dfe;padding: 10px;">
+			<p>为表格创建一个标题</p>
+			<table border="1" id="demo4">
+				<tr><td>Sasa</td><td>Vsds</td></tr>
+				<tr><td>Data</td><td>Data</td></tr>
+				<tr><td>Data</td><td>Data</td></tr>
+			</table>
+			<br>
+			<input type="button" value="创建标题" onclick="biaoti()" />
+			<script>
+				function biaoti(){
+					var x=document.getElementById("demo4").createCaption();
+					x.innerHTML="表的标题";
+				}
+			</script>
+		</div>
+		<div style="background: #7861ff;padding: 10px;">
+			<p>删除表格中的行</p>
+			<table border="1" id="demo5">
+				<tr><td>Sasa</td><td><input type="button" value="删除" onclick="shanchu(this)" /></td></tr>
+				<tr><td>Data</td><td><input type="button" value="删除" onclick="shanchu(this)" /></td></tr>
+				<tr><td>Data</td><td><input type="button" value="删除" onclick="shanchu(this)" /></td></tr>
+			</table>
+			<script>
+				function shanchu(r){
+					var i=r.parentNode.parentNode.rowIndex;
+					document.getElementById("demo5").deleteRow(i);
+				}
+			</script>
+		</div>
+		<div style="background: #5d43f7;padding: 10px;color: #fff;">
+			<p>添加表格中的行</p>
+			<table border="1" id="demo6">
+				<tr id="tr"><td>Sasa</td><td>Vsds</td></tr>
+				<tr><td>Data</td><td>Data</td></tr>
+				<tr><td>Data</td><td>Data</td></tr>
+			</table>
+			<br>
+			<input type="button" value="添加行" onclick="tianjia()"  />
+			<input type="button" value="插入单元格" onclick="hangzhong()"  />
+			<script>
+				function tianjia(){
+					var x=document.getElementById("demo6").insertRow(0);
+					var y=x.insertCell(0);
+					var z=x.insertCell(1);
+					y.innerHTML="新单元格0";
+					z.innerHTML="新单元格1";
+				}
+				function hangzhong(){
+					var x=document.getElementById("tr").insertCell(0);
+					x.innerHTML="我的心得"; 
+				}
+			</script>
+		</div>
+		<div style="background: #439cf7;padding: 10px;color: #fff;">
+			<p>单元格内容对齐/也可以对单个单元格内容进行对其</p>
+			<table border="1" width="100%" id="demo7">
+				<tr id="duiqi"><th>SasaSasaSasaSasa</th><th>Vsds</th></tr>
+				<tr id="chuizhi"><td>需要长</td><td>需要长文本来演示这个例子需要长文本来演示这个例子需要长文本来演示这需要长文本来演示这</td></tr>
+			</table>
+			<br>
+			<input type="button" value="水平对齐" onclick="duiqi()"  />
+			<input type="button" value="垂直对齐" onclick="chuizhi()" />
+			<input type="button" value="修改内容" onclick="gaibian()" />
+			<script>
+				function duiqi(){
+					document.getElementById("duiqi").align="left";
+				}
+				function chuizhi(){
+					document.getElementById("chuizhi").vAlign="top";
+				}
+				function gaibian(){
+					var x=document.getElementById("demo7").rows[0].cells;
+					x[0].innerHTML="新内容";
+				}
+			</script>
+		</div>
+		<div style="background: #43f793;padding: 10px;color: #fff;">
+			<p>改变行的内容</p>
+			<table border="1" id="demo8">
+				<tr>
+					<td colspan="4">娜娜</td>
+					<td colspan="5">丹莹</td>
+				</tr>
+				<tr>
+					<td>娜娜</td>
+					<td>丹莹</td>
+					<td>同智</td>
+					<td>金刚</td>
+					<td>芭比</td>
+					<td>打碟</td>
+					<td>死亡</td>
+					<td>沆瀣</td>
+					<td>一起</td>
+				</tr>
+			</table>
+			<br>
+			<input type="button" value="修改合并列" onclick="hebing()"/>
+			<script>
+				function hebing(){
+					var x=document.getElementById("demo8").rows[0].cells;
+					x[0].colSpan="2";
+					x[1].colSpan="7";
+				}
+			</script>
+			
+		</div>
+	</body>
+</html>

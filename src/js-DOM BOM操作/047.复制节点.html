@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>我是克隆节点...</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+		<script>
+			var ul = document.querySelector("ul");
+			
+			// 复制哪一个节点,ul.children[0].cloneNode(true)
+			//注意:cloneNode()的()里面要加上true,才能把内容一起克隆过来,否侧克隆的就只是一个标签,没有内容
+			var lili = ul.children[0].cloneNode(true);
+			ul.appendChild(lili);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<p>break语句，就是突然在路途中遇到一个坎，直接跳过这条路的后半程，走下一条路。</p>
+		<button type="button" onclick="myFunction()">我是按钮</button>
+		<p id="demo"></p>
+		<script>
+			function myFunction(){
+				var x="",i=0;
+				for(;i<10;i++){
+					if(i==8){
+						break;
+					}
+					x=x+"我的结果是："+i+"<br />";
+				}
+				document.getElementById("demo").innerHTML=x;
+			}
+		</script>
+		<br /><br /><br />
+		<p>continue语句，就是突然在路途中遇到一条河，跨过继续走这条路就好了。与break有点不一样</p>
+		<button type="button" onclick="mycontinue()">我是按钮</button>
+		<p id="demo1"></p>
+		<script>
+			function mycontinue(){
+				var x="",i=0;
+				for(;i<10;i++){
+					if(i==7){
+						continue;
+					}
+					x=x+"我的结果是："+i+"<br/>";
+				}
+				document.getElementById("demo1").innerHTML=x;
+			}
+		</script>
+	</body>
+</html>	

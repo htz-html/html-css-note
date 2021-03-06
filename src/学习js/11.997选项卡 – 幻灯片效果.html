@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			body {margin: 0;padding: 0;}
+			div.tab{overflow: hidden; background-color: #666;}
+			div.tab ul{margin: 0;padding: 0;}
+			div.tab ul li {list-style: none;
+				float: left;
+				padding: 12px;
+				font-weight: bold;
+				font-size: 18px;
+				cursor: pointer;
+			}
+			
+			.tablinks{color: white;
+			
+			}
+			.tablinks:hover{background-color: #888;}
+			.tabcontent{
+				padding: 30px;
+				color: white;
+				display: none;
+			}
+			#London{background-color: red;}
+			#Paris{background-color: orangered;}
+			#Tokyo{background-color: blueviolet;}
+		</style>
+	</head>
+	<body>
+		<h2>选项卡;淡入淡出</h2>
+		<p>这个可以写分类里面的选择，导航栏</p>
+		
+		<div class="tab"> 
+			<ul>
+				<li class="tablinks" onclick="openCity('London',this,'red')" id="defaultOpen">London</li>
+				<li class="tablinks" onclick="openCity('Paris',this,'orangered')">Paris</li>
+				<li class="tablinks" onclick="openCity('Tokyo',this,'blueviolet')">Tokyo</li>
+			</ul>
+		</div>
+		
+		<div id="London" class="tabcontent">
+			<h3>London</h3>
+			<p>我亲爱的娜娜大小姐</p>
+		</div>
+		<div id="Paris" class="tabcontent">
+			<h3>Paris</h3>
+			<p>你就是我心中的棉花糖</p>
+		</div>
+		<div id="Tokyo" class="tabcontent">
+			<h3>Tokyo</h3>
+			<p>甜到了我的心底</p>
+		</div>
+		
+		<script>
+			function openCity(cityName,elmnt,color) {
+				var i,tabcontent,tablinks;
+				tabcontent=document.getElementsByClassName("tabcontent");
+				for(i=0;i<tabcontent.length;i++) {
+					tabcontent[i].style.display="none";
+				}
+				tablinks=document.getElementsByClassName("tablinks");
+				for(i=0;i<tablinks.length;i++) {
+					tablinks[i].style.backgroundColor="";
+				}
+				document.getElementById(cityName).style.display="block";
+				elmnt.style.backgroundColor=color;
+			}
+			
+			document.getElementById("defaultOpen").click();
+		</script>
+	</body>
+</html>

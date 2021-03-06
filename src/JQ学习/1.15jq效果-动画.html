@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.red{background-color: red;padding: 10px;color: white;}
+			.green{background-color: #10C768;padding: 10px;}
+			.div1{background-color: #10C768;text-align: center;padding: 15px;color: white;cursor: pointer;}
+			.div2{background-color: #007AFF;padding: 50px;text-align: center;font-size: 48px;color: white;}
+			
+		</style>
+	</head>
+	<body>
+		<h3>jQuery animate() - 使用预定义的值</h3>
+		<button id="demo2">animate()预定义的值</button>
+		<button id="stop">停止动画</button>
+		<br /><br />
+		<div id="div3" style="background-color: #007AFF;height: 100px;width: 100px;position: absolute;"></div>
+		<script>
+			$(document).ready(function(){
+				$("#demo2").click(function(){
+					$("#div3").animate({
+						height:'toggle'
+					},1900);
+				});
+				$("#stop").click(function(){
+					$("#div3").stop();
+				});
+			});
+		</script>
+		<br /><br /><br /><br /><br /><br /><br />
+		<h1>animate() - 使用队列功能</h1>
+		<button id="demo3" type="button">开始动画</button>
+		<br /><br />
+		<div  id="div2" style="background-color: #007AFF;height: 100px;width: 100px;position: absolute;"></div>
+		<script>
+			$(document).ready(function(){
+				$("#demo3").click(function(){
+					var aaa=$("#div2");
+					aaa.animate({height:'300px',opacity:'0.4'},"slow");
+					aaa.animate({width:'300px',opacity:'0.8'},"slow");
+					aaa.animate({height:'100px',opacity:'0.4'},"slow");
+					aaa.animate({width:'100px',opacity:'0.8'},"slow");
+				});
+			});
+		</script>
+		<br /><br /><br /><br /><br /><br /><br />
+		
+		<h1 style="color: red;">停止动画Query stop() 动画(带参数)</h1>
+		<button id="start">开始动画</button>
+		<button id="stop1">stop1</button>
+		<button id="stop2">stop2</button>
+		<button id="stop3">stop3</button>
+		<br /><br />
+		<div id="div4" style="background-color: #007AFF;height: 100px;width: 100px;position: absolute;">你好</div>
+		<script>
+			$(document).ready(function(){
+				$("#start").click(function(){
+					$("#div4").animate({left:'300px'},5000);
+					$("#div4").animate({fontSize:'3em'},5000);
+				});
+				$("#stop1").click(function(){
+					$("div").stop();
+				});
+				$("#stop2").click(function(){
+					$("div").stop(true);
+				});
+				$("#stop3").click(function(){
+					$("div").stop(false,true);
+					$("div").stop(false,true);
+				});
+			});
+		</script>
+	</body>
+</html>

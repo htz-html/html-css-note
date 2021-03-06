@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.demo{
+				width: 600px;
+				height: 500px;
+				padding: 15px;
+				border: 1px solid red;
+				box-sizing: border-box;
+				display: flex;/* 父容器的伸缩盒子 */
+				justify-content: space-between; /* 设置子元素在主轴上的排列方向 ；如要改变成侧轴方向，就用flex-direction来修改*/
+				/* flex-flow:是flex-wrap和flex-direction的综合 
+				flex-wrap:控制子元素是否换行显示，默认不换行
+					nowrap:不换行，则收缩
+					wrap：换行	*/
+			
+				flex-wrap: wrap;
+				/* flex-direction设置子元素的排列方向，就是用来设置主轴方向，默认主轴方向row(水平方向) */
+				flex-direction: row;
+				/* 简写方式 */
+				/* flex-flow: wrap row; */
+				animation: 1s;
+			}
+			.demo1{
+				width: 30%;
+				height: 200px;
+				background-color: #007EFF;
+				/* flex-shrink:定义收缩比例，通过设置的值来计算收缩的空间 ：默认值为1*/
+				flex-shrink: 1;
+				margin-top: 10px;
+			}	
+			.demo2{
+				width: 200px;
+				height: 200px;
+				background-color: orange;margin-top: 10px;
+			}
+			.demo3{
+				width: 200px;
+				height: 200px;
+				background-color: pink;margin-top: 10px;
+			}
+			.demo4{
+				width: 200px;
+				height: 200px;
+				background-color: #E8314B;margin-top: 10px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<h1></h1>
+		<div class="demo">
+			<div class="demo1"></div>
+			<div class="demo1"></div>
+			<div class="demo1"></div>
+			<div class="demo1"></div>
+			<div class="demo1"></div>
+		</div>
+	</body>
+</html>
+

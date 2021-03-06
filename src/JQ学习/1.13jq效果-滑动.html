@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.red{background-color: red;padding: 10px;color: white;}
+			.green{background-color: #10C768;padding: 10px;}
+			.div1{background-color: #10C768;text-align: center;padding: 15px;color: white;cursor: pointer;}
+			.div2{background-color: #007AFF;padding: 50px;text-align: center;font-size: 48px;color: white;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="div1">点我滑下面板</div>
+		<div class="div2">我爱你！</div>
+		<script>
+			$(document).ready(function(){
+				$(".div1").click(function(){
+					$(".div2").slideToggle();
+				});
+			});
+		</script>
+		<hr />
+		<h2>还有slideDown()和slideUp()</h2>
+	</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title>我的标题</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<script>
+			document.write("因为我不知道，下一辈子还是否能遇到你");
+			document.write("<h1>becase i don't kown</h1>");
+		</script>
+		<p>返回文档中锚的数目</p>
+		<a id="6666" name="html">html教程</a><br />
+		<a id="555" name="css">css教程</a><br />
+		<a id="444" name="node.js">node.js教程</a><br />
+		<a id="222" href="http://www.baidu.com">百度</a>
+		<p>
+			<script>
+				document.write(document.anchors.length);//anchors.length返回文档中锚的数目
+			</script>
+		</p>
+		<script>
+			document.write(document.anchors[1].innerHTML);//anchors[0].innerHTML返回文档中第一个锚的innerHTML
+		</script>
+		<br><br><br>
+		<form name="form1"></form>
+		<form name="form2"></form>
+		<form name="form3"></form>
+		<script>
+			document.write(document.forms.length);//返回文档中表单数
+			document.write(document.forms[0].name);//返回文档中第一个表单的名字
+		</script>
+		<br><br>
+		<img id="aaa" src="../img/1.jpg" style="width: 100px;height: auto;" >
+		<img id="bbb" src="../img/1.jpg" style="width: 100px;height: auto;" >
+		<br>
+		<script>
+			document.write(document.images.length+"<br>");//images.length返回文档中图像数
+			document.write(document.images[0].id);//images[0]返回文档中第一个图像的ID
+		</script>
+		<br>
+		<img src="../img/5.jpg" style="width: 1000px;height: 600px;" usemap="#guolangyu">
+		<map name="guolangyu" id="guolangyu">
+			<area id="wdaaaaaaaadd" shape="rect" coords="0,0,500,600" href="http://www.baidu.com" alt="" />
+			<area id="lllll" shape="circle" coords="600,100,50" href ="http://huaban.com" alt="" />
+		</map>
+		<script>
+			document.write(document.links[0].id);
+			//links[0]返回文档中的第一个链接的ID
+		</script>
+		<p >标签有冲突，所以显示的是222</p>
+		与此文档相关的cookies：
+		<script>
+			document.write(document.cookie);
+			//cookie返回文档中的所有cookies的名称/值对
+		</script>
+		<br>
+		<p>加载这个文件的域名：</p>
+		<script>
+			document.write(document.domain);
+			//domain返回加载的文档的服务域名
+		</script>
+		<br>
+		<script>
+			document.write(document.lastModified);
+			//lastmodified返回文档的最后一次修改时间
+		</script>
+		<br>
+		<script>
+			document.write(document.referrer);
+			//referrer返回加载的当前文档的URL
+		</script>
+		<br />
+		<script>
+			document.write(document.title)
+			//title返回文档的标题
+		</script>
+		<br />
+		<script>
+			document.write(document.URL);
+			//url返回文档的完整的URL
+		</script>
+		<br>
+		<p>哪出问题，待定</p>
+		<input type="button" value="新文档" onclick="qingXia()" />
+		<script>
+			function qingXia(){ //打开输出流,向流中输入文本
+				var doc=document.open("text/html","replace");
+				var txt="<!DOCTYPE html><html><body>我是花美男</body></html>";
+				doc.write(txt);
+				doc.close();
+			}
+		</script>
+		<br>
+		<p>write()和writeIn()的区别</p>
+		<p>注意write()方法不会在每个语句后面新增一行：</p>
+		<pre>
+			<script>
+				document.write("你好！");
+				document.write("你不好！");
+			</script>
+		</pre>
+		<p>注意writeIn()方法在每个语句后面新增一行：</p>
+		<pre>
+			<script>
+				document.writeln("我爱你!");
+				document.writeln("一辈子，一生情!");
+			</script>
+		</pre>
+		<br>
+		
+		<h1 id="demo" onclick="myFunction()">用指定的id弹出一个元素的innerHtml</h1>
+		<script>
+			function myFunction(){
+				var x=document.getElementById("demo");
+				alert(x.innerHTML);
+			}
+		</script>
+		<br>
+		<p>用指定的name弹出元素的数量</p>
+		你:<input type="radio" name="people" value="" />
+		我:<input type="radio" name="people" value="" />
+		她:<input type="radio" name="people" value="" />
+		<input type="button" value="多少名为people的元素" onclick="myPeople()" />
+		<script>
+			function myPeople(){
+				var peop=document.getElementsByName("people");
+				alert(peop.length);
+			}
+		</script>
+		<br>
+		<p>用指定的tagname弹出元素的数量</p>
+		<input type="text" size="20" />
+		<input type="text" size="20" />
+		<input type="text" size="20" />
+		<input type="button" value="多少input元素" onclick="myInput()" />
+		<script>
+			function myInput(){
+				var tag=document.getElementsByTagName("input");
+				alert(tag.length)
+			}
+		</script>
+	</body>
+	
+</html>

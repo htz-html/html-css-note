@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<div style="background-color: red;padding: 10px;">
+			<!-- 返回字符串的长度 -->
+			<script>
+				var txt="Hello World!!"
+				document.write(txt.length);
+			</script>
+		</div>
+		
+		
+		<div style="background-color: green;padding: 10px;">
+			<!-- 为字符串添加样式 -->
+			<script>
+				var txt="hello world!"
+				document.write("<p>字体变大：" + txt.big() + "</p>");
+				document.write("<p>字体缩小："+ txt.small() +"</p>");
+				document.write("<p>字体加粗："+txt.bold()+"</p>");
+				document.write("<p>字体斜体："+txt.italics()+"</p>");
+				document.write("<p>固定定位："+txt.fixed()+"</p>");
+				document.write("<p>加删除线："+txt.strike()+"</p>");
+				document.write("<p>字体颜色："+txt.fontcolor("red")+"</p>");
+				document.write("<p>字体大小："+txt.fontsize(6)+"</p>");
+				document.write("<p>下标："+txt.sub()+"</p>");
+				document.write("<p>上标："+txt.sup()+"</p>");
+				document.write("<p>链接："+txt.link("https:baidu.com")+"</p>");
+				document.write("<p>闪动文本："+txt.blink()+"(不能用于ie，Chrome，或者Safari)</p>")
+			</script>
+		</div>
+		
+		<div style="background-color: blue;padding: 10px;">
+			<!-- 返回字符串中指定文本首次出现的位置 - indexOf()方法 -->
+			<p id="demo">点击来定位指定文本首次出现的位置</p>
+			<button type="button" onclick="myFunction()" style="padding: 6px 16px;">点击</button>
+			<script>
+				function myFunction() {
+					var str="11112232326241174112141121228009004"
+					var n=str.indexOf("8");
+					document.getElementById("demo").innerHTML=n;
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: yellow;padding: 10px;">
+			<script>
+				var str="hello my girl!";
+				document.write(str.match("Girl")+"<br>");
+				document.write(str.match("girl")+"<br>");
+				document.write(str.match("girl!")+"<br>");
+			</script>
+		</div>
+		
+		<div style="background-color: #9100b5;padding: 10px;">
+			<p>单击按钮将段落中的第一个Microsoft替换成Runoob：</p>
+			<p id="demo1">vist kslla Microsoft!roomd nmijuede Microsoft</p>
+			<button onclick="myFunctioned()">点击我</button>
+			<script>
+				function myFunctioned() {
+					var str=document.getElementById("demo1").innerHTML;
+					var n=str.replace("Microsoft","Runoob");
+					document.getElementById("demo1").innerHTML=n;
+				}
+			</script>
+		</div>
+		
+	</body>
+</html>

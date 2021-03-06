@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.red + li {}
+			li:nth-of-type
+		</style>
+	</head>
+	<body>
+		<h2>伪类选择器-兄弟选择器</h2>
+		<h2 style="color: red;">重点说明：n遵循线性变化，其取值0，1,2,3,4,5,...但是当n<=0时，选取无效</h2>
+		<p>+：获取当前元素的相邻的满足条件的元素。如.red + li{}</p>
+		<p>~：获取当前元素满足条件的兄弟元素。如：.red ~ li{}</p>
+		<div>
+			相对于父元素的结构伪类<br>
+			li:last-child{}and li:first-child{}---这两个不要经常用，太危险。要用就用li:first-of-type{不管中间插入什么元素，都是直接去找li的第一个元素}<br />
+			li:nth-of-type(){}和li:nth-of-type(){}<br />
+			如果要选择1-5呢，怎么办?<br />
+			li:nth-of-type(-n+5){}:这是从头开始的前五个<br />
+			li:nth-last-of-type(-n+5){}:这是从尾开始的前五个<br>
+			还有一个空值：没有任何内容的意思，连空格都没有：<br>
+			li:empty{}
+		</div>
+		<ol>
+			<li class="red" style="">我是谁</li>
+			<li>我在哪里</li>
+			<li>我要干嘛</li>
+			<li>我在干什么</li>
+			<li>我几岁</li>
+			<li>我在说什么</li>
+		</ol>
+	</body>
+</html>

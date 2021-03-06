@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.demo{width: 100px;height: 100px;background-color: red;
+			transition: transform 2s;
+			}
+			.demo:active{transform: translate(500px);}
+			.demo1{width: 100px;height: 100px;background-color: red;
+			transition: transform 2s;margin-left: 100px;
+			}
+			.demo1:active{transform: scale(2);}
+			.demo2{width: 100px;height: 100px;background-color: red;
+			transition: transform 2s;margin-left: 100px;margin-top: 20px;
+			}
+			.demo2:active{transform: scale(2,1);}
+			.demo3{width: 100px;height: 100px;background-color: red;
+			transition: transform 2s;margin-left: 100px;margin-top: 20px;
+			}
+			.demo3:active{transform: rotate(45deg);}
+			.demo4{width: 100px;height: 100px;background-color: red;
+			transition: transform 300ms;margin-left: 100px;margin-top: 20px;
+			}
+			.demo4:active{transform: skew(-30deg,30deg);}
+		</style>
+	</head>
+	<body>
+		<h1>transform实现2D转换和3D转换</h1>
+		<h2>2D移动</h2>
+		<p>2D移动：translate(),你可以把元素从原来的位置移动，移动参照元素上角原点</p>
+		<p>a) 语法：transform:translate(tx); 水平x轴 | transform:translate(tx,ty); 移动方向是x轴和y轴</p>
+		<p>也可以使用translateX(tx)或者translateY(ty)</p>
+		<div class="demo"></div>
+		<h2>2D缩放：从中心点缩放</h2>
+		<p>语法：transform:scale(sx|sy)一个值的时候;transform:scale(sx,sy)两个值的时候</p>
+		<div class="demo1"></div>
+		<div class="demo2"></div>
+		<h2>2D旋转：rotate()</h2>
+		<div class="demo3"></div>
+		<h2>2D斜切：skew()</h2>
+		<div class="demo4"></div>
+	</body>
+</html>

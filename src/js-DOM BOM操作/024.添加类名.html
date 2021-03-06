@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.demo {
+				font-size: 20px;
+				color: #E8314B;
+			}
+			.demo1 {
+				padding: 20px;
+				background-color: #22AADD;
+				color: #FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button">给p标签添加类名</button>
+		<p class="demo">这个世界没有你照样转</p>
+		<script>
+			var btn = document.querySelector("button");
+			var ptag = document.querySelector("p");
+			btn.onclick = function() {
+				ptag.className = 'demo demo1';
+			}
+		</script>
+	</body>
+</html>

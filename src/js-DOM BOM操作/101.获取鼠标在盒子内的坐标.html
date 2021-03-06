@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin:10px;
+				padding: 0;
+			}
+			.box{
+				width: 200px;
+				height: 200px;
+				background: palevioletred;
+				position: absolute;
+				top: 100px;
+				left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box"></div>
+		<script>
+			// 我们在盒子内点击，想要得到鼠标在盒子内的距离
+			// 首先得到鼠标在页面中的坐标（e.pageX,epageY）
+			// 其次得到盒子在页面中的坐标 （box.offsetWidth, box.offsetHeight）
+			// 用鼠标距离页面的坐标-盒子距离页面的坐标，就得到鼠标距离盒子的大小了
+			var box = document.querySelector('.box');
+			box.addEventListener('mousemove', function(e) {  // 这里用鼠标拖动事件
+				console.log(e.pageX);
+				console.log(e.pageY);
+				console.log(this.offsetLeft);
+				console.log(this.offsetTop);
+				var x = e.pageX - this.offsetLeft;
+				var y = e.pageY - this.offsetTop;
+				this.innerHTML = "x坐标：" + x + "，y坐标：" +y;
+			});
+			
+		</script>
+	</body>
+</html>

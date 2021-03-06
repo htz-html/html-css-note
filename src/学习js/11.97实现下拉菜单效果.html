@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			/* text-transform: capitalize; */
+			*, *:before, *:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+			html,body{padding: 0;margin:0;background-color: #eee;}
+			body{padding-top:80px;}
+			.section{width: 400px;height: 64px;margin: 10px auto;box-shadow: 0 2px 4px #aaa;
+			overflow: hidden;-webkit-transition: 1s;transition:1s;}
+			.title{background-color: #13D771;padding: 20px;color: white;cursor: pointer;text-shadow: 0 1px 0 #666;
+			text-transform: capitalize;font-style: italic;position: relative;width: 100%;-moz-user-select: none;
+			-webkit-user-select: none;-ms-user-select: none;user-select:none;z-index: 10;}
+			.content{font: 16px open,sans-serif;background-color: #007AFF;padding: 20px 20px 40px;color: #fff;
+			-moz-transform: translateY( -100% );-ms-transform: translateY( -100% );
+			transform: translateY( -100% );-webkit-transform: translateY( -100% );overflow: hidden;transition: 1s;-webkit-transition: 1s;}
+			.section.open{height:160px;}
+			.open .content{-webkit-transform: none;-ms-transform: none;-moz-transform: none;transform: none;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="section">
+			<div class="title">
+				我是被折叠的
+			</div>
+			<div class="content">
+				<h2>我就是被折叠的内容，你觉得呢</h2>
+			</div>
+		</div>
+		<div class="section">
+			<div class="title">
+				我是被折叠的
+			</div>
+			<div class="content">
+				<h2>我就是被折叠的内容，你觉得呢</h2>
+			</div>
+		</div>
+		<div class="section">
+			<div class="title">
+				我是被折叠的
+			</div>
+			<div class="content">
+				<h2>我就是被折叠的内容，你觉得呢</h2>
+			</div>
+		</div>
+		
+		<script>
+			(function(w,d) {
+				'use strict';
+				var titles=d.querySelectorAll('.title'),
+				i=0,
+				len=titles.length;
+				
+				for( ;i<len;i++)
+				titles[i].onclick=function(e) {
+					for(var j=0;j<len;j++)
+						if(this!=titles[j])
+							titles[j].parentNode.className = titles[j].parentNode.className.replace(/open/i, '');
+					var cn=this.parentNode.className;
+					this.parentNode.className=~cn.search(/open/i)?cn.replace(/open/i, ''):cn+' open';
+				}
+			})(this, document);
+		</script>
+	</body>
+</html>

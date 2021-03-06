@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin:0;
+				padding: 0;
+			}
+			.box{
+				width: 400px;
+				height: 400px;
+				background: palevioletred;
+				margin-top: 100px;
+				margin-left: 100px;
+				position: relative;
+			}
+			.box .aaa {width: 100%;height: 100%;}
+			.yellow {display: none;width: 200px;height: 200px;background: rgba(255,140,0,0.5);position: absolute;
+			left: 0;top: 0;cursor: move;}
+			.big{
+				display: none;
+				width: 500px;
+				height: 500px;
+				background: indianred;
+				position: absolute;
+				left: 410px;
+				top: 0;
+				border: 1px solid #ccc;
+				overflow: hidden;
+			}
+			.bigimg{
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img src="../img/3.jpg" class="aaa"/>
+			<div class="yellow"></div>
+			<div class="big">
+				<img src="../img/3.jpg" class="bigimg" />
+			</div>
+		</div>
+		<script>
+			var box = document.querySelector(".box");
+			var yellow = document.querySelector(".yellow");
+			var big = document.querySelector(".big");
+			box.addEventListener("mouseover", function(){
+				yellow.style.display = "block";
+				big.style.display = "block";
+			});
+			box.addEventListener("mouseleave", function(){
+				yellow.style.display = "none";
+				big.style.display = "none";
+			});
+			box.addEventListener("mousemove", function(e){
+				//鼠标距离box盒子的距离
+				var x = e.pageX - this.offsetLeft;			
+				var y = e.pageY - this.offsetTop;
+				//遮挡层移动距离
+				var yellowx = x - yellow.offsetWidth/2; //除2是为了让鼠标指针放在遮挡层的中间
+				var yellowy = y - yellow.offsetHeight/2;
+				//遮挡层的最大移动距离
+				var yellowMax = box.offsetWidth - yellow.offsetWidth;
+				if(yellowx <= 0) {
+					yellowx = 0;
+				} else if(yellowx >= yellowMax) {
+					yellowx = yellowMax + 'px';
+				}
+				if(yellowy <= 0){
+					yellowy = 0;
+				} else if(yellowy >= yellowMax) { // 这里y值也被替换成了，yellowx,是因为他们是正方形，所以是一样的
+					yellowy = yellowMax;
+				}
+				yellow.style.left = yellowx + 'px';
+				yellow.style.top = yellowy + 'px';
+				// 获取大图
+				var bigimg = document.querySelector(".bigimg");
+				// 大图片的移动距离 = 遮挡层移动距离 * 大图片最大移动距离 / 遮挡层的最大移动距离
+				//大图片最大移动距离
+				var bigimgMax = bigimg.offsetWidth-big.offsetWidth;
+				bigimg.style.left = - yellowx * bigimgMax / yellowMax + 'px';
+				bigimg.style.top = - yellowy * bigimgMax / yellowMax + 'px';
+			});
+		</script>
+	</body>
+</html>

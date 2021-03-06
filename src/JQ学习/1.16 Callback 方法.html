@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.red{background-color: red;padding: 10px;color: white;}
+			.green{background-color: #10C768;padding: 10px;}
+			.div1{background-color: #10C768;text-align: center;padding: 15px;color: white;cursor: pointer;}
+			.div2{background-color: #007AFF;padding: 50px;text-align: center;font-size: 48px;color: white;}
+			
+		</style>
+	</head>
+	<body>
+		<button id="demo2" style="padding: 10px;background-color: #007AFF;color: white;">隐藏</button>
+		<button id="demo" style="padding: 10px;background-color: #10C768;color: white;">隐藏</button>
+		<div id="div2" style="padding: 20px;background-color: red;color: white;">我是先消失再跳出弹窗</div>
+		<div id="div1" style="padding: 20px;background-color: blue;color: white;">我是先跳出弹窗再消失</div>
+		<script>
+			$(document).ready(function(){
+				$("#demo2").click(function(){
+					$("#div2").hide("slow",function(){
+						alert("我被隐藏了！");
+					});
+				});
+			});
+			$(document).ready(function(){
+				$("#demo").click(function(){
+					$("#div1").hide(2000);
+					alert("我被隐藏了！");
+				});
+			});
+		</script>
+	</body>
+</html>

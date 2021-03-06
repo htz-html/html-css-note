@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			#myInput {padding: 10px 20px;background-color: #ff4660;color: white;border: 0;border-radius: 3px;font-size: 14px;}
+			#myInput:active{background-color: #e8314b;}
+			#myUL {list-style-type: none;padding: 0;}
+		</style>
+	</head>
+	<body>
+		<h2>点击按钮按字母排列</h2>
+		<input id="myInput" type="button" onclick="sortList()" value="点击排序" />
+		<!-- 需要排序的字母 -->
+		<ul id="myUL">
+			<li>H</li>
+			<li>L</li>
+			<li>F</li>
+			<li>O</li>
+			<li>P</li>
+			<li>J</li>
+			<li>W</li>
+			<li>N</li>
+			<li>K</li>
+			<li>D</li>
+			<li>B</li>
+			<li>a</li>
+		</ul>
+		
+		<!-- JS代码块 -->
+		<script>
+			function sortList() {
+				var list,i,switching,b,shouldSwitch;
+				list = document.getElementById("myUL");
+				switching = true;
+				// 创建一个循环,知道没有完成切换
+				while (switching) {
+					// 首先要说:不进行切换
+					switching = false;
+					b = list.getElementsByTagName("li");
+					// 循环遍历所有的列表项
+					for(i=0;i<(b.length-1);i++) {
+						// 一开始就说不应该换
+						shouldSwitch = false;
+						// 检查下一项是否应与当前项切换位置
+						if (b[i].innerHTML.toLowerCase() > b[i+1].innerHTML.toLowerCase()) {
+							// 如果下一项按字母顺序低于当前项,则标记为转换并中断循环
+							shouldSwitch = true;
+							break;
+						}
+					}
+					if(shouldSwitch) {
+						// 如果已标记了转换,则按已完成的方式进行转换并标记该转换
+						b[i].parentNode.insertBefore(b[i+1],b[i]);
+						switching = true;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>	

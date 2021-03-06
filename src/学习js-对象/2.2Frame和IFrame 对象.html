@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<h2>对iframe排版</h2>
+		<p>
+		这里是一些文本。 这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。
+		这里是一些文本。 这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。
+		这里是一些文本。 这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。
+		这里是一些文本。 这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。
+		<iframe src="http://baidu.com" id="myframe">
+			<p>你的浏览器不支持iftames。</p>
+		</iframe>
+		这里是一些文本。 这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。
+		这里是一些文本。 这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。
+		这里是一些文本。 这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。这里是一些文本。
+		</p>
+		<script>
+			document.getElementById("myframe").align="right";
+		</script>
+		<iframe id="aaa" src="2.0重置表单.html" frameborder="0"><p>你的浏览器不支持iframes。</p></iframe>
+		<br>
+		<input type="button" value="修改背景颜色" onclick="aaa()"/>
+		<script>
+			function aaa(){
+				var x=document.getElementById("aaa");
+				var y=(x.contentWindow || x.contentDocment);
+				if(y.document)y=y.document;
+				y.body.style.backgroundColor="red";
+			}document.write("<br><br>这个frameborder已设置:");
+			document.write(document.getElementById("aaa").frameBorder);
+		</script>
+		
+		<p>以下是删除iframe的frameborder</p>
+		<iframe id="bbb" src="http://huaban.com/" width="250" height="250"><p>你的浏览器不支持iframes。</p></iframe>
+		<br>
+		<input type="button" value="移除边框" onclick="bbb()"/>
+		<input type="button" value="修改大小" onclick="ccc()"/>
+		<input type="button" value="移除滚动条" onclick="ddd()"/>
+		<input type="button" value="改变原链接" onclick="changeSrc()"/>
+		<script>
+			function bbb(){
+				document.getElementById("bbb").frameBorder="0";
+			}
+			function ccc(){
+				document.getElementById("bbb").width="300";
+				document.getElementById("bbb").height="300";
+			}
+			function ddd(){
+				document.getElementById("bbb").scrolling="no";
+			}
+			function changeSrc(){
+				document.getElementById("bbb").src="https://www.zcool.com.cn/";
+			}
+		</script>
+		
+	</body>
+</html>

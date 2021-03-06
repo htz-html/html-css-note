@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {margin: 0;padding: 0;}
+			.tab {
+				width: 600px;
+				height: 400px;
+				margin: auto;
+				margin-top: 100px;
+				padding-left: 1px;
+				overflow: hidden;
+			}
+			.tab .tablist {
+				display: flex;
+			}
+			.tab .tablist li{
+				flex: 1;
+				text-align: center;
+				list-style: none;
+				margin: 10px;
+				padding: 10px 0;
+				font-size: 16px;
+				border: 1px solid #ddd;
+				border-radius: 4px;
+				color: #666666;
+			}
+			.active {
+				background-color: #007de7;
+				color: white;
+				transition: 500ms;
+				color: #fff !important;
+				border: 0;
+			}
+			.item {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tab">
+			<div class="tablist">
+				<li class="active">首页</li>
+				<li>产品</li>
+				<li>资讯</li>
+			</div>
+			<div class="content">
+				<div class="item" data-index='0' style="display: block;">我是首页</div>
+				<div class="item" data-index='1'>我是产品</div>
+				<div class="item" data-index='2'>我是资讯</div>
+			</div>
+		</div>
+		
+		
+		<script>
+			var tablist = document.querySelector(".tablist");
+			var li_list = tablist.querySelectorAll("li");
+			var items = document.querySelectorAll('.item')
+			for(var i = 0; i<li_list.length; i++) {
+				li_list[i].setAttribute("data-index",i);
+				li_list[i].onclick = function(){
+					for( var i=0; i<li_list.length; i++) {
+						li_list[i].className = '' ;
+					}
+					this.className = 'active';
+					var index = this.getAttribute('data-index');
+					for( var i=0; i<items.length; i++) {
+						items[i].style.display = 'none';
+					}
+					items[index].style.display = 'block';
+				}
+			}
+			
+		</script>
+	</body>
+</html>

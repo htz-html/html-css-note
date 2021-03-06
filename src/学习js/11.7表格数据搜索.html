@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			#myInput{background: url(../img/search.png) no-repeat;background-size: 26px; background-position: 6px 8px;width: 100%;
+			height: 44px;font-size: 16px;padding-left: 34px;border: 1px solid #aaa;border-radius: 3px;margin-bottom: 10px;}
+			#myTable{border-collapse: collapse;width: 100%;border: 1px solid #ddd;}
+			#myTable th,#myTable td{ text-align: left;padding: 10px;}
+			#myTable tr {border: 1px solid #ddd;}
+			#myTable tr:hover,#myTable tr.header{background-color: #f1f1f1;}
+		</style>
+	</head>
+	<body>
+		<input type="search" id="myInput" onkeyup="myFunction()" placeholder="搜索...">
+		
+		<table id="myTable">
+			<tr class="header">
+				<th style="width: 60%;">名称</th>
+				<th style="width: 40%;">城市</th>
+			</tr>
+			<tr>
+				<td>黄鹤楼</td>
+				<td>武汉</td>
+			</tr>
+			<tr>
+				<td>鼓浪屿</td>
+				<td>厦门</td>
+			</tr>
+			<tr>
+				<td>兵马俑</td>
+				<td>西安</td>
+			</tr>
+			<tr>
+				<td>天安门</td>
+				<td>北京</td>
+			</tr>
+		</table>
+		<script>
+			function myFunction()
+			{
+				// 声明变量
+				var input,filter,table,tr,td,i;
+				input = document.getElementById('myInput');
+				filter = input.value.toUpperCase();
+				table = document.getElementById("myTable");
+				tr = table.getElementsByTagName('tr');
+				
+				// 循环所有列表,查找匹配项
+				for (i=0;i<tr.length;i++) {
+					td = tr[i].getElementsByTagName("td")[0];
+					if(td){
+						if(td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+							tr[i].style.display = "";
+						} else {
+							tr[i].style.display = "none";
+						}
+					}
+				}
+			}
+		</script>
+	</body>
+</html>	

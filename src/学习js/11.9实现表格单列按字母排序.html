@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			#myInput {padding: 10px 20px;background-color: #ff4660;color: white;border: 0;border-radius: 3px;font-size: 14px;}
+			#myInput:active{background-color: #e8314b;}
+			#myTable {margin-top: 10px;}
+		</style>
+	</head>
+	<body>
+		<h2>点击按钮按字母排列</h2>
+		<input id="myInput" type="button" onclick="sortTable()" value="点击排序" />
+		<!-- 需要排序的字母 -->
+		<table border="1" id="myTable">
+			<tr>
+				<th>wwodemingzi</th>
+				<th>wodenianling</th>
+			</tr>
+			<tr>
+				<td>ruguonihaiaiwoqingbawopengzaishouxin</td>
+				<td>zhidaobu</td>
+			</tr>
+			<tr>
+				<td>youiyitianwshinidd</td>
+				<td>qingaiwo</td>
+			</tr>
+			<tr>
+				<td>buyaolikaiwohaoma</td>
+				<td>wohenxiangni</td>
+			</tr>
+			<tr>
+				<td>dangnanianbuzhidaoshiniud</td>
+				<td>wphendanxinnizhidaoma</td>
+			</tr>
+		</table>
+		
+		<!-- JS代码块 -->
+		<script>
+			function sortTable(){
+				var table,rows,switching,i,x,y,shouldSwitch;
+				table = document.getElementById("myTable");
+				switching = true;
+				// 创建一个循环,该循环将一直持续到未完成切换为止
+				while(switching) {
+					// 一开始就说:不做切换
+					switching = false;
+					rows = table.getElementsByTagName("tr");
+					// 循环遍历所有表行(除了第一个，它包含表标题)
+					for(i=1;i<(rows.length-1);i++) {
+						// 首先要说不应该切换
+						shouldSwitch = false;
+						// 获取要比较的两个元素,一个来自当前行,一个来自下一行
+						x = rows[i].getElementsByTagName("td")[0];
+						y = rows[i+1].getElementsByTagName("td")[0];
+						// 核对这两行是否应该交换位置
+						if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+							// 如果成立,将其标记为切换并断开循环
+							shouldSwitch = true;
+							break;
+						}
+					}
+					if(shouldSwitch) {
+						// 如果标记了切换,则换行切换并标记已完成的切换
+						rows[i].parentNode.insertBefore(rows[i+1],rows[i]);
+						shouldSwitch = true;  
+					}
+				}
+			}
+		</script>
+	</body>
+</html>	

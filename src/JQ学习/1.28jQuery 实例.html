@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}span{line-height: 30px;}
+		</style>
+	</head>
+	<body>
+		<h3>1.jQuery选择器</h3>
+		<blockquote>
+			<p>$("p").hide()</p>
+			<p>$(".class").hide()</p>
+			<p>$("#id").hide()</p>
+			<p>$(".class p")</p>
+			<p>$("this")</p>
+		</blockquote>
+		<h3>2.jQuery事件</h3>
+		<ul>
+			<li>click()</li>
+			<li>dbclcik()</li>
+			<li>mouseenter()</li>
+			<li>mouseleave()</li>
+			<li>mousedown()</li>
+			<li>mouseup()</li>
+			<li>hover()</li>
+			<li>focus()与blur()</li>
+		</ul>
+		<h3>jQuery隐藏/显示</h3>
+		<ul>
+			<li>hide()</li>
+			<li>hide()和show()</li>
+			<li>toggle()</li>
+		</ul>
+		<h3>jQuery淡入淡出</h3>
+		<ul>
+			<li>fadeIn()</li>
+			<li>fadeOut()</li>
+			<li>fadeToggle()</li>
+			<li>fadeTo()</li>
+		</ul>
+		<h3>jQuery滑动</h3>
+		<ul>
+			<li>slideDown()</li>
+			<li>slideUp</li>
+			<li>slideToggle</li>
+		</ul>
+		<h3>jQuery动画</h3>
+		<ul>
+			<li>animate({left:'250px'})但是这个不能改变背景颜色</li>
+			<li>animate 可以设置多个属性</li>
+			<li>animate可以使用相关值 ({width:'+=100px',height:'+=100px'})</li>
+			<li>animate预定义：$("#div1").animate({height:'toggle'})----意思就是点击按钮仅高度以隐藏/显示切换</li>
+			<li>
+				<p>animate更多案例：</p>
+				$("button").click(function(){  <br />
+					var abc=$("#div1");  <br />
+					abc.animate({height:'100px',opacity:'0.5'},"slow");  <br /> 
+					abc.animate({width:'100px',opacity:'0.8'},"slow");  <br />
+					.....  <br />
+				})
+			</li>
+		</ul>
+		<h3>jQuery停止动画</h3>
+		<ul>
+			<li>stop()滑动</li>
+			<li>stop()动画，带参数</li>
+		</ul>
+		<h3>jQuery HTML 设置内容和属性</h3>
+		<ul>
+			<li>
+				<p style="color: #8A2BE2;font-weight: bold;">text(),html(),val()-设置内容</p>
+				使用 jQuery text(), html() 和 val() 方法设置内容 
+			</li>
+			<li>
+				<p style="color: #8A2BE2;font-weight: bold;">text(),html()设置内容，并使用回调函数</p>
+			</li>
+		</ul>
+	</body>
+</html>

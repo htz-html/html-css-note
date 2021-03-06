@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			body{margin: 0;padding: 0;}
+			*{box-sizing: border-box;}
+			#snackbar{
+				visibility: hidden;
+				width: 100%;
+				text-align: center;
+				position:fixed;
+				bottom: 30px;
+				}
+			#snackbar span{background-color: #333;color:white;padding: 20px;width: 600px;border-radius: 6px;
+			display: inline-block;margin: auto;}
+			#snackbar.show{
+				visibility:visible;
+				-webkit-animation: fadein .5s, fadeout .5s 2.5s;
+				animation: fadein .5s, fadeout .5s 2.5s;
+				}
+			@-webkit-keyframes fadein{
+				from{bottom: 0;opacity: 0;}
+				to{bottom: 30px;opacity: 1;}
+			}
+			@keyframes fadein{
+				from{bottom: 0;opacity: 0;}
+				to{bottom: 30px;opacity: 1;}
+			}
+			@-webkit-keyframes fadeout{
+				from{bottom: 30px;opacity: 1;}
+				to{bottom: 0;opacity: 0;}
+			}
+			@keyframes fadeout{
+				from{bottom: 30px;opacity: 1;}
+				to{bottom: 0;opacity: 0;}
+			}
+		</style>
+	</head>
+	<body>
+		<h2>snackbar</h2>
+		<p>在屏幕底部弹出消息，也可以是顶部</p>
+		<p>点击按钮显示提示消息，3秒后消失</p>
+		
+		<button type="button" onclick="mySnackbar()">显示sanckbar</button>
+		<div id="snackbar"><span>信息未填写完整</span></div>
+			
+		<script>
+			function mySnackbar(){
+				var x=document.getElementById("snackbar");
+				x.className="show";
+				setTimeout(function() {x.className = x.className.replace("show","");}, 3000)
+			}
+		</script>
+		
+	</body>
+</html>

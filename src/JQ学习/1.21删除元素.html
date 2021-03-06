@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+		</style>
+	</head>
+	<body>
+		<h3>添加新的 HTML 内容---append() 方法</h3>
+		<h4>remove() 方法删除被选元素及其子元素。</h4>
+		<div id="div1" style="height: 200px;background-color: #007AFF;border: 5px solid #D5801B;padding: 10px;color: white;margin-bottom: 10px;">
+			内容内容内容内容内容内容
+			<p class="class1">你是我的优乐美</p>
+			<p  class="class2">酱紫我就可以把你捧在手心啦</p>
+		</div>
+		<button id="demo1">remove删除元素</button>
+		<button id="demo2">empty删除元素</button>
+		<button id="demo3">删除元素过滤出来的元素</button>
+		<script>
+			$(document).ready(function(){
+				$("#demo1").click(function(){
+					$("#div1").remove();
+				});
+				$("#demo2").click(function(){
+					$("#div1").empty();
+				});
+				$("#demo3").click(function(){
+					$("p").remove(".class1");
+				});
+			});
+		</script>
+		
+	</body>
+</html>

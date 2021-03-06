@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function setCookie(cname,cvalue,exdays){
+				var d = new Date();
+				d.setTime(d.getTime()+(exdays*24*60*60*1000));//setTime设置毫秒数,并显示新的日期
+				                                             //getTime可返回距1970年1月1日之间的毫秒数.
+				var expires = "expires="+d.toGMTString();//toGMTString可根据格林威治时间(GMT)把Date对象转换为字符串,并返回结果
+				document.cookie = cname+"="+cvalue+";"+expires;
+			}
+			function getCookie(cname){
+				var name = cname+"=";
+				var ca = document.cookie.split(';');//split()方法用于把一个字符串分割成字符串数组.
+				for(var i=0;i<ca.length;i++) {
+					var c = ca[i].trim();//trim()函数移除字符串两侧的空白字符或其他预定义字符.
+					if (c.indexOf(name)==0) {return c.substring(name.lenght,c.length);}
+				}
+				return "";
+			}
+			function checkCookie(){
+				var user=getCookie("username");
+				if (user!=""){
+					alert("欢迎"+ user + "再次访问");
+				}
+				else{
+					user = prompt("请输入你的名字：','");
+					if (user!="" && user!=null){
+						setCookie("username",user,30);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>	

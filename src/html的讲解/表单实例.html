@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>HTML 教程</title>
+	</head>
+	<body>
+		<p>带边框的表单</p>
+		<form>
+			<fieldset>
+				<legend>我的呼吸</legend>
+				Name: <input type="text" size="30"><br>
+				E-mail: <input type="text" size="30"><br>
+				Date of birth: <input type="text" size="10">
+			</fieldset>
+		</form>
+		<p>定义选项组</p>
+		<select>
+			<optgroup label="Swedish Cars">
+				<option value="volvo">Volvo</option>
+				<option value="saab">Saab</option>
+			</optgroup>
+			<optgroup>
+				<option value ="volvo">fsds</option> 
+				<option value ="saab">dsdsd</option>
+			</optgroup>
+		</select>
+		<p>定义一个计算结果</p>
+		<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+			0<input type="range" id="a" value="22" />100
+			+<input type="number" id="b" value="61" />
+			=<output name="x" for="a b"></output>
+		</form>
+		<br />
+		<iframe src="http://www.baidu.com" width="" height=""></iframe><br />
+		移除边框：<iframe src="http://www.huaban.com" width="" height="" frameborder="0"></iframe><br />
+		使用iframe来显示目录链接页面
+		<iframe src="http://www.baidu.com" width="" height="" name="iframe_a"></iframe>
+		<p><a href="http://www.huaban.com" target="iframe_a">点击换成了花瓣网</a></p>
+		
+		
+	</body>
+</html>

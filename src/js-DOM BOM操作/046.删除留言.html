@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 100px;
+			}
+			ul li {
+				list-style: none;
+				background-color: #FF4660;
+				margin-bottom: 5px;
+			}
+			ul {
+				margin: 0;
+				padding: 0;
+				margin-top: 10px;
+			}
+			ul li a {
+				float: right;
+				
+				text-decoration: none;
+			}
+			textarea{
+				width: 100%;
+				padding: 10px;
+				
+			}
+			input {
+				float: right;
+			}
+			.demo{
+				clear: both;
+				margin-top: 60px;
+				padding: 10px 0;
+				border-bottom: 1px solid #ddd;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea rows="10" placeholder="给我留言..."></textarea>
+		<input type="button" value="提交留言" />
+		<div class="demo">
+			留言列表
+		</div>
+		<ul>
+		</ul>
+		<script>
+			var text = document.querySelector("textarea");
+			var input = document.querySelector("input");
+			var ul = document.querySelector("ul");
+			
+			
+			input.onclick = function() {
+				if(text.value == '') {
+					alert("请输入内容再提交留言");
+					return false;
+				}
+				var li = document.createElement("li");
+				li.innerHTML = text.value + "<a href='javascript:void(0)'>删除</a>";
+				ul.insertBefore(li, ul.children[0]);
+				text.value = '';
+				// 删除元素
+				var alla = document.querySelectorAll("a");
+				for(var i = 0; i<alla.length; i++) {
+					alla[i].onclick = function() {
+						ul.removeChild(this.parentNode)
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

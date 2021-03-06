@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../响应式/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.fix {
+				width: 100px;
+				height: 200px;
+				background: rgb(230, 0,0);
+				position: absolute;
+				right: 10%;
+				top: 600px;
+				color: #000000;
+				font-size: 36px;
+				font-weight: bold;
+				padding: 10px 0;
+				text-align: center;
+				border-radius: 10px;
+			}
+			img{width: 100%;}
+		</style>
+	</head>
+	<body>
+		<div>
+			<img src="../img/3.jpg" >
+			<img src="../img/22.jpg" >
+			<img src="../img/33.jpg" >
+		</div>
+		<div class="fix">新<br>年<br>快<br>乐</div>
+		<script>
+			var fix = document.querySelector(".fix");
+			var w = window.document;
+			w.addEventListener("scroll", function(){
+				console.log(window.pageYOffset);
+				if(window.pageYOffset > 500) {
+					fix.style.position = "fixed";
+					fix.style.top = "100px";
+				} else {
+					fix.style.position = "absolute";
+					fix.style.top = "600px";
+				}
+			})
+		</script>
+	</body>
+</html>

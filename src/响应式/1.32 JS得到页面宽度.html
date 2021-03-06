@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<!-- 添加视口:viewport就是视口的意思，在meta标签里面 -->
+		<meta meta content= "width=decice-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" id="viewport"/>
+		<title>JS得到页面宽度</title>
+		
+	</head>
+	<body>
+		<h1 id="widthSize"></h1>
+		<script type="text/javascript">
+			window.onresize = function(){
+				var myh1 = document.getElementById("widthSize");
+				myh1.innerHTML = document.documentElement.clientWidth;
+			}
+		</script>
+		<p>window对象的事件：onload加载完成；onresize调整尺寸；onscroll滚动滚轮</p>
+	</body>
+</html>

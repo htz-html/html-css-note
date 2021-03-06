@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			p{text-align:center;font-size:60px;}
+		</style>
+	</head>
+	<body>
+		<p id="demo"></p>
+		
+		<!-- Javascript代码块 -->
+		<script>
+			// 把我们计算的日期定在
+			var countDownDate=new Date("Jan 5,2028,13:14:52").getTime();
+			// 每1秒更新一次计数
+			var x=setInterval(function() {
+				// 得到今天的日期和时间
+				var now=new Date().getTime();
+				// 查找当前与倒计时日期之间的距离
+				var distance=countDownDate-now;
+				
+				// 日期/小时/分钟/秒的时间计算
+				var days=Math.floor(distance / (1000*60*60*24));
+				var hours=Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+				var minutes=Math.floor((distance % (1000*60*60))/(1000*60));
+				var seconds=Math.floor((distance % (1000*60))/(1000));
+				
+				// 在id="demo"中输出结果
+				document.getElementById("demo").innerHTML = days+"d "+hours+"h "
+				+minutes+"min "+seconds+"s";
+				
+				// 如果计数下降了,写一些文本
+				if(distance<0) {
+					clearInterval(x);
+					document.getElementById("demo").innerHTML = "我特么信你"
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.demo{
+				height: 300px;
+				width: 300px;
+				background: radial-gradient( at top left,red,blue);
+			}
+			.demo1{
+				width: 300px;
+				height: 200px;
+				background: radial-gradient(circle closest-corner at 50px 50px,red,blue);
+			}
+			.demo2 { width: 300px;height: 200px;background: radial-gradient(red,red 50%,blue 50%,blue);}
+		</style>
+	</head>
+	<body>
+		<h1>径向渐变</h1>
+		<h2>主要是去了解 closest-corner 最近的角，closest-side最近的边，farthest-side最远的边,farthest-corner最远的角</h2>
+		<div class="demo"></div><br>
+		<div class="demo1"></div><br>
+		<div class="demo2"></div>
+	</body>
+</html>

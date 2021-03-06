@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			*{border:none;font-family:'Open Sans',sans-serif;margin:0;padding:0;}
+			h2{text-align:center;}
+			.center{background:#fff;border-radius:50%;margin:auto;}
+			form{background-color:#334b60;box-shadow:4px 4px #172734;margin:40px auto;padding:40px 0 30px 40px;width:280px;}
+			.btn{outline:none;cursor:pointer;font-size:20px;height:45px;width:45px;margin:5px 0 5px 5px;}
+			.btn,#display,form{border-radius:25px;}
+			#display{outline:none;background-color:#adc8be;box-shadow:inset 4px 4px 0px #e6fff6;height:45px;font-size:20px;
+			text-align:right;padding-right:15px;width:135px;margin-left:10px;}
+			.number {background-color:#848f93;box-shadow:0 4px 0 #596569;color:white;}
+			.number:active{box-shadow:0 2px #798589;-webkit-transform:translateY(2px);-ms-transform:translateY(2px);-moz-transform:translateY(2px);transform:translateY(2px);}
+			.operator {background-color:#f9f9ee;box-shadow:0 4px 0 #c2c1b0;}
+			.operator:active{box-shadow:0 2px #f4f4e9;-webkit-transform:translateY(2px);-ms-transform:translateY(2px);-moz-transform:translateY(2px);transform:translateY(2px);}
+			.other {background-color:#ff9c27;box-shadow:0 4px 0 #d5801b;color:white;}
+			.other:active{box-shadow:0 2px #eb8e20;-webkit-transform:translateY(2px);-ms-transform:translateY(2px);-moz-transform:translateY(2px);transform:translateY(2px);}
+		</style>
+	</head>
+	<body>
+		<div class="center">
+			<h2>神奇的计算器</h2>
+			<form name="calculator">
+				<input type="button" id="clear" class="btn other"  value="c" />
+				<input type="text" id="display" />
+				<br>
+				<input type="button" class="btn number" value="7" onclick="get(this.value);" />
+				<input type="button" class="btn number" value="8" onclick="get(this.value);"/>	
+				<input type="button" class="btn number" value="9" onclick="get(this.value);"/>	
+				<input type="button" class="btn operator" value="+" onclick="get(this.value);"/>	
+				<br>
+				<input type="button" class="btn number" value="4" onclick="get(this.value);"/>
+				<input type="button" class="btn number" value="5" onclick="get(this.value);"/>
+				<input type="button" class="btn number" value="6" onclick="get(this.value);"/>
+				<input type="button" class="btn operator" value="-" onclick="get(this.value);"/>
+				<br>
+				<input type="button" class="btn number" value="1" onclick="get(this.value);"/>
+				<input type="button" class="btn number" value="2" onclick="get(this.value);"/>
+				<input type="button" class="btn number" value="3" onclick="get(this.value);"/>
+				<input type="button" class="btn operator" value="*" onclick="get(this.value);"/>
+				<br>
+				<input type="button" class="btn number" value="0" onclick="get(this.value);"/>
+				<input type="button" class="btn operator" value="." onclick="get(this.value);"/>	
+				<input type="button" class="btn other" value="=" onclick="calculates();">
+				<input type="button" class="btn operator" value="/" onclick="get(this.value);"/>
+			</form>
+		</div>
+		
+		
+		<script>
+			document.getElementById("clear").addEventListener("click", function() { //addEventListener用于向指定元素添加事件句柄
+				document.getElementById("display").value="";
+			});
+			function get(value) {
+				document.getElementById("display").value += value;
+			}
+			function calculates() {
+				var result = 0;
+				result=document.getElementById("display").value;
+				document.getElementById("display").value= "";
+				document.getElementById("display").value= eval(result);
+			};
+		</script>
+	</body>
+</html>

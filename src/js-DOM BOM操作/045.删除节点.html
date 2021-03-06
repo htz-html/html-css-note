@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		</style>
+	</head>
+	<body>
+		<button type="button">删除</button>
+		<ol>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ol>
+		<script>
+			var ol = document.querySelector("ol");
+			var btn = document.querySelector("button");
+			btn.onclick = function(){
+				if( ol.children.length == 0){
+					this.disabled = true;
+				} else {
+					ol.removeChild(ol.children[0]);
+				}
+			}
+		</script>
+	</body>
+</html>

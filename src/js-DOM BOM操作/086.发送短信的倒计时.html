@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin:10px;
+				padding: 0;
+			}
+			img {
+				position: absolute;
+			}
+			span {
+				margin: 5px;
+				padding: 10px;
+				background-color: #000000;
+				color: white;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" />
+		<button type="button" class="duanxin">发送</button>
+		<script>
+			var btn = document.querySelector('.duanxin');
+			var time = 3;
+			btn.addEventListener('click', function(){
+				btn.disabled = true;
+				var timer = setInterval(function(){
+					if(time === 0) {
+						// 清除定时器和复原按钮
+						btn.disabled = false;
+						clearInterval(timer)
+						time = 3;
+						btn.innerHTML = "发送"
+					} else {
+						btn.innerHTML = "还剩"+time+"秒";
+						time--;
+					}
+				}, 1000);
+			})
+		</script>
+	</body>
+</html>

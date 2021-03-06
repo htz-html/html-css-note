@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../响应式/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 10px;
+				padding: 0;
+			}
+			.box{
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 200px;
+				width: 200px;
+				border-radius: 100%;
+				background: red;
+				color: #000000;
+				text-align: center;
+				font-size: 110px;
+				font-weight: bold;
+				line-height: 180px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">福</div>
+		<script>
+			//  (1) 触摸元素 touchstart: 获取手指的坐标(在应用中只需要取第一个手指的坐标)，同时获取盒子原来的位置
+			//  (2) 移动手指 touchmove: 计算手指的滑动距离，并移动盒子
+			//  (3) 离开屏幕 touchend: 
+			var box = document.querySelector(".box");
+			var startX = 0;
+			var startY = 0;
+			var x = 0;
+			var y = 0;
+			box.addEventListener("touchstart", function(e) {
+				// 获取手指的坐标
+				startX = e.targetTouches[0].pageX;
+				startY = e.targetTouches[0].pageY;
+				// 获取盒子的位置
+				x = this.offsetLeft;
+				y = this.offsetTop;
+			});
+			box.addEventListener("touchmove", function(e){
+				var moveX = e.targetTouches[0].pageX - startX;
+				var moveY = e.targetTouches[0].pageY - startY;
+				this.style.left = x + moveX + 'px';
+				this.style.top = y + moveY + 'px';
+				e.preventDefault(); // 阻止屏幕默认的默认行为
+			});
+		</script>
+	</body>
+</html>

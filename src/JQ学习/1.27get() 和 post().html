@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}span{line-height: 30px;}
+		</style>
+	</head>
+	<body>
+		<h3>HTTP 请求：GET vs. POST</h3>
+		<ul>
+			<li>GET - 从指定的资源请求数据</li>
+			<li>post - 向指定的资源提交要处理的数据</li>
+		</ul>
+		<p>GET基本上用于从服务器获得数据。 <span style="color: #ff7a7a;">注释：GET 方法可能返回缓存数据。</span> </p>
+		<p>POST也是可用于从服务器获取数据。不过，post方法不会缓存数据，并且常用于连同请求一起发送数据。</p>
+		<h3>$.get() 方法</h3>
+		<p>$.get()方法通过HTTP GET 请求从服务器上请求数据</p>
+		<p style="color: #e15273;font-weight: bold;">语法实例(看代码):</p>
+		<button style="padding: 10px;background: #007EFF;color: white;border: 0;border-radius: 5px;">发送一个HTTP GET请求并获取返回结果</button>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("button").click(function(){
+					$.get("../demo_txt.php",function(data,status){
+						alert("数据：" + data + "\n状态：" + status);
+					});
+				});
+			});
+		</script>
+		
+		<h2>noconflict()</h2>
+		<p>如果其他 JavaScript 框架也使用 $ 符号作为简写怎么办？</p>
+		<p style="color: #ff6363;">就使用noConflict() ,noConflict()方法会释放对 $ 标识符的控制，这样其他脚本就可以使用它了。</p>
+		<p style="color: #007AFF;font-weight: bold;">例如：</p>
+		<span>要先在js标签开头写上: $.noConflict()</span>
+		<h3 style="color: red;">注意：把“ $ ”替换成“ jQuery ”全名。下面三种形式：</h3>
+		<script>
+			$.noConflict();
+			jQuery(document).ready(function(){
+				jQuery("button").click(function(){
+					
+				});
+			});
+			
+			
+			或
+			
+			
+			var jq=$.noConflict();
+			jq(document).ready(function(){
+				jq("button").click(function(){
+					
+				})
+			})
+			
+			或
+			
+			$.noConflict();
+			jQuery(document).ready(function(){
+				$("button").click(function(){
+					
+				})
+			})
+		</script>
+	</body>
+</html>

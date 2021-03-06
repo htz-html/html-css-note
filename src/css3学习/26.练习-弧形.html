@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			.demo1 {
+				overflow: hidden;
+				padding-top: 18px;
+				margin-top: -20px;
+			}
+
+			.demo {
+				margin-top: -3px;
+				width: 100%px;
+				height: 100px;
+				background-color: #007EFF;
+				position: relative;
+				z-index: 1;
+
+			}
+
+			.demo::before {
+				content: '';
+				width: 116%;
+				height: 50px;
+				background-color: #007EFF;
+				position: absolute;
+				top: -15px;
+				left: -30px;
+				border-radius: 100%;
+				z-index: -1;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="height: 100px;background-color: #09B75C;">
+
+		</div>
+		<div class="demo1">
+			<div class="demo">11vsdsdsad颠三倒四第三方的风格的胜多负少的颠三倒四多所多所方法对方答复a</div>
+		</div>
+		
+		<style type="text/css">
+			ul {
+				list-style: none;
+			}
+			.choosecity {
+				overflow: hidden;
+				
+			}
+			.choosecity ul li { 
+				
+				width: 30%;float: left;
+				padding: 5px;
+			}
+			.choosecity ul {
+				margin:  0 -5px;
+			}
+			.choosecity ul li a {
+				display: block;
+				text-align: center;
+				font-size: 16px;
+				border: 1px solid #bbb;
+				padding: 8px 0;
+				border-radius: 3px;
+			}
+			
+		</style>
+		<div style="padding: 10px;">
+			<div style="color:#888;margin-top: 10px;margin-bottom: 10px;">热门城市</div>
+			<div class="choosecity">
+				<ul>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+					<li><a href="">厦门</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

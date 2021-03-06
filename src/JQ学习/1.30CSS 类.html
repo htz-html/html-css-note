@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+			}
+
+			span {
+				line-height: 30px;
+			}
+
+			.demo {
+				color: #10C768;
+			}
+
+			.foo {
+				font-size: 20px;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<p> addClass()你好吗？</p>
+		<script>
+			$(document).ready(function() {
+				$("p").click(function() {
+					$("p").addClass("demo foo");
+				});
+			});
+		</script>
+		<p>removeClass()移除指定元素的类</p>
+		<div id="demo1">toggleClass()在选取的元素切换（添加/删除）类</div>
+		<script>
+			$(document).ready(function() {
+				$("#demo1").click(function() {
+					$("#demo1").toggleClass("demo foo");
+				});
+			});
+		</script>
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<div id="demo2" style="color: red;">
+			我是胡八一
+		</div>
+		<script>
+			$(document).ready(function() {
+				$("#demo2").click(function() {
+					alert("背景颜色= " + $("#demo2").css("color"));
+				});
+			});
+		</script>
+
+
+		<br />
+		<br />
+		<br />
+		<br />
+		<button>发送一个 HTTP GET 请求并获取返回结果</button>
+		<script>
+			$(document).ready(function() {
+				$("button").click(function() {
+					$.get("\helloh5\dbymodel\JQ学习/1.17链.html", function(data, status) {
+						alert("数据: " + data + "\n状态: " + status);
+					});
+				});
+			});
+		</script>
+
+
+	</body>
+</html>

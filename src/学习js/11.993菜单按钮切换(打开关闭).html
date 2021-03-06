@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			.container{display: inline-block;cursor: pointer;}
+			.bar1,.bar2,.bar3{height: 6px;width: 36px;background-color: #000;margin: 6px;transition: .3s;
+			border-radius: 3px;}
+			.change .bar1{transform: rotate(-45deg) translate(-9px,7px);
+			-webkit-transform: rotate(-45deg) translate(-9px,7px);}
+			.change .bar2{opacity: 0;}
+			.change .bar3{transform: rotate(45deg) translate(-9px,-9px);
+			-webkit-transform: rotate(45deg) translate(-9px,-9px);}
+		</style>
+	</head>
+	<body>
+		<p>点击菜单按钮变为“x”</p>
+		<div class="container" onclick="myFunction(this)">
+			<div class="bar1"></div>
+			<div class="bar2"></div>
+			<div class="bar3"></div>
+		</div>
+		
+		<script>
+			function myFunction(x) {
+				x.classList.toggle("change");
+			}
+		</script>
+	</body>
+</html>

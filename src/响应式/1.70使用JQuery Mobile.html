@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" id="viewport" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css"/>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+		<title>使用jqm</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			p {
+				margin: 10px 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<h2>好邦伲七夕</h2>
+			</div>
+			<div data-role="content">
+				<p>为了实现页面跳转，所有的data-role为page的“页面”，都需要有id；然后在a标签中，通过锚点链接
+				href="#id"来进行页面跳转，可以给a里面添加data-transition来设置页面的转场效果。
+				</p>
+				<p>data-transition="slide" 滑动</p>
+				<p>data-transition="pop" 弹出</p>
+				<p>data-transition="flip" 翻转</p>
+				<p>data-transition="turn" 比较夸张的翻转</p>
+				...
+				<p><a href="https://www.w3school.com.cn/jquerymobile/jquerymobile_transitions.asp">其他转场效果</a></p>
+				<a data-role="button" href="#detail" data-transition="slide">查看详情</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h4>底部导航</h4>
+			</div>
+		</div>
+		<div data-role="page" id="detail">
+			<div data-role="header">
+				<h2>好邦伲七夕</h2>
+			</div>
+			<div data-role="content">
+				<p>我是七夕详情页</p>
+				<a data-role="button" href="#home" data-transition="slide">返回首页</a>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<h4>底部导航</h4>
+			</div>
+		</div>
+	</body>
+</html>

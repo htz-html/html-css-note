@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<div style="background-color: #3caaff;padding: 10px;">
+			<h3>后退按钮</h3>
+			<input type="button"  value="返回" onclick="goback()" />
+			<p>注意,点击后退按钮在这里不会导致任何行动,因为以前的历史列表中没有该URL</p>
+			<script>
+				function goback() {
+					window.history.back();
+				}
+			</script>
+		</div>
+		<div style="background-color: #3cffcf;padding: 10px;">
+			<h3>前进按钮</h3>
+			<input type="button"  value="前进" onclick="goForward()" />
+			<p>注意,点击这里的前进按钮不会导致任何行动,因为历史列表中没有下一个URL</p>
+			<script>
+				function goForward() {
+					window.history.goForward();
+				}
+			</script>
+		</div>
+		
+	</body>
+</html>

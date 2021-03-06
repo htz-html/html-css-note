@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet" />
+		<title></title>
+	</head>
+	<body>
+		<button id="popup-words" class="dby-btn-danger">弹窗</button>
+		<h1>我是H1，我最大</h1>
+		<h2>我是H2，我老二</h2>
+		<h3>我是H3，我老三</h3>
+		<h4>我是H4，我老四</h4>
+		<h5>我是H5，我老五</h5>
+		<h6>我是H6，我最小</h6>
+		<div id="popup-background">
+			<div id="popup-content" class="popup-content">
+				<div class="popup-content-head">
+					<span id="popup_close">×</span>
+					<h2>预约留言</h2>
+				</div>
+				<div class="popup-content-title">
+					<input type="text" placeholder="您的姓名" />
+					<input type="text" placeholder="您的手机" />
+					<div class="popup-code">
+						<input class="popup-code-input" type="text" placeholder="验证码" />
+						<a href="" class="popup-btn-code">获取验证码</a>
+					</div>
+					<input type="button" value="确认" class="popup-btn-sure" />
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var btn = document.getElementById('popup-words');
+			var div = document.getElementById('popup-background');
+			var close = document.getElementById('popup_close');
+			btn.onclick = function show() {
+				div.style.display = "block";
+			}
+			close.onclick = function close() {
+				div.style.display = "none";
+			}
+			// 			window.onclick = function close(e) {
+			// 				if (e.target == div) {
+			// 					div.style.display = "none";
+			// 				}
+			// 			}
+		</script>
+	</body>
+</html>

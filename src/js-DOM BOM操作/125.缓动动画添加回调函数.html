@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../响应式/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			div {
+				position: absolute;
+				left: 0;
+				width: 100px;
+				height: 100px;
+				background: orangered;
+			}
+			span{
+				display: inline-block;
+				width: 150px;
+				height: 150px;
+				background: #DB7093;
+				position: absolute;
+				left: 0;
+				top: 110px;
+			}
+		</style>
+	</head>
+	<body>
+		<span></span>
+		<button type="button" class="btn500">按钮500</button>
+		<button type="button" class="btn800">按钮800</button>
+		<script>
+			// 既然是回调函数，就新增一个传递过来的函数，多一个参数
+			function animate(obj, target, callback) {
+				// var step = Math.ceil((target - obj.offsetLeft) / 10); 
+				obj.timer = setInterval(function(){
+					var  step = (target - obj.offsetLeft) / 10;
+					step = step > 0 ? Math.ceil(step) : Math.floor(step);
+					if ( obj.offsetLeft === target) { 
+						clearInterval(obj.timer);
+						// 首先要判断这里是否有回调函数
+						if(callback) {
+							callback();
+						}
+					} 
+					obj.style.left = obj.offsetLeft + step + "px";
+				}, 15);
+			};
+			var span = document.querySelector("span");
+			var btn500 = document.querySelector(".btn500");
+			var btn800 = document.querySelector(".btn800");
+			btn500.addEventListener("click", function(){
+				animate(span,500);
+			});
+			btn800.addEventListener("click", function(){
+				animate(span,800,function(){
+					span.style.backgroundColor = "red";
+				});
+			})
+		</script>
+		
+	</body>
+</html>

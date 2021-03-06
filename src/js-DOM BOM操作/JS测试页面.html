@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+
+			#main {
+				position: relative;
+			}
+
+			.item {
+				padding: 5px;
+				float: left;
+			}
+
+			.pic {
+				padding: 5px;
+				border: 1px solid #595959FF;
+				box-shadow: 0 0 5px #ccc;
+				/*阴影效果*/
+				border-radius: 5px;
+				/*圆角效果*/
+			}
+			img {
+				width: 200px;
+				height: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="masonry" id="main">
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/1.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/11.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/1.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/3.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/2325.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/33.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/11.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/11.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/44.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/44.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/1.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/1.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/1.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item" >
+				<div class="pic">
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/44.jpg"></div>
+				</div>
+			</div>
+		</div>
+		
+		<script>
+			window.onload = function() {
+				imgLocation("main", "item")
+				var imgData = {
+					"data":[{
+							"src": "../img/1.jpg"
+						},
+						{
+							"src": "../img/44.jpg"
+						},
+						{
+							"src": "../img/22.jpg"
+						},
+						{
+							"src": "../img/1.jpg"
+						},
+						{
+							"src": "../img/22.jpg"
+						}
+					]
+				}
+
+				window.onscroll = function() {
+					if (checkFlag()) {
+						var cparent = document.getElementById("main");
+						for (var i = 0; i < imgData.data.length; i++) {
+							var ccontent = document.createElement("div");
+							ccontent.className = "item";
+							cparent.appendChild(ccontent);
+							var boximg = document.createElement("div");
+							boximg.className = "pic";
+							ccontent.appendChild(boximg);
+							var img = document.createElement("img");
+							img.src = imgData.data[i].src;
+							boximg.appendChild(img);
+						}
+						imgLocation("main", "item");
+					}
+				}
+			}
+
+			function checkFlag() {
+				var cparent = document.getElementById("main");
+				var ccontent = getChildElement(cparent, "item");
+				var lastContentHeight = ccontent[ccontent.length - 1].offsetTop;
+				var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+				var pageHeight = document.documentElement.clientHeight || document.body.clientHeight;
+				if (lastContentHeight < (scrollTop + pageHeight)) {
+					return true;
+				}
+				console.log(lastContentHeight + "," + scrollTop + "," + pageHeight);
+			}
+
+			function imgLocation(parent, content) {
+				//将parent下所有的content全部取出
+				var cparent = document.getElementById(parent);
+				var ccontent = getChildElement(cparent, content);
+				var imgwidth = ccontent[0].offsetWidth;
+				//获得每一行显示图片的个数
+				var cols = Math.floor(document.documentElement.clientWidth / imgwidth);
+				//设置父容器main的宽度，并设置样式居中
+				cparent.style.cssText = "width:" + imgwidth * cols + "px;margin:0 auto";
+
+				var boxHeightArr = [];
+				for (var i = 0; i < ccontent.length; i++) {
+					if (i < cols) {
+						boxHeightArr[i] = ccontent[i].offsetHeight;
+					} else {
+						var minheight = Math.min.apply(null, boxHeightArr);
+						var minIndex = getminheightLocation(boxHeightArr, minheight);
+						ccontent[i].style.position = "absolute";
+						ccontent[i].style.top = minheight + "px";
+						ccontent[i].style.left = ccontent[minIndex].offsetLeft + "px";
+						boxHeightArr[minIndex] = boxHeightArr[minIndex] + ccontent[i].offsetHeight;
+					}
+
+				}
+			}
+
+			function getminheightLocation(boxHeightArr, minheight) {
+				for (var i in boxHeightArr) {
+					if (boxHeightArr[i] == minheight) {
+						return i;
+					}
+				}
+			}
+
+			//将parent下的所有类名为content的div存储在自定义的数组contentArr中
+			function getChildElement(parent, content) {
+				var contentArr = [];
+				var allcontent = parent.getElementsByTagName("*");
+				//获取所有内容，返回的是一个dom对象可以遍历，有length属性，但不是数组。
+				for (var i = 0; i < allcontent.length; i++) {
+					if (allcontent[i].className == content) {
+						contentArr.push(allcontent[i]); //向数组contentArr末尾进行追加content
+					}
+				}
+				return contentArr;
+			}
+		</script>
+	</body>
+</html>

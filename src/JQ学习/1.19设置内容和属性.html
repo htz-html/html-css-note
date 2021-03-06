@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+		</style>
+	</head>
+	<body>
+		<h3>设置内容 - text()、html() 以及 val()</h3>
+		<p id="test1">我会变</p>
+		<p id="test2">我也会变</p>
+		<p>爱人姓名：<input type="text" id="test3" value="那个微胖型女神" /></p>
+		<button id="demo1">改变文本</button>
+		<button id="demo2">改变html</button>
+		<button id="demo3">改变val的值</button>
+		<script>
+			$(document).ready(function(){
+				$("#demo1").click(function(){
+					$("#test1").text("哈哈哈，我变了!");
+				});
+				$("#demo2").click(function(){
+					$("#test2").html("<b>我被加粗了</b>");
+				});
+				$("#demo3").click(function(){
+					$("#test3").val("大小姐")
+				})
+			})
+		</script>
+		<br />
+		<br />
+		<br />
+		<hr />
+		<br /><br /><br />
+		
+		
+		
+		
+		
+		<h3>text()、html() 以及 val() 的回调函数</h3>
+		<p>回调函数有两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。</p>
+		<p id="test4">我是被测试的text</p>
+		<p id="test5">我是被测试的<b>html</b> </p>
+		<button id="demo4">显示 新/旧文本</button>
+		<button id="demo5">显示 新/旧 HTML</button>
+		<script>
+			$(document).ready(function(){
+				$("#demo4").click(function(){
+					$("#test4").text(function(i,origText){
+						return "旧文本：" + origText + "新文本：hello！！！(index:" + i + ")";
+					});
+				});
+				$("#demo5").click(function(){
+					$("#test5").html(function(i,origText){
+						return "旧文本：" + origText + "新文本：<b>hello</b>！！！(index:" + i + ")";
+					});
+				})
+			});
+		</script>
+		<br />
+		<br />
+		<br />
+		<hr />
+		<br /><br /><br />
+		
+		
+		
+		<a id="a1" title="百度" href="http://www.baidu.com">百度</a>
+		<button id="demo6">改变链接和内容</button>
+		<script>
+			$(document).ready(function(){
+				$("#demo6").click(function(){
+					$("#a1").attr({
+						"href":"http://www.huaban.com",
+						"title":"花瓣"
+					});
+				});
+				$("#demo6").click(function(){
+					$("#a1").html("花瓣");
+				});
+			});
+		</script>
+		
+		
+		<br /><br /><br />
+		
+		
+		<a id="a2" title="百度" href="http://www.baidu.com">百度</a>
+		<button id="demo7">改变链接和内容2</button>
+		<script>
+			$(document).ready(function(){
+				$("#demo7").click(function(){
+					$("#a2").attr({
+						"href":"http://www.huaban.com",
+						"title":"花瓣"
+					});
+					title = $("#a2").attr('title');
+					$("#a2").html(title);
+				});
+				
+			});
+		</script>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

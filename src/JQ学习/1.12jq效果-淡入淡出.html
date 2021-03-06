@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.red{background-color: red;padding: 10px;color: white;}
+			.green{background-color: #10C768;padding: 10px;}
+			#div1{width: 80px;height: 80px;background-color: #10C768;margin-bottom: 10px;display:none;}
+			#div2{width: 80px;height: 80px;background-color: #007AFF;margin-bottom: 10px;display:none;}
+			#div3{width: 80px;height: 80px;background-color: yellow;margin-bottom: 10px;display:none;}
+			#div4{width: 80px;height: 80px;background-color: #10C768;margin-bottom: 10px;}
+			#div5{width: 80px;height: 80px;background-color: #007AFF;margin-bottom: 10px;}
+			#div6{width: 80px;height: 80px;background-color: orange;margin-bottom: 10px;}
+			#div7{width: 80px;height: 80px;background-color: #008000;margin-bottom: 10px;}
+			#div8{width: 80px;height: 80px;background-color: #0000FF;margin-bottom: 10px;}
+			#div9{width: 80px;height: 80px;background-color: orange;margin-bottom: 10px;}
+		</style>
+	</head>
+	<body>
+		
+		<div>
+			<p>fadeIn() 效果</p>
+			<button id="demo">点击fadeIn()效果</button>
+			<button id="demo1">点击fadeOut()效果</button>
+			<button id="demo2">点击fadeToggle()切换效果</button>
+			<br /><br />
+			<div id="div1"></div>
+			<div id="div2"></div>
+			<div id="div3"></div>
+			<br /><br />
+			<div id="div4"></div>
+			<div id="div5"></div>
+			<div id="div6"></div>
+			<script>
+				$(document).ready(function(){
+					$("#demo").click(function(){
+						$("#div1").fadeIn();
+						$("#div2").fadeIn("slow");
+						$("#div3").fadeIn(3000);
+					});
+				});
+				
+				$(document).ready(function(){
+					$("#demo1").click(function(){
+						$("#div4").fadeOut();
+						$("#div5").fadeOut("slow");
+						$("#div6").fadeOut(3000);
+					});
+				});
+				
+				$(document).ready(function(){
+					$("#demo2").click(function(){
+						$("#div4").fadeToggle();
+						$("#div5").fadeToggle("slow");
+						$("#div6").fadeToggle(3000);
+					});
+				});
+			</script>
+		</div>
+		<hr />
+		<p>演示 fadeTo() 使用不同参数</p>
+		<button id="demo3">点我让颜色变淡</button>
+		<br /><br />
+		<div id="div7"></div>
+		<div id="div8"></div>
+		<div id="div9"></div>
+		<script>
+			$(document).ready(function(){
+				$("#demo3").click(function(){
+					$("#div7").fadeTo("slow",0.15);
+					$("#div8").fadeTo("slow",0.3);
+					$("#div9").fadeTo("slow",0.5);
+				})
+			})
+		</script>
+	</body>
+</html>

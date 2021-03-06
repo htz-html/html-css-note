@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			.demo {
+				width: 300px;
+				height: 150px;
+				background-color: #10C768;
+				float: left;
+			}
+
+			.demo1 {
+				width: 100px;
+				height: 150px;
+				background-color: #ffc600;float: left;
+				position: relative;
+			}
+			.demo1::after{
+				content: "";
+				position: absolute;
+				width: 20px;height: 20px;
+				background-color: white;
+				border-radius: 20px;
+				top: -10px;left: -10px;
+			}
+			.demo1::before{
+				content: "";
+				position: absolute;
+				width: 20px;height: 20px;
+				background-color: white;
+				border-radius: 20px;
+				bottom: -10px;left: -10px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>伪元素选择器</h1>
+		<h2>重点：E:before,E:after</h2>
+		<div style="margin-bottom: 20px;">
+			1.是一个行内元素，如果要设置宽和高，需要转换成块状元素：display：black；float:**,position:<br>
+			2.必须添加content，哪怕不设置内容，也要添加content:"";<br>
+			3.兼容所有的浏览器就用::before,::after,一般写单冒号:after,:before;<br>
+			4.无法通过JS来操作它
+		</div>
+		<div class="demo"></div>
+		<div class="demo1"></div>
+<input type="number" name="num" id="num" value="" />
+	</body>
+</html>

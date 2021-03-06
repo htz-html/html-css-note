@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<base href="../img/" target="_blank" />
+		<link rel="stylesheet" type="text/css" href="" />
+		<title>正规的html头部</title>
+		<style type="text/css">
+			td {
+				width: 100%;
+				min-width: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>1、noscript的作用，当浏览器不支持js的时候，就会显示noscript的内容</p>
+		<noscript>不支持js脚本语言</noscript>
+		<p>2、字符实体：在 HTML 中不能使用小于号（<）和大于号（>），必须要用字符实体来代替<br />如需显示小于号，我们必须这样写：&lt; 或 &#60; 或 &#060;</p>
+		<table border="" cellspacing="" cellpadding="">
+			<caption>HTML字符实体</caption>
+			<tr>
+				<th>显示结果</th>
+				<th>描述</th>
+				<th>实体名称</th>
+				<th>实体编号</th>
+			</tr>
+			<tr>
+				<td> </td>
+				<td>空格</td>
+				<td>&ampnbsp;</td>
+				<td>&amp#160;</td>
+			</tr>
+			<tr>
+				<td>
+					<</td> <td>小于号
+				</td>
+				<td>&amplt;</td>
+				<td>&amp#60;</td>
+			</tr>
+			<tr>
+				<td>¥</td>
+				<td>人民币/日元</td>
+				<td>&ampyen;</td>
+				<td>&amp#165;</td>
+			</tr>
+			<tr>
+				<td>®</td>
+				<td>注册商标</td>
+				<td>&ampreg;</td>
+				<td>&amp#174;</td>
+			</tr>
+			<tr>
+				<td>&</td>
+				<td>和号</td>
+				<td>&ampamp;</td>
+				<td>&amp#38;</td>
+			</tr>
+			<tr>
+				<td>™</td>
+				<td>商标</td>
+				<td>&amptrade;</td>
+				<td>&amp#8482;</td>
+			</tr>
+		</table>
+		<p>最好的 HTML 解决方法:这是一个完整的视频代码块</p>
+		<video width="320" height="40" controls>
+			<source src="movie.mp4" type="video/mp4">
+			<source src="movie.ogg" type="video/ogg">
+			<source src="movie.webm" type="video/webm">
+			<object data="movie.mp4" width="320" height="40">
+				<embed src="movie.swf" width="320" height="40">
+			</object>
+		</video>
+		<br />
+		<a href="" style="text-decoration: blink;background-attachment: fixed;">我爱你</a>
+		<p>背景图片固定background-attachment: 参数</p>
+		<div>
+			<p>word-spacing: 单词间距 </p>
+			<p>letter-spacing: 字母间距</p>
+			<p>文本对齐justify：相对左右两端对齐</p>
+			<p>垂直对齐vertical-align: 参数
+				top：顶对齐<br/ >
+				bottom：底对齐<br/ >
+				text-top：相对文本顶对齐<br/ >
+				text-bottom：相对文本底对齐<br/ >
+				baseline：基准线对齐<br/ >
+				middle：中心对齐<br/ >
+				sub：以下标的形式显示<br/ >
+				super：以上标的形式显示</p>
+			<p>显示样式 display: 参数------inline：在对象前后都不换行 *------list-item：在对象前后都换行，增加了项目符号 </p>
+			<p align="right">边框border style 参数:dotted：边框为点线;dashed：边框为长短线;double：边框为双线</p>
+		</div>
+		<marquee>我的走马灯</marquee>
+		<a href="javascript.:top.windows.close();">点击关闭窗口</a>
+		<a href="http://www.huaban.com">花瓣网</a>
+		<a href="java script.:history.go(-1);">点击后退</a>
+		
+	</body>
+</html>

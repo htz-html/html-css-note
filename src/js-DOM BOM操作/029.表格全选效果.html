@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			table td, table th{
+				padding: 10px 20px;
+				margin: 0;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<table border="" cellspacing="" cellpadding="">
+			<thead>
+				<tr>
+					<th>
+						<input type="checkbox" id="ipt_t" />
+					</th>
+					<th>T恤</th>
+					<th>裤子</th>
+					<th>鞋子</th>
+				</tr>
+			</thead>
+			<tbody id="ipt_d">
+				<tr>
+					<td>
+						<input type="checkbox" />
+					</td>
+					<td>$180</td>
+					<td>60</td>
+					<td>$50</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" />
+					</td>
+					<td>$90</td>
+					<td>$100</td>
+					<td>$100</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="checkbox" />
+						</td>
+					<td>$10</td>
+					<td>$110</td>
+					<td>$60</td>
+				</tr>
+			</tbody>
+		</table>
+		<script>
+			var ipt_t = document.getElementById("ipt_t");
+			var ipt_d = document.getElementById("ipt_d").getElementsByTagName('input');
+			ipt_t.onclick = function() {
+				this.checked;
+				for( var i=0;i<ipt_d.length;i++) {
+					ipt_d[i].checked = this.checked;
+				}
+			}
+			for(var i=0;i<ipt_d.length;i++) {
+				ipt_d[i].onclick = function () {
+					var flag = true;
+					for( var i=0;i<ipt_d.length;i++ ) {
+						if (!ipt_d[i].checked ) {
+							flag = false;
+							break;
+						}
+					}
+					ipt_t.checked = flag;
+				}
+			}
+		</script>
+	</body>
+</html>

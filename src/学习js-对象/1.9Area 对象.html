@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<div style="background-color: #09BB5E;padding: 10px;">
+			<p>返回和设置链接的charset属性</p>
+			<a id="demo" charset=" ISO-2022-JP" href="http://baidu.com">百度</a><br />
+			<script>
+				document.write("返回a的charset：");
+				document.write(document.getElementById("demo").charset);
+			</script>
+			<br><br>
+			<a id="demo1" href="http://360.cn">360</a><br />
+			<script>
+				document.getElementById("demo1").charset="utf-8";
+				document.write("返回a的charset：");
+				document.write(document.getElementById("demo1").charset);
+			</script>
+		</div>
+		<div style="background: #10C768;padding: 10px;">
+			<p>返回和设置链接的href属性</p>
+			<a id="a" href="http://baidu.com">baidu</a>
+			<script>
+				document.write("返回a的href属性：");
+				document.write(document.getElementById("a").href);
+			</script>
+		</div>
+	</body>
+</html>

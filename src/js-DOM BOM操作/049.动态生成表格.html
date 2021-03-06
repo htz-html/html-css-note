@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			th,td {
+				border: 1px solid #ddd;
+				width: 80px;
+				padding: 5px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<table>
+			<thead>
+				<th>编号</th>
+				<th>姓名</th>
+				<th>科目</th>
+				<th>分数</th>
+				<th>删除</th>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+		<script>
+			var datas = [
+				{
+					Id: 001,
+					name: '陆杨清',
+					subject: '数学',
+					num: 150
+				},
+				{
+					Id: 002,
+					name: '小邹',
+					subject: '数学',
+					num: 126
+				},
+				{
+					Id: 003,
+					name: '陈讲义',
+					subject: '数学',
+					num: 140
+				},
+				{
+					Id: 004,
+					name: '朱勇',
+					subject: '数学',
+					num: 99
+				}
+			];
+			var tbody = document.querySelector('tbody');
+			for(var i = 0; i < datas.length; i++) {
+				var tr = document.createElement('tr');
+				tbody.appendChild(tr);
+				for(var k in datas[i]) {
+					var td = document.createElement('td');
+					td.innerHTML = datas[i][k]
+					tr.appendChild(td);
+				}
+				// 创建删除两个字
+				var td = document.createElement('td');
+				tr.insertBefore(td, tr.children[0]);
+				td.innerHTML = "<a href= 'javascript:;'>删除</a>";
+				
+			}
+			var as = document.querySelectorAll("a");
+			for(var j = 0; j < as.length;j++){
+				as[j].onclick=function () {
+					tbody.removeChild(this.parentNode.parentNode)
+				}
+			}
+		</script>
+	</body>
+</html>

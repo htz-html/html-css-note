@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<h1>以下用的是一个代码块</h1>
+		<button type="button" onclick="myFunction()">以代码块的形式改成下面的内容</button>
+		<div id="demo1" style="margin-top: 20px;color: red;">我是div的内容</div>
+		<p id="demo2">我是p标签的内容</p>
+		<script>
+			function myFunction(){
+				document.getElementById("demo1").innerHTML = "我改变了div里的内容";
+				document.getElementById("demo2").innerHTML = "我改变了p标签里的内容";
+			}
+		</script>
+	</body>
+</html>	

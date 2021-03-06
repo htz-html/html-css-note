@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			img{
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			// 1. 我们的keyup和keydown事件不区分字母大小写 a 和 A 得到的都是65；
+			// 2. 我们的keypress事件区分字母大小写
+			document.addEventListener('keydown', function(e){
+				//keyCode 返回的是键的ASCII码值，大小写的值是不一样的
+				console.log(e.keyCode);
+				//我们可以利用keyCode来判断用户到底按的是哪个值
+				if(e.keyCode === 88){
+					alert("我是'x'的时候才会被弹出")
+				}
+			})
+			// keypress不识别功能键
+			document.addEventListener('keypress', function(e){
+				console.log(e.keyCode);
+			})
+		</script>
+	</body>
+</html>

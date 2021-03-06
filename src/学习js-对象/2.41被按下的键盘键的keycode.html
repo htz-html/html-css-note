@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body onkeyup="jianpan(event)">
+		<p>被按下的键盘键的keycode？</p>
+		<p><b>注释：</b>在测试这个例子时，要确保右侧的框架获得了焦点。在键盘上按一个键。消息框会提示出该按键的 unicode。</p>
+		<script>
+			function jianpan(event){
+				alert(event.keyCode);
+			}
+		</script>
+	</body>
+</html>

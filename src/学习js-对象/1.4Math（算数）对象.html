@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<div style="background-color: #ff3c3c;color: white;padding: 10px;">
+			<h3>使用 round() 对数字进行舍入</h3>
+			<p id="demo">点击舍入与“2.5”最接近的整数</p>
+			<button onclick="myRound()">点击</button>
+			<script>
+				function myRound() {
+					document.getElementById("demo").innerHTML = Math.round(3.5);
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #ff3cc6;color: white;padding: 10px;">
+			<h3>使用 random() 来返回 0 到 1 之间的随机数</h3>
+			<p id="demo1">显示0-1的随机数</p>
+			<button onclick="myRandom()">点击</button>
+			<script>
+				function myRandom() {
+					document.getElementById("demo1").innerHTML = Math.random();
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #cf3cff;color: white;padding: 10px;">
+			<h3>使用 max()/min() 来返回两个给定的数中的较大/较小的数</h3>
+			<p id="demo2">返回区间的最大值</p>
+			<button onclick="myMax()">点击</button>
+			<script>
+				function myMax() {
+					document.getElementById("demo2").innerHTML = Math.max(15.6,1885.33);//返回区间最小值用min()
+				}
+			</script>
+		</div>
+		<div style="background-color: #a63cff;color: white;padding: 10px;">
+			<h3>这相当于一个简单的数学算式</h3>
+			<p>华氏度和摄氏度的换算：F=(Cx1.8)+32</p>
+			<form action="" method=""><!-- action里面是一个页面地址，表单数据会提交到这个页面去 -->
+				<input type="text" name="c" id="c" onkeyup="convert('C')" /><!--onkeyup:当释放键盘按钮是执行JS代码-->
+				摄氏度等于
+				<input type="text" name="f" id="f" onkeyup="convert('F')" />
+				华氏度
+			</form>
+			<p>注意:使用<b>Math.round()</b>方法返回的结果是一个整数</p>
+			<script>
+				function convert(degree) {
+					if(degree=="C") {
+						F=document.getElementById("c").value*9/5+32;
+						document.getElementById("f").value=Math.round(F);
+					} else {
+						C=(document.getElementById("f").value-32)*9/5;
+						document.getElementById("c").value=Math.round(C);
+					}
+				}
+			</script>
+		</div>
+		
+	</body>
+</html>

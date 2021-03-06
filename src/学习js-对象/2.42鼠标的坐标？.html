@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<p onmousedown="show_coords(event)">点击这一行。一个消息框会提示出鼠标指针的 x 和 y 坐标。</p>
+		<script>
+			function show_coords(event){
+				var x=event.clientX;
+				var y=event.clientY;
+				alert("X coords:"+x+"Y coords:"+y);
+			}
+		</script>
+	</body>
+</html>

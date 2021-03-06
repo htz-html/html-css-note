@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+		</style>
+	</head>
+	<body>
+		<h1>什么是遍历？</h1>
+		<h2>祖先：向上遍历DOM树</h2>
+		<p>他们用于向上遍历DOM树</p>
+		<ul>
+			<li>parent()返回被选元素的直接父元素</li>
+			<li>parents()返回被选元素的所有祖先元素</li>
+			<li>parentsUntil()返回介于两个给定元素之间的所有祖先元素</li>
+		</ul>
+		<h2 style="color: #8A2BE2;">后代：向下遍历DOM树</h2>
+		<ul>
+			<li>children返回被选元素的所有直接子元素</li>
+			<li>find返回被选元素的后代元素，一路向下直到最后一个后代</li>
+		</ul>
+		find:
+		<p>$("div").find("span")返回div后代所有的span元素</p>
+		<p><span style="color: red;font-weight: bold;line-height: 28px;">注意：</span>$("div").find("*")这个才是返回属于div后代所有的后代元素，并不是$("div").find()</p>
+		<h2 style="color: #005bcc;">水平：在DOM树中水平遍历</h2>
+		<ul>
+			<li>siblings()返回被选元素的所有同胞元素</li>
+			<li>next()返回被选元素的下一个同胞元素</li>
+			<li>nextAll()返回被选元素后面所有的同胞元素</li>
+			<li>nextUntil()返回介于两个给定参数之间的所有同胞元素</li>
+			<li>prev()</li>
+			<li>prevAll()</li>
+			<li>prevUntil()</li>
+		</ul>
+		<p><span style="color: red;font-weight: bold;line-height: 30px;">注意：</span>
+		prev,prevAll,prevUntil方法与next方法一样，只不过方向相反而已：他们返回的是前面的同胞元素
+		</p>
+	</body>
+</html>

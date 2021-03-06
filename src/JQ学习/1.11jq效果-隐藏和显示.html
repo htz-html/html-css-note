@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.red{background-color: red;padding: 10px;color: white;}
+			.green{background-color: #10C768;padding: 10px;}
+		</style>
+	</head>
+	<body>
+		<div class="red">
+			<p>通过下面的两个按钮，我可以隐藏也可以显示</p>
+			<button type="button" id="show">显示</button>
+			<button type="button" id="hide">隐藏</button>
+			<script>
+				$(document).ready(function(){
+					$("#show").click(function(){
+						$("p").show();
+					});
+					
+					$("#hide").click(function(){
+						$("p").hide();
+					});
+				});
+			</script>
+		</div>
+		<div class="green">
+			<div class="red" id="red">隐藏及设置回调函数</div>
+			<button type="button" class="hidebtn">隐藏</button>
+			<script>
+				$(document).ready(function(){
+					$(".hidebtn").click(function(){
+						$("#red").hide(1000,"linear",function(){
+							alert("完成隐藏！");
+						});
+					});
+				});
+			</script>
+			<p>第二个参数是一个字符串，表示过渡使用哪种缓动函数。（译者注：jQuery自身提供"linear" 和 "swing"，其他可以使用相关的插件）。</p>
+		</div>
+		<div class="red">
+			<button type="button" class="demo">隐藏/显示</button>
+			<p><span>我是内容</span></p>
+			<script>
+				$(document).ready(function(){
+					$(".demo").click(function(){
+						$("span").toggle();
+					});
+				});
+			</script>
+		</div>
+	</body>
+</html>

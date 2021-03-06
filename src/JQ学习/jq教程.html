@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+	</head>
+	<body>
+		<script>
+			$(document).ready(function(){
+				$("p").click(function(){
+					$(this).hide();
+				});
+			});
+		</script>
+		<p>如果你点我，我就消失</p>
+		<p>继续点我</p>
+		<p>你还点</p>
+		<br/>
+		<ul style="margin: 0;padding-left: 14px;">
+			<li>美元($)符号定义 jQuery</li>
+			<li>选择符（selector）"查询"和"查找" HTML 元素</li>
+			<li>jQuery 的 action() 执行对元素的操作</li>
+			<li>$(this).hide() - 隐藏当前元素</li>
+			<li>$("p").hide() - 隐藏所有 p 元素</li>
+			<li>$("p.test").hide() - 隐藏所有 class="test" 的 p 元素</li>
+			<li>$("#test").hide() - 隐藏所有 id="test" 的元素</li>
+		</ul>
+		<hr />
+		<div><cite>注意:</cite> jq元素选择器 
+			<p>$("ul li:first"):选取第一个ul元素的第一个li元素</p>
+			<p>$("ul li:first-child")：选取每个ul元素的第一个li元素</p>
+			<p>$("[href]"):选取带有href属性的元素</p>
+			<p>$("a[target='_blank']")：选取所有target属性值为_blank的a元素</p>
+			<p>$("a[target!='_blank']"):选取所有target属性值不为_blank的a元素</p>
+			<p style="background-color: red;color: white;padding: 10px 0;">$(":button"):选取所有type="button"的input元素和button元素</p>
+			<p>$("tr:even")和$("tr:odd"):选取偶数/奇数位置的tr元素</p>
+		</div>
+		<hr />
+		<p><b style="background-color: orangered;color: white;">click()与dblclick():</b> 单击触发事件/双击触发事件</p>
+		<p><b style="background-color: orangered;color: white;">mouseenter事件与mouseleven事件：</b>鼠标穿过元素时触发事件/当鼠标指针离开元素时触发事件</p>
+		<p>mousedown()和mouseup()：按下鼠标/松开鼠标按键</p>
+		<!-- <div id="demo"><b style="background-color: orangered;color: white;">hover()：</b> 当鼠标移动到元素上时，会触发指定的第一个函数(mouseenter);当鼠标移出这个元素时，会触发指定的第二个函数(mouseleave)。</div> -->
+		<script>
+			$(document).ready(function(){
+				$("#demo").hover(
+					function(){
+						alert("你进入了我的世界！爱你哦~");
+				},
+					function(){
+						alert("你离开了我的世界，为什么？");
+				});
+			});
+		</script>
+		<br />
+		<div id="demo1"><b style="background-color: orangered;color: white;">focus()：</b> 当元素获得焦点时，触发事件</div>
+		姓名：<input type="text" value="" />
+		<script>
+			$(document).ready(function(){
+				$("input").focus(function(){
+					$(this).css("background-color","red");
+				});
+				$("input").blur(function(){
+					$(this).css("background-color","white")
+				})
+			})
+		</script>
+	</body>
+</html>

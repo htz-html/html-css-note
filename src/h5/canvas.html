@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<title></title>
+		
+		<style type="text/css">
+			.myCanvas{}
+		</style>
+	</head>
+	<body>
+		<canvas id="myCanvas" width="200" height="100" style="border: 1px solid red;"></canvas>
+		<script>
+			var c = document.getElementById("myCanvas");
+			var ctx = c.getContext("2d");
+			ctx.fillStyle = "#FF9C27";//CSS颜色，渐变，或图案
+			ctx.fillRect(10,10,150,60);//fillRect(x,y,width,height) 方法定义了矩形当前的填充方式
+		</script>
+		<br/>
+		<br/>
+		<br/>
+		<canvas id="myCanvas1" width="200" height="100" style="border: 1px solid #6848CD;"></canvas>
+		<script>
+			var c = document.getElementById("myCanvas1");
+			var cxt = c.getContext("2d");
+			cxt.moveTo(0,0);
+			cxt.lineTo(200,100);
+			cxt.stroke();
+		</script>
+		<br />
+		<br />
+		<br />
+		<br />
+		<canvas id="myCanvas2" width="200" height="200" style="border: 1px solid #E8314B;"></canvas>
+		<script>
+			var d = document.getElementById("myCanvas2");
+			xtt = d.getContext("2d");
+			xtt.beginPath();
+			xtt.arc(100,100,80,0,2*Math.PI);
+			xtt.stroke();
+		</script>
+		<br />
+		<br />
+		<br />
+		<br />
+		<canvas id="demo" width="200" height="100" style="border: 1px solid #000000;"></canvas>
+		<script>
+			var f = document.getElementById("demo");
+			xdd = f.getContext("2d");
+			xdd.font="30px Arial";
+			
+			var ga = xdd.createLinearGradient(100,0,180,60);
+			ga.addColorStop(0,"black");
+			ga.addColorStop("0.3","blue");
+			ga.addColorStop("0.6","green");
+			ga.addColorStop("0.8","red");
+			xdd.strokeStyle = ga;
+			xdd.strokeText("Hello World！",10,55);
+		</script>
+	</body>
+</html>

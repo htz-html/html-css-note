@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function Glory(uname, type, blood) {
+				this.name = uname;
+				this.type = type;
+				this.blood = blood;
+				this.attack = function(attack) {
+					console.log(attack);
+				}
+			}
+			var houyi = new Glory('后羿','射手',200);
+			console.log(houyi.name);
+			console.log(houyi.blood);
+			houyi.attack('远程');
+			var zzhou = new Glory('庄周','可以一挑三的辅助',1000);
+			console.log(zzhou['name']);
+			console.log(zzhou.type);
+			zzhou.attack('可远可近');
+		</script>
+	</head>
+	<body>
+-8j]		<p style="font-weight: bold;">构造函数的特点</p>
+		<p>构造函数名首字母要大写</p>
+		<p>里面的属性和方法都要this.xxx</p>
+		<p>构造函数不用return</p>
+		<p>调用构造函数，前面要加 new 构造函数名()</p>
+	</body>
+</html>

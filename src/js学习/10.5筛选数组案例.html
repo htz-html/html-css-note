@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" content="text/html">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var shuzu = [10,6,58,9,20,33,4];
+			var newarr = [];
+			var j = 0;
+			for ( var i = 0; i < shuzu.length; i++) {
+				if (shuzu[i] > 10) {
+					newarr[j]=shuzu[i];
+					j++;
+				}
+			}
+			console.log(newarr);
+			
+			//方法2
+			var shuzu = [10,6,58,9,20,33,4];
+			var newarr = [];
+			for ( var i = 0; i < shuzu.length; i++) {
+				if (shuzu[i] > 10) {
+					newarr[newarr.length]=shuzu[i];
+				}
+			}
+			console.log(newarr);
+		</script>              
+	</body>
+</html>

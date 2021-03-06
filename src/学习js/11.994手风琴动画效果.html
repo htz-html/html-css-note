@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			body{margin: 0;padding: 0;}
+			
+			button.accordion{
+				background-color: #ddd;
+				cursor: pointer;
+				width: 100%;
+				border: none;
+				padding: 20px;
+				font-size: 16px;
+				text-align: left;
+				outline: none;
+				transition: 1s;
+			}
+			button.accordion:hover,button.accordion:active{background-color: #aaa;}
+			div.panel{
+				padding: 0 18px;
+				background-color: white;
+				transition: max-height 1s ease-out;
+				overflow: hidden;max-height: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>手风琴动画</h2>
+		<h4>点击以下选项显示折叠内容</h4>
+		
+		<button class="accordion">UI设计师</button>
+		<div class="panel">
+			<p>你觉得你阔以就来</p>
+			<p>你觉得你阔以就来</p>
+		</div>
+		
+		<button class="accordion">创意总监</button>
+		<div class="panel">
+			<p>你觉得你阔以就来</p>
+		</div>
+		
+		<button class="accordion">策划总监</button>
+		<div class="panel">
+			<p>你觉得你阔以就来</p>
+		</div>
+		
+		
+		<script>
+			var acc=document.getElementsByClassName("accordion");
+			var i;
+			
+			for(i=0;i<acc.length;i++) {
+				acc[i].onclick = function() {
+					this.classList.toggle("active");
+					var panel=this.nextElementSibling;
+					if(panel.style.maxHeight) {
+						panel.style.maxHeight=null;
+					}else {
+						panel.style.maxHeight = panel.scrollHeight + "px"
+					}
+				}
+			}
+			
+		</script>
+	</body>
+</html>

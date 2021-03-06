@@ -1,0 +1,13 @@
+body{
+	background-color: #d2f4ff;
+}
+.big-ul{
+	display: flex;
+	list-style: none;
+}
+.big-ul li{
+	flex: 1;
+}
+.btnzhankai{
+	display: none;
+}

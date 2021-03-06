@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			.demo2{background-color: orange;/* display: none; */height: 0;overflow: hidden;}
+			.demo1 {background-color: #10C768;padding: 10px;border: 1px solid #008000;}
+			.demo0:hover .demo2{/* display: block; */height: 110px;}
+			.demo0 .demo2{ transition: height  300ms linear 0s;}
+		</style>
+	</head>
+	<body>
+		<h2>记住，无法为一些状态值添加过渡效果（如display），只能为一些具体的值添加过渡效果:</h2>
+		<div class="">
+			<div class="demo0">
+				<div class="demo1">行业新闻</div>
+				<div class="demo2">
+					<p>1</p>
+					<p>2</p>
+					<p>3</p>
+					<p>4</p>
+				</div>
+			</div>
+			<div class="demo0">
+				<div class="demo1">游戏天地</div>
+				<div class="demo2">
+					<p>1</p>
+					<p>2</p>
+					<p>3</p>
+					<p>4</p>
+				</div>
+			</div>
+			<div class="demo0">
+				<div class="demo1">股票市场</div>
+				<div class="demo2">
+					<p>1</p>
+					<p>2</p>
+					<p>3</p>
+					<p>4</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var arr = [1,2];
+			var obj = {};
+			// 第一种方法是使用:instanceof运算符来检查
+			console.log(arr instanceof Array);
+			console.log(obj instanceof Array);
+			
+			// 第二种方法使用:Array.isArray()
+			console.log(Array.isArray(arr));
+			console.log(Array.isArray(obj));
+			
+			function reverse(arr) {
+				var newArr = [];
+				// if (arr instanceof Array) {
+				if (Array.isArray(arr)) {
+					for(var i = arr.length - 1;i >= 0; i--) {
+						newArr[newArr.length] = arr[i];
+					}
+					return newArr;
+				} else {
+					return 'error 这个参数必须是一个数组格式'
+				}
+				
+			}
+			console.log(reverse([1,2,3]));
+			console.log(reverse(1,2,3));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

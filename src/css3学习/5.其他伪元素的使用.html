@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+			/* 获取第一个字符：实现首字下沉 */
+			p::first-letter{
+				color: red;font-size: 36px;
+				float: left;/* 文本环绕 */
+				padding-right: 10px;
+			}
+			/* 获取第一行内容: 如果设置了::first-letter，那么无法同时设置它的样式*/
+			p::first-line {
+				text-decoration: underline;
+			}
+			/* 设置当前选中的内容的样式*/
+			p::selection{
+				background-color: #E8314B;
+				color: white;
+				/* 注意：这个伪元素只能设置显示的样式，而不能设置内容的大小 */
+				font-size: 48px;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			1.E::first-letter 文本的第一个字母或字（不是词组）<br>
+			2.E::first-line 文本第一行 <br>
+			3.E::selection 可改变选中文本的样式
+		</div>
+		<div style="margin-top: 30px;">
+			<p>锄禾日当午，汗滴禾下土，<br />谁知盘中餐，粒粒皆辛苦。</p>
+		</div>
+	</body>
+</html>

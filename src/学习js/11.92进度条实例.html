@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			#myBtn{background-color: #279cff;color: white;border: 0;padding: 8px 15px;font-size: 14px;border-radius: 3px;}
+			#myProgress {width: 100%;background-color: #ddd;margin-bottom: 20px;}
+			#myBar{width: 1%;height: 30px;background-color: #279cff;}
+		</style>
+	</head>
+	<body>
+		<h2>进度条（加载进度条）</h2>
+		<div id="myProgress">
+			<div id="myBar"></div>
+		</div>
+		<button id="myBtn" onclick="move()">安装</button>
+		
+		<script>
+			function move(){
+				var elem = document.getElementById("myBar");
+				var width=1;
+				var id=setInterval(frame, 100);
+				function frame(){
+					if(width>=100) {
+						clearInterval(id);
+					} else {
+						width++;
+						elem.style.width=width+'%';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>	

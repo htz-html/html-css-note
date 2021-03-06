@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//利用对象字面量创建对象 {}
+			// var obj = {}; // 创建了一个空的对象
+			
+			//创建一个狗对象
+			var dog = {
+				name: '可可',
+				type: '阿拉斯加',
+				age: 5,
+				color: 'red',
+				bark: function() {
+					console.log("汪汪汪");
+				},
+				showFilm: function() {
+					console.log("演电影");
+				}
+			}
+			
+			
+			
+			// 第二种方法
+			
+			var obj = new Object();
+			obj.uname = '鸣人';
+			obj.sex = '男';
+			obj.age = 19;
+			obj.skill = function(){
+				console.log('隐分身术');
+			}
+			console.log(obj.uname);
+			obj.skill();
+		</script>
+	</head>
+	<body>
+		<style type="text/css">
+			span{
+				color: red;
+			}
+		</style>
+		<h3>利用<span>字面量</span>来创建对象</h3>
+		<h3>利用<span>new Object</span>来创建对象</h3>
+		<h3>利用<span>构造函数</span>来创建对象</h3>
+	</body>
+</html>

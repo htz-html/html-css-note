@@ -1,0 +1,46 @@
+.small-ul{
+	overflow: hidden;
+	height: 0px;
+}
+.in {
+	height: 300px;
+	transition: height 500ms;
+	-webkit-transition: height 500ms;
+}
+.out{
+	height: 0;
+	transition: height 500ms;
+	-webkit-transition: height 500ms;
+}
+
+/* @keyframes donghua{
+	from{
+		height: 0px;
+	}
+	to{
+		height: 300px;
+	}
+}
+@keyframes gfdfd{
+	from{
+		height: 300px;
+	}
+	to{
+		height: 0px;
+	}
+} */
+
+
+
+.small-ul li {
+	padding: 10px;
+	background-color: #fff;
+}
+.small-ul li:nth-of-type(2n){
+	background-color: #fffae3;
+}
+.btnzhankai{
+	padding: 10px 20px;
+	background-color: #09BB5E;
+	border: none;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<p>如何使用switch语句</p>
+		<button type="button" onclick="myFunction()">请点击我</button>
+		<p id="demo"></p>
+		<script>
+			function myFunction(){
+				var x;
+				var d = new Date().getDay();
+				switch(d){
+					case 0:x = "今天星期日";//switch一定要跟break
+					break;
+					case 1:x = "今天星期一";
+					break;
+					case 2:x = "今天星期二";
+					break;
+					case 3:x = "今天星期三";
+					break;
+					case 4:x = "今天星期四";
+					break;
+					case 5:x = "今天星期五";
+					break;
+					case 6:x = "今天星期六";
+					break;
+				}
+				document.getElementById("demo").innerHTML = x;
+			}
+		</script>
+		<button type="button" onclick="mydefault()">请点击我</button>
+		<p id="demo1"></p>
+		<script>
+			function mydefault(){
+				var x;
+				var d = new Date().getDay();
+				switch(d){
+					case 0 :x="星期日";
+					break;
+					case 6 :x="星期六";
+					break;
+					default: x= "期待周末";
+				}
+				document.getElementById("demo1").innerHTML=x;
+			}
+		</script>
+		
+		
+		
+	</body>
+</html>	

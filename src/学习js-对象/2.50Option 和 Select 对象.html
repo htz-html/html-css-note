@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<div style="background: #09B75C;padding: 10px;">
+			<form id="222">
+				<select id="demo">
+					<option>apple</option>
+					<option>pear</option>
+					<option>banana</option>
+					<option>orange</option>
+				</select>
+				<br><br>
+				<input type="button" value="禁用列表" onclick="jinyong()" />
+				<input type="button" value="启用列表" onclick="qiyong()" />
+				<input type="button" value="列表有几种选择" onclick="xuanz()" />
+			</form>
+			<script>
+				function jinyong(){
+					document.getElementById("demo").disabled=true;
+				}
+				function qiyong(){
+					document.getElementById("demo").disabled=false;
+				}
+				document.write("<br>"+document.getElementById("demo").form.id);
+			</script>
+			<br />
+			<script>
+				function xuanz(){
+					alert(document.getElementById("demo").length);
+				}
+			</script>
+		</div>
+		<div style="background: #f63f77;padding: 10px;">
+			<form>
+				<select id="demo1">
+					<option>apple</option>
+					<option>pear</option>
+					<option>banana</option>
+					<option>orange</option>
+				</select>
+				<input type="button"  value="修改列表大小" onclick="changeSize()"/>
+			</form>
+			<script>
+				function changeSize(){
+					document.getElementById("demo1").size="4";
+				}
+			</script>
+		</div>
+		<div style="background: #f6773f;padding: 10px;">
+			<form>
+				<select id="demo2" size="4">
+					<option>apple</option>
+					<option>pear</option>
+					<option>banana</option>
+					<option>orange</option>
+				</select>
+				<input type="button"  value="多选项" onclick="moreSel()"/>
+			</form>
+			<p style="color: #fff;"><b>在你点击“选择多个”按钮之前,尽量选择一个以上的选项(通过按下shift或Ctrl键)。然后尝试点击“选择多个”按钮。</b></p>
+			<script>
+				function moreSel(){
+					document.getElementById("demo2").multiple=true;
+				}
+			</script>
+		</div>
+		<div style="background: #f6d63f;padding: 10px;">
+			<form>
+				<select id="demo3">
+					<option>apple</option>
+					<option>pear</option>
+					<option>banana</option>
+					<option>orange</option>
+				</select>
+				<input type="button"  value="输出选中选项" onclick="getOption()"/>
+				<input type="button"  value="输出选中选项索引" onclick="suoyin()"/>
+			</form>
+			<script>
+				function getOption(){
+					var x=document.getElementById("demo3");
+					var txt="选中选项是：";
+					var i;
+					for(i=0;i<x.length;i++) {
+						if(x.options[i].selected) {
+							txt=txt+"\n"+x.options[i].text;
+						}
+					}
+					alert(txt);
+				}
+				function suoyin(){
+					var x=document.getElementById("demo3");
+					alert(x.selectedIndex)
+				}
+			</script>
+		</div>
+		<div style="background: #f6d63f;padding: 10px;">
+			<p>改变下拉列表中被选中的选项的文本</p>
+			<form>
+				<select id="demo4">
+					<option>apple</option>
+					<option>pear</option>
+					<option>banana</option>
+					<option>orange</option>
+				</select>
+				<input type="button"  value="设置我的选项" onclick="shezhi()"/>
+			</form>
+			<script>
+				function shezhi(){
+					var x=document.getElementById("demo4");
+					x.options[x.selectedIndex].text="watermelon"
+				}
+			</script>
+		</div>
+		<div style="background: #29c996;padding: 10px;">
+			<p>改变下拉列表中被选中的选项的文本</p>
+			<form>
+				<select id="demo5">
+					<option>apple</option>
+					<option>pear</option>
+					<option>banana</option>
+					<option>orange</option>
+				</select>
+				<input type="button"  value="删除选项" onclick="reMove()"/>
+			</form>
+			<script>
+				function reMove(){
+					var x.document.getElementById("demo5");
+					x.remove(x.selectedIndex);
+			</script>
+		</div>
+	</body>
+</html>

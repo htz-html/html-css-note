@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			body{margin: 0;}
+			.container{
+				overflow: hidden;
+				background-color: #333;
+			}
+			.container a {
+				padding: 10px;
+				float: left;
+				font-size: 16px;
+				color: white;
+				text-align: center;
+				text-decoration: none;
+			}
+			.dropdown{
+				float: left;
+				overflow: hidden;
+			}
+			.dropdown .dropbtn{
+				cursor: pointer;
+				border: none;
+				outline: none;
+				background-color: inherit;
+				color: white;
+				font-size: 16px;
+				padding: 10px;
+			}
+			.container a:hover,.dropdown .dropbtn:hover,.container a.active{background-color: #13D771;}
+			
+			.dropdown-content{
+				display:none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 100px;
+				box-shadow: 0px 8px 16px 0px rgba(0,0,0,.2);
+				z-index: 1;
+			}
+			.dropdown-content a {
+				float: none;
+				color: #333;
+				padding: 10px;
+				display: block;
+				text-align: left;
+			}
+			.dropdown-content a:hover{background-color: #ccc;}
+			.show{display: block;}
+			
+			.tabcontent{
+				display: none;
+				padding: 10px;
+				border: 1px solid #ccc;border-top: 0;
+				animation: fadeEffect 1s;
+				-webkit-animation: fadeEffect 1s;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>此处是下拉菜单。我后面添加了选项卡的功能</h2>
+		<div class="container">
+			<a href="#Home" class="tablinks" onclick="openCity(event,'London')">首页</a>
+			<a href="#Recommend" class="tablinks" onclick="openCity(event,'Paris')" id="defaultOpen">推荐</a>
+			<div class="dropdown">
+				<button class="dropbtn" onclick="myFunction()">新闻</button>
+				<div class="dropdown-content" id="myDropdown">
+					<a href="">军事</a>
+					<a href="">娱乐</a>
+					<a href="">游戏</a>
+				</div>
+			</div>
+			<a href="#About" class="tablinks" onclick="openCity(event,'Tokyo')">关于我们</a>
+		</div>
+		<div id="London" class="tabcontent">
+			<h3>London</h3>
+			<p>我亲爱的娜娜大小姐</p>
+		</div>
+		<div id="Paris" class="tabcontent">
+			<h3>Paris</h3>
+			<p>你就是我心中的棉花糖</p>
+		</div>
+		<div id="Tokyo" class="tabcontent">
+			<h3>Tokyo</h3>
+			<p>甜到了我的心底</p>
+		</div>
+		
+		<script>
+			function myFunction() {
+				document.getElementById("myDropdown").classList.toggle("show");//toggle()切换元素的可见状态
+			}
+			
+			window.onclick=function(e) {
+				if(!e.target.matches('.dropbtn')) {
+					var myDropdown = document.getElementById("myDropdown");
+					if(myDropdown.classList.contains('show')) {
+						myDropdown.classList.remove('show');
+					}
+				}
+			}
+		</script>
+		<script>
+			function openCity(evt,cityName) {
+				var i,tabcontent,tablinks;
+				tabcontent = document.getElementsByClassName("tabcontent");
+				for(i=0;i<tabcontent.length;i++) {
+					tabcontent[i].style.display="none";
+				}
+				tablinks = document.getElementsByClassName("tablinks");
+				for(i=0;i<tablinks.length;i++) {
+					tablinks[i].className = tablinks[i].className.replace(" active","");
+				}
+				document.getElementById(cityName).style.display = "block";
+				evt.currentTarget.className +=" active";
+			}
+			
+			// 触发ID="defaultOpen"click事件
+			document.getElementById("defaultOpen").click();
+		</script>
+	</body>
+</html>

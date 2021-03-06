@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>我是p标签</p>
+		<div>获取兄弟节点</div>
+		<span>这两个方法IE9以上才支持，少用吧</span>
+		<i>解决兼容性问题的方法：就是自己封装一个兼容性函数</i>
+		<script>
+			var div = document.querySelector("div");
+			console.log(div.nextElementSibling); // 下一个兄弟节点
+			console.log(div.previousElementSibling); // 上一个兄弟节点
+			
+			function getNextElementSibling(element) {
+				var el = element;
+				while(el = el.nextSibling) {
+					if (el.nodeType === 1) {
+						return el;
+					}
+				}
+				return null;
+			}
+			
+		</script>
+	</body>
+</html>

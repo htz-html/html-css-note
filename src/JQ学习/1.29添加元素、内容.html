@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}span{line-height: 30px;}
+		</style>
+	</head>
+	<body>
+		<h3>append()在选取元素的末尾添加元素</h3>
+		<p>麻蛋想造反是不是</p>
+		<p>你是猪吗</p>
+		<ol>
+			<li>第一点</li>
+			<li>第二点</li>
+			<li>第三点</li>
+			<li>第四点</li>
+		</ol>
+		<button id="btn1">添加文本</button>
+		<button id="btn2">添加列表项</button>
+		<button id="btn3">添加列表项在前</button>
+		<script>
+			$(document).ready(function(){
+				$("#btn1").click(function(){
+					$("p").append("<b>最佳好友</b>");
+				});
+				$("#btn2").click(function(){
+					$("ol").append("<li>我是被添加的列表</li>");
+				});
+				$("#btn3").click(function(){
+					$("ol").prepend("<li>我添加在前面</li>");
+				});
+			});
+		</script>
+		<br />
+		<br />
+		<br />
+		<br />
+		
+		<p id="demo">在后面追加文本</p>
+		<button onclick="appendTxt()">追加多个文本</button>
+		<script>
+			function appendTxt(){
+				var txt1 = "<p>我是第一个</p>";
+				var txt2 = $("<p></p>").text("我是第二个");
+				var txt3 = document.createElement('p');
+				txt3.innerHTML="我是第三个";
+				$("#demo").append(txt1,txt2,txt3);
+			}
+		</script>
+		
+	</body>
+</html>

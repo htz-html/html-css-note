@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JS得到页面宽度</title>
+		<link id="mylink" rel="stylesheet" type="text/css" href="css/1.css"/>
+		<script type="text/javascript">
+			//更换样式表,需要在页面加载的时候执行一次;
+			//在浏览器尺寸改变的时候,也要执行.
+			
+			gaibian();  //最开始的时候就执行一次这个函数,保证页面默认情况就显示合理的样式表;
+			window.onresize = gaibian;
+			
+			function gaibian(){
+				var widthaa = document.documentElement.clientWidth;
+				var mylink = document.getElementById("mylink");
+				if(widthaa < 800) {
+					mylink.href = "css/2.css"
+				}else{
+					mylink.href = "css/1.css"
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="submit" name="" id="" value="" />
+	</body>
+</html>

@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>只有特定的值才使用switch语句</h1>
+		<h2>对特定的值：固定值；</h2>
+		<p>一定要写break结束；</p>
+		<p>switch里面的变量要和case 后面的值要全等于才能匹配成功</p>
+		<script type="text/javascript">
+			var num = 2;
+			switch(num){
+				case 1: console.log('1');break;
+				case 2: console.log('2');break;
+				case 3: console.log('3');break;
+				default:
+					alert(没有匹配到);
+			}
+		</script>
+	</body>
+</html>

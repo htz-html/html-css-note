@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../响应式/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box {
+				position: absolute;
+				left: 50px;
+				top:50px;
+				width: 200px;
+				height: 200px;
+				background: palegreen;
+				border: 10px solid #007AFF;
+				overflow: auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+			新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐新年快乐
+		</div>
+		
+		<script>
+			var box = document.querySelector(".box");
+			// 通过输出值就可以看出他们最大的区别是什么了。scrollHeight返回的是内容的高度
+			console.log(box.scrollHeight);
+			console.log(box.clientHeight);
+			// scrollTop，是返回的box顶部距离内容顶端超出部分的距离，所以这里需要给box加一个滚动条的属性。才有值
+			// 想要滚动滚动条打印出scrolltop的值，就必需要一个scroll事件才行。
+			// 这里一定要注意：元素被卷去的头部用scrolltop，但是如果是页面被卷去的头部则用window.pageYOffset
+			box.addEventListener("scroll", function(){
+				console.log(this.scrollTop)
+			})
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.demo{
+				width: 100px;height: 100px;background-color: red;
+				position: relative;
+				left: 100px;
+				top: 100px;
+				/* 添加过渡效果 */
+				transition-property: left;
+				/* 过渡效果的耗时 */
+				transition-duration: 1s;
+				/* 设置时间函数，控制运动速度  linear:匀速；ease：先慢在快在慢 */
+				transition-timing-function: linear;
+				/* 过渡效果的延迟 */
+				transition-delay: 1s;
+				
+				/* transition的简写样式：要过渡的属性名 过渡时间 时间函数 延迟 */
+				/* transition: left 1s linear 1s; */
+				
+				/* 为多个样式同事添加过渡效果 */
+				/* transition: left 1s linear 0s,background-color 2s linear 0s; */
+				
+				/* 为所有样式添加过渡效果 all：所有样式 建议不要使用all*/
+				/* transition: all 2s; */
+			}
+			.demo:active{
+				left: 1000px;
+				background-color: #09B75C;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>过渡效果执行完毕之后，默认会还原到原始位置</h2>
+		<h2>简写：transition的简写样式：要过渡的属性名 过渡时间 时间函数 延迟</h2>
+		<h3>为所有样式添加过渡效果 all:有以下几个缺点</h3>
+		<p>1.所有样式的过渡都是一样</p>
+		<p>2.效率低下，它会去查询所有添加的样式</p>
+		<p>3.建议：以后不要这么写</p>
+		<div class="demo"></div>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<h4>JavaScript 弹窗--确认框</h4>
+		<button type="button" onclick="myconfirm()">确认框</button>
+		<p id="demo"></p>
+		<script>
+			function myconfirm(){
+				var x;
+				var y = confirm();
+				if (y==true){
+					x = "确认";
+				}else{
+					x = "取消";
+				}
+				document.getElementById("demo").innerHTML=x;
+			}
+		</script>
+		<h4>JavaScript 弹窗--提示框</h4>
+		<button type="button" onclick="myprompt()">提示框</button>
+		<p id="demo1"></p>
+		<script>
+			function myprompt(){
+				var x;
+				var person = prompt("请输入你的名字","如：贱人");
+				if (person!=null && person!=""){
+					x = person+ "为什么" +"我现在活成了以前" + "最讨厌的样子";
+					document.getElementById("demo1").innerHTML=x;
+				}
+				
+			}
+		</script>
+	</body>
+</html>

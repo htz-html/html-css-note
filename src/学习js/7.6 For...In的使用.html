@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<p>使用for...in声明来遍历数组内的元素</p>
+		<p>用于对数组或对象的属性进行循环操作</p>
+		<p>每执行一次，就会对数组的元素或者对象的属性进行一次操作</p>
+		<p>可以任意顺序遍历一个对象的可枚举属性，对于每个不同属性，都会被执行</p>
+		<button type="button" onclick="myFunction()">我是按钮</button>
+		<p id="demo"></p>
+		<script>
+			function myFunction(){
+				var x;
+				var y="";
+				var z={aa:"我会",bb:"忘记",cc:"你的",dd:"王八蛋"};
+				for(x in z){
+					y=y+z[x];
+				}
+				document.getElementById("demo").innerHTML=y;
+			}
+		</script>
+	</body>
+</html>	

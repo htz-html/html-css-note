@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			body{margin: 0;padding: 0;}
+			*{box-sizing: border-box;}
+			.sidenav{
+				height: 100%;
+				width: 0;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				background-color: #111;
+				overflow-x: hidden;
+				padding-top: 60px;
+				transition: .5s;
+			}
+			.sidenav a {
+				padding: 8px;
+				padding-left: 32px;
+				text-decoration: none;
+				font-size: 20px;
+				color: #888;
+				display: block;
+				transition: .3s;
+			}
+			.sidenav .closebtn{
+				position: absolute;
+				top: 0;
+				right: 20px;
+				margin-left: 50px;
+				font-size: 34px;
+				cursor: pointer;
+				font-weight: bold;
+			}
+			.sidenav a:hover, .offcanvas a:focus{color: #ccc;}
+			
+			@media screen and(max-width:450px) {
+				.sidenav{padding-top: 15px;}
+				.sidenav a {font-size: 18px;}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="">推荐</a>
+			<a href="">军事</a>
+			<a href="">娱乐</a>
+			<a href="">体育</a>
+		</div>
+		
+		<h2>侧边栏动画</h2>
+		<p>点击图标打开侧边栏</p>
+		<span style="font-size: 30px;cursor: pointer;" onclick="openNav()">&#9776; open</span>
+		
+		<script>
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "250px";
+			}
+			function closeNav(){
+				document.getElementById("mySidenav").style.width="0";
+			}
+		</script>
+	</body>
+</html>

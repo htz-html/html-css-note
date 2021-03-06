@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="demo">
+			<i>123</i>
+		</div>
+		
+		<script>
+			// 1. 创建一个p标签
+			var p = document.createElement("p");
+			var span = document.createElement("span");
+			// 2. 然后把p标签放在div里面去 ,这是元素节点最佳在后面的方法
+			var div = document.querySelector("#demo");
+			div.appendChild(p);
+			
+			// 3. 把元素节点追加在已有的前面
+			div.insertBefore(span, div.children[0])
+		</script>
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body onload="startTime()">
+		<!-- 使用Date()方法来返回今天的日期和时间 -->
+		<div style="background-color: #007AFF;padding: 10px;">
+			<script>
+				var d=new Date();
+				document.write(d);
+			</script>
+		</div>
+		<!-- 使用getTime()计算从1970年到今天有多少毫秒 -->
+		<div style="background-color: red;padding: 10px;">
+			<p id="demo">点击按钮显示1970年1月1号至今的毫秒数</p>
+			<button onclick="myFunction()">点击按钮</button>
+			<script>
+				function myFunction(){
+					var d=new Date();
+					var x=document.getElementById("demo");
+					x.innerHTML=d.getTime();
+				}
+			</script>
+		</div>
+		
+		<!-- 使用setFullYear()设置具体的日期 -->
+		<div style="background-color: green;padding: 10px;">
+			<p id="demo1">点击我显示修改后的年月日</p>
+			<button onclick="mySetFullYear()">点击</button>
+			<script>
+				function mySetFullYear() {
+					var d=new Date();
+					d.setFullYear(2023,12,6);
+					var x=document.getElementById("demo1");
+					x.innerHTML=d;
+				}
+			</script>
+		</div>
+		
+		
+		
+		<!-- 使用 toUTCString() 把当日的日期（根据 UTC）转换为字符串 -->
+		<div style="background-color: blueviolet;padding: 10px;">
+			<p id="demo2">点击把utc日期和时间转换成字符串</p>
+			<button onclick="myUtc()">点击</button>
+			<script>
+				function myUtc() {
+					var d=new Date();
+					var x=document.getElementById("demo2");
+					x.innerHTML=d.toUTCString();
+				}
+			</script>
+		</div>
+		
+		<!-- 使用 getDay() 来显示星期，而不仅仅是数字 -->
+		<div style="background-color: beige;padding: 10px;">
+			<p id="demo3">单击显示今天周几</p>
+			<button onclick="myWeekday()">今天周几</button>
+			<script>
+				function myWeekday(){
+					var d=new Date();
+					var weekday=new Array(7);
+					weekday[0]="周天";
+					weekday[1]="周一";
+					weekday[2]="周二";
+					weekday[3]="周三";
+					weekday[4]="周四";
+					weekday[5]="周五";
+					weekday[6]="周六";
+					var x=document.getElementById("demo3");
+					x.innerHTML=weekday[d.getDay()];
+				}
+			</script>
+		</div>
+		
+		<!--显示一个钟表 -->
+		<p>显示钟表有一个onload=""，写到了body里面了</p>
+		<div style="background-color: #D5801B;padding: 10px;">
+			<div id="txt"></div>
+		</div>
+		<script>
+			function startTime() {
+				var today=new Date();
+				var h=today.getHours();
+				var m=today.getMinutes();
+				var s=today.getSeconds();
+				m=checkTime(m);
+				s=checkTime(s);
+				document.getElementById('txt').innerHTML=h+":"+m+":"+s;
+				t=setTimeout(function(){startTime()},500);
+			}
+			function checkTime(i) {
+				if(i<10){
+					i="0"+i;
+				}
+				return i
+			}
+		</script>
+	</body>
+</html>

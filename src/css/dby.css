@@ -1,0 +1,91 @@
+html {font-size: 62.5%;}
+a { text-decoration:none;color: #333;}
+a:active{color: #13D771;}
+b,strong {font-weight: 600}
+* {-webkit-box-sizing: border-box;box-sizing: border-box;-webkit-user-select: none;outline: 0;-webkit-tap-highlight-color: transparent;
+	-webkit-tap-highlight-color: transparent;}
+body {
+	margin: 0
+	font-family:'Microsoft YaHei', 'Helvetica Neue', Helvetica, sans-serif;
+	font-size: 1.4rem;
+	line-height: 1.8rem;
+	color: #333;
+	-webkit-overflow-scrolling: touch;
+}
+input,button{width: 100%;height: 3.6rem;padding:0 1rem;border-radius: .4rem;border: 1px solid #ccc;}
+h1{font-size: 1.8rem;}
+h2{font-size: 1.6rem;}
+h3{font-size: 1.5rem;}
+h4{font-size: 1.4rem;}
+h5{font-size: 1.2rem;}
+h6{font-size: 1rem;}
+
+/* 按钮集合 */
+button:enabled:active,
+input[type=button].mui-active:enabled,
+input[type=button]:enabled:active,
+input[type=reset].mui-active:enabled,
+input[type=reset]:enabled:active,
+input[type=submit].mui-active:enabled,
+input[type=submit]:enabled:active {color: #fff;background-color: #929292;}
+.dby-content-padded { padding: 10px;}
+.dby-btn { transition: .2s; display: inline-block; background: none;border: .1rem solid #bbb;border-radius: .4rem;font-size: 1.4rem;}
+.dby-btn-primary { background-color: #007AFF;color: #fff;border: #007AFF .1rem solid;}
+.dby-btn-success { background-color: #13d771;color: #fff;border: #13d771 .1rem solid;}
+.dby-btn-warning { background-color: #f1a436;color: #fff;border: #f1a436 .1rem solid;}
+.dby-btn-danger { background-color: #e93730;color: #fff;border: #e93730 .1rem solid;}
+.dby-btn-royal { background-color: #8a6de9;color: #fff;border: #8a6de9 .1rem solid;}
+.dby-btn-primary:enabled:active { color: #fff;background-color: #0c66c8;}
+.dby-btn-success:enabled:active  { color: #fff;background-color: #09bb5e;}
+.dby-btn-warning:enabled:active  { color: #fff;background-color: #c57c14;}
+.dby-btn-danger:enabled:active { color: #fff;background-color: #bc1c16;}
+.dby-btn-royal:enabled:active { color: #fff;background-color: #6848cd;}
+.dby-btn-block { display: block;width: 100%;margin-bottom: 1rem;}
+.dby-btn-outlined { background-color:transparent;}
+.dby-btn-outlined.dby-btn-primary{ color: #007AFF;}
+.dby-btn-outlined.dby-btn-success{ color: #13d771;}
+.dby-btn-outlined.dby-btn-warning{ color: #f1a436;}
+.dby-btn-outlined.dby-btn-danger{ color: #e93730;}
+.dby-btn-outlined.dby-btn-royal{ color: #8a6de9;}
+/* --按钮集合-- */
+/* --按钮集合-- */
+/* --按钮集合-- */
+/* --按钮集合-- */
+
+
+/* 弹窗 */
+#popup-background{display:none;position:fixed;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5)}
+#popup-content{background:#fff;width:80%;z-index:1;margin:0 auto;margin-top: 40%; overflow:auto;border-radius: .5rem;}
+.popup-content .popup-content-head span{color:#888;padding-top:6px;cursor:pointer;padding-right:8px}
+.popup-content .popup-content-title{margin:auto;padding:0 1rem 1rem;}
+.popup-content .popup-content-title input {margin-bottom: 1rem;}
+.popup-content-head{padding:5px;}
+#popup_close{float:right;font-size:3rem}
+.popup-content .popup-content-head h2{margin:10px 0;padding-left:15px;text-align: center;font-size: 1.8rem;}
+.popup-content .popup-content-title .popup-code .popup-code-input{width: 50%;}
+.popup-content .popup-content-title .popup-code .popup-btn-code { width: 40%;padding:.8rem 1rem;float: right;text-align: center;border-radius: .4rem;border: 1px solid #ccc;}
+.popup-content .popup-content-title .popup-btn-sure {width: 100%;background-color: #13D771;color: #fff;border: 0;height: 3.4rem;font-size: 1.6rem;}
+/* --弹窗-- */
+/* --弹窗-- */
+/* --弹窗-- */
+
+
+
+/* 瀑布流排版 */
+/* 瀑布流排版 */
+/* 瀑布流排版 */
+/* 瀑布流排版 */
+.masonry {column-count:2;column-gap: 0;counter-reset: item-counter;margin: -5px;}
+.masonry .item { box-sizing: border-box; break-inside: avoid; padding: 5px;counter-increment: item-counter;}
+.masonry .item .item-content { background-color: #fff;border-radius: .4rem;overflow: hidden;}
+.masonry .item .item-content img {width: 100%;height: auto;}
+.masonry .item .item-content .title { padding:0 1rem 1rem;margin: 0;}
+/* 瀑布流排版 */
+/* 瀑布流排版 */
+/* 瀑布流排版 */
+/* 瀑布流排版 */
+
+
+
+
+

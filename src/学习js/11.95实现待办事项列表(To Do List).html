@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;min-width: 250px;}
+			*{box-sizing: border-box;}
+			ul{margin: 0;padding: 0;}
+			ul li{cursor: pointer;position: relative;padding: 12px 8px 12px 40px;background-color: #eee;transform: .3s;
+			/* 是列表项不可选 */-webkit-user-select: none;-moz-user-select:none;-ms-user-select: none;user-select:none;}
+			ul li:nth-child(odd){background-color: #f9f9f9;}
+			ul li:hover{background-color: #13D771;color: white;}
+			ul li.active{background-color: #888;color: white;text-decoration: line-through;}
+			ul li.active::before{content: '';border: red;position: absolute; border-style: solid;border-width: 0 2px 2px 0;top: 10px;left: 16px; transform: rotate(45deg);height: 15px;width: 7px;}
+			.close{position: absolute;right: 0;top: 0;padding: 12px 16px;}
+			.close:hover{background-color: #f44336;color: white;}
+			/* 头部样式 */
+			.header{background-color: #f44336;padding: 30px 40px;color: white;text-align: center;}
+			.header:after{content: "";display: table;clear: both;}
+			/* input样式 */
+			input{border: none;width: 70%;height: 36px;padding: 10px; float: left;}
+			#addBtn {float: left;padding: 10px;height: 36px;background-color: #d9d9d9; width: 25%;color: #555;text-align: center;font-size: 12px;cursor: pointer;transition: .3s;}
+			#addBtn:hover{background-color: #bbb;}
+		</style>
+	</head>
+	<body>
+		<div class="header" id="myDiv">
+			<h2 style="text-align: center;">我的待办事项</h2>
+			<input type="text" id="myInput" placeholder="输入待办事项.." />
+			<span onclick="newElement()" id="addBtn">添加</span>
+		</div>
+		
+		<ul id="myUL">
+			<li>zhouliu yao shangban</li>
+			<li class="active">nishi ruciyouxiu</li>
+			<li>zhoutian yao buban</li>
+			<li>kandaoni laozijuedehenbushaung</li>
+			<li>nimabi nixiaode bu</li>
+		</ul>
+		
+		<script>
+			// 创建一个"关闭"按钮并将其附加到每个列表中
+			var myNodelist=document.getElementsByTagName("li");
+			var i;
+			for (i = 0; i < myNodelist.length; i++) {
+				var span = document.createElement("span");
+				var txt = document.createTextNode("\u00D7");
+				span.className = "close";
+				span.appendChild(txt);
+				myNodelist[i].appendChild(span);
+			}
+			// 点击"关闭"按钮隐藏当前列表项
+			var close= document.getElementsByClassName("close");
+			var i;
+			for(i=0;i<close.length;i++) {
+				close[i].onclick=function() {
+					var div=this.parentElement;
+					div.style.display="none";
+				}
+			}
+			// 单击列表项时添加"选中"符号
+			var list= document.querySelector('ul');
+			list.addEventListener('click', function(ev) {
+				if(ev.target.tagName ==='LI') {
+					ev.target.classList.toggle('active');
+				}
+			},false);
+			// 单击"添加"按钮时创建新的列表项
+			function newElement() {
+				var li= document.createElement('li');
+				var inputValue=document.getElementById("myInput").value;
+				var t=document.createTextNode(inputValue);
+				li.appendChild(t);
+				if(inputValue==='') {
+					alert("You mustwrite something!");
+				} else {
+					document.getElementById("myUL").appendChild(li);
+				}
+				document.getElementById("myInput").value="";
+				
+				var span=document.createElement("span");
+				var txt=document.createTextNode("\u00D7");
+				span.className="close";
+				span.appendChild(txt);
+				li.appendChild(span);
+				
+				for(i=0;i<close.length;i++) {
+					close[i].onclick = function() {
+						var div=this.parentElement;
+						div.style.display="none";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>	

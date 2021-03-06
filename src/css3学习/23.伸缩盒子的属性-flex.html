@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.demo{
+				width: 680px;
+				height: 500px;
+				border: 1px solid red;
+				box-sizing: border-box;
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.demo1{
+				flex: 1;
+				height: 200px;
+				background-color: #007EFF;
+			}	
+			.demo2{
+				flex: 1;
+				height: 200px;
+				background-color: orange;
+			}
+			
+			/* 案例演示 */
+			
+			.demo3{
+				height: 300px;
+				width: 700px;
+				border: 1px solid #09B75C;
+			}
+			.demo3>ul{
+				width: 100%;
+				list-style: none;
+				display: flex;
+			}
+			.demo3 > ul > li{
+				flex: 1;
+				height: 40px;
+				line-height: 40px;
+				background-color: #09BB5E;
+				border-right: 1px solid #fff;
+				color: #fff;
+				text-align: center;	
+			}
+		</style>
+	</head>
+	<body>
+		<h1></h1>
+		<div class="demo">
+			<div class="demo1"></div>
+			<div class="demo2"></div>
+		</div>
+		
+		<!-- 案例演示 -->
+		<div class="demo3">
+			<ul>
+				<li>案例演示</li>
+				<li>首页</li>
+				<li>新闻知道</li>
+				<li>电视剧</li>
+			</ul>
+		</div>
+	</body>
+</html>
+

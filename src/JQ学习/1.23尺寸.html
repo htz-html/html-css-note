@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.lcxing{font-weight: bold;font-size: 48px;}
+			.blue{color: blue;}
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>width()</li>
+			<li>height()</li>
+			<li>innerWidth()</li>
+			<li>innerHeight()</li>
+			<li>outerWidth()</li>
+			<li>outerHeight</li>
+		</ul>
+		<h3>1、width() 和 height() 方法 <span style="color: red;">(不包括内边距、边框或外边距）</span> </h3>
+		<div id="div1" style="height: 100px;width: 300px;background-color: #09BB5E;border: 10px solid #41354B;"></div>
+		<br />
+		<button id="demo1">显示div元素尺寸</button>
+		<script>
+			$(document).ready(function(){
+				$("#demo1").click(function(){
+					var txt="";
+					txt+="div的宽度为：" + $("#div1").width() + "<br />";
+					txt+="div的高度为：" + $("#div1").height();
+					$("#div1").html(txt);
+				});
+			});
+		</script>
+	</body>
+</html>

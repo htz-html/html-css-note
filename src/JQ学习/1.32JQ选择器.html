@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style>
+			tr{border: 0;}
+			td{padding: 10px;}
+			tr>td:first-child{width: 20%;}
+			tr>td:nth-child(2){width: 25%;}
+			tr>td:last-child{width: 45%;}
+		</style>
+	</head>
+	<body>
+		<table border="" cellspacing="" cellpadding="">
+			<tr>
+				<td>*</td>
+				<td>$("*")</td>
+				<td>所有元素</td>
+			</tr>
+			<tr>
+				<td>#id</td>
+				<td>$("#lastname")</td>
+				<td>id="lastname" 的元素</td>
+			</tr>
+			<tr>
+				<td>.class,.class</td>
+				<td>$(".into,.demo")</td>
+				<td>class为“into”或“demo”的所有元素</td>
+			</tr>
+			<tr>
+				<td>:even</td>
+				<td>$("tr:even")</td>
+				<td>所有偶数tr元素，索引值从0开始，第一个元素是偶数（0），第二个元素奇数（1），以此类推</td>
+			</tr>
+			<tr>
+				<td>:odd</td>
+				<td>$("tr:odd")</td>
+				<td>所有奇数tr元素，索引值从0开始，第一个元素是偶数（0），第二个元素是奇数</td>
+			</tr>
+			<tr>
+				<td>:first-of-type</td>
+				<td>$("p:first-of-type")</td>
+				<td>指的是其子元素中第一个p元素，不是第一个子元素。因为第一个子元素不一定是p元素</td>
+			</tr>
+			<tr>
+				<td>:nth-last-child(2)</td>
+				<td>$("p:nth-last-child(2)")</td>
+				<td>选取属于其父元素的第三个子元素的p元素，从最后一个元素开始计数。<b style="color: red;">不能掺杂其他元素，类似：last-child</b></td>
+			</tr>
+			<tr>
+				<td style="background: #09B75C;">:nth-child(n)</td>
+				<td>$("p:nth-child(2)")</td>
+				<td>选择器选取属于其父元素的不限类型的第 n 个子元素的所有元素。</td>
+			</tr>
+			<tr>
+				<td style="background: #09B75C;">:nth-of-type</td>
+				<td>$("p:nth-of-type")</td>
+				<td>选择器来选取属于其父元素的特定类型的第 n 个子元素的所有元素。</td>
+			</tr>
+			<tr>
+				<td colspan="3" style="background:red;color: white;line-height: 24px;">:nth-child(n)与:nth-of-type的区别：p:nth-child(n)如果第n个不是p元素，就会无效<br/>p:nth-of-type不管前面是否有其他元素，这里只需要数第三个p元素就行</td>
+			</tr>
+		</table>
+		<br>
+		<table border="" cellspacing="" cellpadding="">
+			<tr>
+				<td>element + next</td>
+				<td>$("div + p")</td>
+				<td>首先div和p两个元素是同级元素，才能实现：每个 div元素相邻的下一个 p元素</td>
+			</tr>
+			<tr>
+				<td>element ~ siblings</td>
+				<td>$("div ~ p")</td>
+				<td>div 元素同级的所有p 元素</td>
+			</tr>
+			<tr>
+				<td>:eq(index)</td>
+				<td>$("ul li:eq(3)")</td>
+				<td>列表中的第四个元素（index 值从 0 开始）</td>
+			</tr>
+			<tr>
+				<td>:gt(no)</td>
+				<td>$("ul li:gt(3)")</td>
+				<td> index 大于 3 的所有li元素</td>
+			</tr>
+			<tr>
+				<td>:lt(no)</td>
+				<td>$("ul li:lt(3)")</td>
+				<td> index 小于 3 的所有li元素</td>
+			</tr>
+			<tr>
+				<td>:not(selector)</td>
+				<td>$("p:not(.intro)")</td>
+				<td>选择器选取除了"(.intro)"指定元素以外的所有元素。</td>
+			</tr>
+			<tr>
+				<td>:header</td>
+				<td>$(":header")</td>
+				<td>所有标题元素 h1,h2,h3,h4,h5,h6</td>
+			</tr>
+			<tr>
+				<td>:animated</td>
+				<td>$(":animated")</td>
+				<td>所有动画元素(注意：先要有动画，才有anmated元素)</td>
+			</tr>
+			<tr>
+				<td>:focus</td>
+				<td>$(":focus")</td>
+				<td>当前具有焦点的元素</td>
+			</tr><tr>
+				<td>:contains(text)</td>
+				<td>$(":contains('Hello')")</td>
+				<td>所有包含文本 "Hello" 的元素</td>
+			</tr><tr>
+				<td>:has(selector)</td>
+				<td>$("div:has(p)")</td>
+				<td>所有包含有p元素在其内的 div元素</td>
+			</tr><tr>
+				<td>:empty</td>
+				<td>$(":empty")</td>
+				<td>所有空元素（如:表格中，没有填写内容的空白）</td>
+			</tr><tr>
+				<td>:parent</td>
+				<td>$("td:parent")</td>
+				<td>匹配所有含有子元素或者文本的父元素</td>
+			</tr>
+			<tr>
+				<td>:hidden</td>
+				<td>$("p:hidden")</td>
+				<td>所有隐藏的p元素。<b style="color:red">对开始就隐藏掉的p元素才有效</b></td>
+			</tr>
+			<tr>
+				<td>:visible</td>
+				<td>$("p:visible")</td>
+				<td>所有可见的p元素</td>
+			</tr>
+			<tr>
+				<td>:lang(language)</td>
+				<td>$("p:lang(it)")</td>
+				<td>所有 lang 属性值为 "it" 的p元素</td>
+			</tr>
+			<tr>
+				<td>[attribute]</td>
+				<td>$("[href]")</td>
+				<td>所有带有href属性的元素</td>
+			</tr>
+			<tr>
+				<td>看他们的区别</td>
+				<td>$("[href='default.htm']")/	$("[href!='default.htm']")/$("[href$='.jpg']")</td>
+				<td>链接等于 / 不等于，/ 所有带有href属性且值以.jpg结尾的元素</td>
+			</tr>
+			<tr>
+				<td>[attribute|=value]</td>
+				<td>$("[title|='too']")</td>
+				<td>所有带有title属性且值等于'too'或者'too'后跟链接符作为开头的字符串</td>
+			</tr>
+			<tr>
+				<td>[attribute^=value]</td>
+				<td>$("[title^='Tom']")</td>
+				<td>所有带有 title 属性且值以 "Tom" 开头的元素</td>
+			</tr>
+			<tr>
+				<td>[attribute~=value]</td>
+				<td>$("[title~='hello']")</td>
+				<td>带有title属性且包含单词“hello”的元素</td>
+			</tr>
+			<tr>
+				<td>[attribute*=value]</td>
+				<td>$("[title*='hello']")</td>
+				<td>所有带有title属性且值包含字符串“hello”的元素</td>
+			</tr>
+			<tr>
+				<td>[name=value][name2=value2]</td>
+				<td>$("input[id][name$='man']")</td>
+				<td>带有id属性，且name属性以man结尾的输入框</td>
+			</tr>
+			<tr>
+				<td>:input</td>
+				<td>$(":input")</td>
+				<td>选取表单元素，该选择器同样适用于 button 元素。</td>
+			</tr>
+		</table>
+	</body>
+</html>

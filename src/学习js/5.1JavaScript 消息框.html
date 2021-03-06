@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<button type="button" onclick="myalert()">我是警告框</button>
+		<script>
+			function myalert(){
+				alert("警告框请用alert方法！");//换行就用"\n"分割
+			}
+		</script>
+		</br></br></br></br>
+		<button type="button" onclick="myconfirm()">我是带有确认/取消的框</button>
+		<p id="demo"></p>
+		<script>
+			function myconfirm(){
+				var x;
+				var y = confirm("确认框请用confirm方法");
+				if (y==true){
+					x = "确认";
+				}else{
+					x = "取消";
+				}
+				document.getElementById("demo").innerHTML = x;
+			}
+		</script>
+		</br></br>
+		<button type="button" onclick="myprompt()">我是提示框</button>
+		<p id="demo1"></p>
+		<script>
+			function myprompt(){
+				var x;
+				var p = prompt("请输入你的名字","如：林青霞");
+				if(p!=null && p!=""){
+					x = "Hello!" + p + "，好巧啊，城市真小，这都能遇到你";
+				}
+				document.getElementById("demo1").innerHTML = x;
+			}
+		</script>
+	</body>
+</html>	

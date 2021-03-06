@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style>
+			.font{font-size: 12px;color: ;}
+		</style>
+	</head>
+	<body>
+		<p id="demo1">我是bind()事件<b style="color: red;">on()事件来代替了</b> </p>
+		<script>
+			$(document).ready(function(){
+				$("#demo1").bind("click",function(){
+					alert("我被点击了！！");
+				});
+			});
+		</script>
+		<hr />
+		<p id="demo2">
+			blur事件测试: <input type="text" placeholder="失去焦点弹窗" />
+		</p>
+		<p class="font">注意：该方法常与 focus() 方法一起使用</p>
+		<script>
+			$(document).ready(function(){
+				$("#demo2 input").blur(function(){
+					alert("你已经失去我了！");
+				});
+			});
+		</script>
+		<hr />
+		<p id="demo3">change()事件：<input type="text" value="" placeholder="修改内容" /> </p>
+		<p class="font">change事件是内容被改变之后被提示</p>
+		<script>
+			$(document).ready(function(){
+				$("#demo3 input").change(function(){
+					alert("内容已被改变！");
+				});
+			});
+		</script>
+	</body>
+</html>

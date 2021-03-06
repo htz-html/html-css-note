@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<input type="number" id="id1" min="100" required="required" />
+		<input type="submit" onclick="asdfghj()" value="提交" />
+		<p id="demo"></p>
+		<script>
+			function asdfghj(){
+				var txt ="";
+				var inpobj = document.getElementById("id1");
+				if (!isNumeric(inpobj.value)){ //isNumeric是一个随便命名的函数名,去判断是否是数字的一个函数名
+					txt = "您输入发不是数字！";
+				}else if(inpobj.validity.rangeUnderflow){
+					txt="您输入的直太小了！";
+				}else{
+					txt = "您输入正确！";
+				}
+				document.getElementById("demo").innerHTML =txt;
+			}
+			function isNumeric(x){
+				return !isNaN(parseFloat(x)) && isFinite(x);//isNaN判断是数字,parseFloat()解析首个字符是否是数字,如果是就会返回一个数字,isFinite检查是否是无穷大
+			}
+		</script>
+		
+	</body>
+</html>

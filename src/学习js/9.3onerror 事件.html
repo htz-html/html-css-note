@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<p>onerror时间属于js中的事件之一，只要页面中出现脚本错误，就会产生onerror事件。如果需要利用onerror事件，就必须
+		创建一个处理错误的函数。你可以把这个函数叫做onerror事件处理器（onerror event handler）。
+		这个事件处理器使用三个参数来调用，msg（错误信息）、URL（发生错误页面的链接）、line(发生错误的代码行)。
+		</p>
+		<button type="button" onclick="message()">请点击我</button>
+		<script>
+			onerror=handleErr;
+			var txt="";
+			function handleErr(msg,url,line){
+				txt = "该页面有个错误\n";
+				txt += "错误:" + msg + "\n";
+				txt += "url:" + url + "\n";
+				txt += "行:" + line + "\n";
+				txt += "点击确认继续。\n";
+				alert(txt);
+				return true;
+			}
+			function message(){
+				alert("辣鸡花花卡！");
+			}
+		</script>
+	</body>
+</html>	

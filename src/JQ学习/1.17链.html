@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+		</style>
+	</head>
+	<body>
+		<button id="demo" style="padding: 10px;background-color: #10C768;color: white;">隐藏</button>
+		<div id="div1" style="padding: 20px;background-color: blue;color: white;">我是先跳出弹窗再消失</div>
+		<script>
+			$(document).ready(function(){
+				$("#demo").click(function(){
+					$("#div1").css("backgroundColor","red")
+					.slideUp("3000")
+					.slideDown("3000");//记住这里是没有标点符号分隔的
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" content="text/html">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			// 返回值为true / false
+			function isRunYear(year) {
+				var result = false;
+				if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ) {
+					result = true;
+				}
+				return result;
+			}
+			console.log(isRunYear(2020))
+			
+		</script>
+	</body>
+</html>

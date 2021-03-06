@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<form>
+			<input type="button" value="开始计时" onclick="dotimer()" />
+			<input type="text" id="txt" />
+			<input type="button" value="停止计时" onclick="stopCount()" />
+		</form>
+		<script>
+			var c=0;
+			var t;
+			var timer_is_on=0;
+			function timedCount(){
+				document.getElementById('txt').value=c;
+				c=c+1;
+				t=setTimeout(function(){timedCount()},100)
+			}
+			function dotimer(){
+				if(!timer_is_on)
+				{
+					timer_is_on=1;
+					timedCount();
+				}
+			}
+			function stopCount(){
+				clearTimeout(t);
+				timer_is_on=0;
+			}
+		</script>
+	</body>
+</html>	

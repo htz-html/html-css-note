@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<base href="../img/" target="_blank" />
+		<link rel="stylesheet" type="text/css" href="" />
+		<title>正规的html头部</title>
+		<style type="text/css">
+			.mytxt {
+				color: #333;
+				line-height: normal;
+				font-family: "Microsoft YaHei", Tahoma, Verdana, SimSun;
+				font-style: normal;
+				font-variant: normal;
+				font-size-adjust: none;
+				font-stretch: normal;
+				font-weight: normal;
+				margin-top: 0px;
+				margin-bottom: 0px;
+				margin-left: 0px;
+				padding-top: 4px;
+				padding-right: 4px;
+				padding-bottom: 4px;
+				padding-left: 4px;
+				font-size: 15px;
+				outline-width: medium;
+				outline-style: none;
+				outline-color: invert;
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+				border-bottom-left-radius: 3px;
+				border-bottom-right-radius: 3px;
+				text-shadow: 0px 1px 2px #fff;
+				background-attachment: scroll;
+				background-repeat: repeat-x;
+				background-position-x: left;
+				background-position-y: top;
+				background-size: auto;
+				background-origin: padding-box;
+				background-clip: border-box;
+				background-color: rgb(255, 255, 255);
+				margin-right: 8px;
+				border-top-color: #ccc;
+				border-right-color: #ccc;
+				border-bottom-color: #ccc;
+				border-left-color: #ccc;
+				border-top-width: 1px;
+				border-right-width: 1px;
+				border-bottom-width: 1px;
+				border-left-width: 1px;
+				border-top-style: solid;
+				border-right-style: solid;
+				border-bottom-style: solid;
+				border-left-style: solid;
+			}
+
+			.mytxt:focus {
+				border: 1px solid #fafafa;
+				-webkit-box-shadow: 0px 0px 6px #007eff;
+				-moz-box-shadow: 0px 0px 5px #007eff;
+				box-shadow: 0px 0px 5px #007eff;
+
+			}
+		</style>
+	</head>
+	<body>
+		<h1>用到了css的伪元素focus</h1>
+		<input type="text" value="" />
+		<input type="text" value="" class="mytxt" />
+		<input style="background:transparent;border:1px solid #fff">
+		<p>鼠标划过输入框，输入框背景色变色：</p>
+		<input value="Type here" NAME="user_pass" TYPE="text" SIZE="29" onmouseover="this.style.borderColor='black';this.style.backgroundColor='plum'"
+		 style="width: 106; height: 21;" onmouseout="this.style.borderColor='black';this.style.backgroundColor='#ffffff'"
+		 style="border-width:1px;border-color=black">
+		<p>输入字时输入框边框闪烁(边框为小方型)： </p>
+		<Script Language="JavaScript">
+			function borderColor(){
+			if(self['oText'].style.borderColor=='red'){
+			self['oText'].style.borderColor = 'yellow';
+			}else{
+			self['oText'].style.borderColor = 'red';
+			}
+			oTime = setTimeout('borderColor()',400);
+			}
+		</Script>
+		<input type="text" id="oText" style="border:5px dotted red;color:red" onfocus="borderColor(this);" onblur="clearTimeout(oTime);">
+		<p>输入字时输入框边框闪烁(边框为虚线)： </p>
+		<style>
+			#oText1{border:1px dotted #ff0000;ryo:expression_r(onfocus=function light (){with(document.all.oText){style.borderColor=(style.borderColor=="#ffee00"?"#ff0000":"#ffee00");timer=setTimeout(light,500);}},onblur=function(){this.style.borderColor="#ff0000";clearTimeout(timer)})};
+		</style>
+		<input type="text" id="oText1">
+		<p>只有下划线的文本框： </p>
+		<input type="text" style="border:0;border-bottom:1px solid black;">
+		<p>软件序列号式的输入框(完整版)：</p>
+		<script for="T" event="onkeyup">if(value.length==maxLength)document.all[event.srcElement.sourceIndex+1].focus();</script>
+		<script for="T" event="onfocus">select();</script>
+		<script for="Submit" event="onclick">
+			var sn=new Array();
+			for(i=0;i<T.length;i++)
+			sn=T.value;
+			alert(sn.join("—"));
+		</script>
+		<input name="T" size="5" maxlength="3">—<input name="T" size="5" maxlength="3">—<input name="T" size="5" maxlength="3">—<input
+		 name="T" size="5" maxlength="3">—<input name="T" size="5" maxlength="3">—<input name="T" size="5" maxlength="3">
+		<input type="submit" name="Submit">
+
+
+		<p>HTML中让表单input等文本框为只读不可编辑的方法</p>
+		<input type="text" name="input1" value="中国" onfocus=this.blur()>
+		<input type="text" name="input1" value="中国" readonly />
+		<input type="text" name="input1" value="中国" disabled />
+		完整的例子:
+		<input type="text" name="ly_qq" value="123456789" onMouseOver="this.className='input_1'" onMouseOut="this.className='input_2'"
+		 disabled="true" readonly />
+
+		<div align=center style='
+color: #ffffff; 
+background-color: #000000; 
+border: solid 2px black; 
+width: 120px; 
+height: 200px; 
+overflow: scroll; 
+scrollbar-face-color: #889B9F;
+scrollbar-shadow-color: #3D5054;
+scrollbar-highlight-color: #C3D6DA;
+scrollbar-3dlight-color: #3D5054;
+scrollbar-darkshadow-color: #85989C;
+scrollbar-track-color: #95A6AA;
+scrollbar-arrow-color: #FFD6DA;
+'>日志文字日志文字日志日志文字日志文字日志文字日志文字日志文字日志文字日志文字日志文字日志文字日志文字文字日志文字日志文字日志文字日志文字日志文字日志文字日志文字日志文字日志文字</div>
+	</body>
+</html>

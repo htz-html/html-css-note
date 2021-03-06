@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link id="mylink" rel="stylesheet" type="text/css" href="css/1.css"/>
+		<style type="text/css">
+			#myback{
+				background-color: #007AFF;
+				padding: 10px 30px;
+				color: #fff;
+			}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var mybtn = document.getElementById("myback");
+				var mylink = document.getElementById("mylink");
+				mybtn.onclick = function(){
+					mylink.href = "css/2.css";
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<input type="button" id="myback" value="点击我改变背景样式">
+	</body>
+</html>

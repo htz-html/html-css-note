@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			var obj = {
+				name:'陆杨清',
+				age:28,
+				sex:'男',
+				fn: function(){
+					console.log('陆杨清是个程序猿');
+				}
+			}
+			// 遍历对象要用for in
+			// 里面的变量一般都是k或者key
+			for(var k in obj) {
+				console.log(k);
+				console.log(obj[k]);
+			}
+			console.log(obj.name);
+			obj.fn();
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

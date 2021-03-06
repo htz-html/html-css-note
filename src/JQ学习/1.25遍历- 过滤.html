@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}span{line-height: 30px;}
+		</style>
+	</head>
+	<body>
+		<h1>缩小搜索元素的范围</h1>
+		<p><span style="color: red;font-weight: bold;">三个最基本的过滤方法是：</span>first(),last()和eq()。</p>
+		<p><span style="color: #007AFF;font-weight: bold;">其他过滤方法：</span>filter()和not()允许你选取匹配和不匹配某项制定标准的元素。</p>
+		<p><span style="color: red;font-weight: bold;">注意：</span>last() 返回的是被选元素的最后一个元素。如果有两个相同的元素。则选择最后一个p元素的最后一个span元素</p>
+		<span>例如：</span>
+		<div style="margin: 10px;background-color: #efefef;padding: 10px;">
+			<p>
+				<span>第一个</span>
+			</p>
+			<p>
+				<span>第二个</span>
+			</p>
+			<p>
+				<span>第三个</span>
+			</p>
+		</div>
+		<p><span style="color: red;font-weight: bold;">eq()方法：</span>返回被选元素中带有指定索引号的元素<b style="background-color: orange;color: white;">(下标，起始值为0)</b></p>
+		<span>例如：</span>
+		<div id="demo" style="margin: 10px;background-color: #efefef;padding: 10px;">
+			<h3>从下标开始算起：</h3>
+			<p>我的下标是0</p>
+			<p>我的下标是1</p>
+			<p>我的下标是2</p>
+		</div>
+		<script>
+			$(document).ready(function(){
+				$("#demo p").eq(1).css({
+					"color":"white",
+					"background-color":"#888"
+				});
+			});
+		</script>
+		<p><span style="color: red;font-weight: bold;">filter()方法：</span>方法允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回。</p>
+		<p>$("p").filter(".url");说明：返回带有class="url"的所有p标签</p>
+		<p>$("p").not(".url");说明：返回除了带有class="url"的所有p标签，与filter()相反</p>
+	</body>
+</html>

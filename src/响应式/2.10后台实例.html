@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>后台实例</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				font-size: 14px;
+				color: #333;
+			}
+			body{
+				background-color: #e8f0f3;
+			}
+			ul li{
+				list-style: none;
+			}
+			.header{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+			}
+			.pctop{
+				height: 60px;
+				background-color: #009cdf;
+			}
+			.pctop .left{
+				float: left;
+			}
+			.pctop .right{
+				float: right;
+			}
+			.pctop .left ul li{
+				color: #eee;
+			}
+			.pctop .right ul li {
+				color:#fff;
+			}
+			
+			.pctop .right ul li,.pctop .left ul li {
+				line-height: 60px;
+				float: left;
+				padding: 0 10px;
+			}
+			.pctop .right ul li span{
+				background: rgba(255,255,255,0.1);
+				padding: 4px 10px;
+				border-radius: 5px;
+				color: #fff;
+			}
+			.pcdown{
+				height: 28px;
+				background-color: #fff;
+			}
+			.pcdown ul li{
+				line-height: 28px;
+				float: left;
+				padding: 0 5px;
+				font-size: 12px;
+				color: #666;
+			}
+			.pcdown .left{
+				float: left;
+			}
+			.pcdown .right{
+				float: right;
+			}
+			.pcfixedleft{
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: -1;
+				width: 140px;
+				background-color: #313942;
+				height: 100%;
+				padding-top: 88px;
+				box-sizing: border-box;
+				
+			}
+			.pcfixedleft ul li{
+				line-height: 40px;
+				border-bottom: 1px solid #232930;
+				color: #ccc;
+				padding-left: 10px;
+			}
+			.pcfixedleft ul li:first-of-type{
+				background-color: #1d2329;
+				font-weight: bold;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<nav class="header">
+			<div class="pctop">
+				<div class="left">
+					<ul>
+						<li>业务系统
+						 
+						</li>
+						<li>网站管理</li>
+						<li>技术部</li>
+						<li>好邦伲</li>
+						<li>开发专用</li>
+					</ul>
+				</div>
+				<div class="right">
+					<ul>
+						<li><span>账号：陆杨清</span></li>
+						<li>账号设置</li>
+					</ul>
+				</div>
+			</div>
+			<div class="pcdown">
+				<div class="left">
+					<ul>
+						<li>查看通知</li>
+						<li>我的通知</li>
+						<li>身份证阅读</li>
+						<li>开票管理</li>
+						<li>预付款</li>
+					</ul>
+				</div>
+				<div class="right">
+					<ul>
+						<li>更多菜单</li>
+						<li>线上支付</li>
+						<li>收款收据 </li>
+						<li>创建收据</li>
+						<li>短信发送</li>
+						<li>在线员工</li>
+						<li>百度地图</li>
+						<li>回访情况 </li>
+						<li>添加客户</li>
+						<li>查询客户</li>
+						<li>客户微信</li>
+						<li>员工微信</li>
+						<li>客户支付宝</li>
+						<li>来电记录</li>
+						<li>打卡记录</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="pcfixedleft">
+			<ul>
+				<li>网站管理</li>
+				<li>线上产品管理</li>
+				<li>微信被动回复</li>
+				<li>我的网站</li>
+				<li>自助名片管理</li>
+				<li>供求信息管理</li>
+				<li>网址大全管理</li>
+				<li>招聘管理</li>
+				<li>新产品中心</li>
+				<li>管理招聘名片</li>
+				<li>管理招聘信息</li>
+			</ul>
+		</div>
+	</body>
+</html>

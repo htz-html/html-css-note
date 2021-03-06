@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" content="text/html">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			function backDay() {
+				var year = prompt("输入年份判断2月天数");
+				if(isRunYear(year)){
+					alert( year + '年的2月有29天')
+				} else {
+					alert( year + '年的2月有28天')
+				}
+			}
+			backDay();
+			
+			
+			返回值为true / false
+			function isRunYear(ageyear) {
+				var flag = false;
+				if (ageyear % 4 == 0 && ageyear % 100 != 0 || ageyear % 400 == 0 ) {
+					flag = true;
+				}
+				return flag;
+			}
+			
+		</script>
+	</body>
+</html>

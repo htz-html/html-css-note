@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			#myBtn{ padding: 10px 20px;border: 0;background-color: #007AFF;color: white;border-radius: 3px;cursor: pointer;}
+			#mycontainer {width: 300px;height: 300px;background-color: red;margin-top: 10px;position: relative;}
+			#mycontent {height: 60px;width: 60px;background-color: yellow;border-radius: 50%;position: absolute;}
+		</style>
+	</head>
+	<body>
+		<button id="myBtn" onclick="myMove()">动画开始</button>
+		<div id="mycontainer">
+			<div id="mycontent"></div>
+		</div>
+		
+		<script>
+			function myMove(){
+				var elem = document.getElementById("mycontent");
+				var pos = 0;
+				var id = setInterval(frame, 10);
+				function frame() {
+					if(pos ==240) {
+						clearInterval(id);
+					} else {
+						pos++;
+						elem.style.top = pos + 'px';
+						elem.style.left = pos + 'px';
+					}
+				}
+			}
+		</script>
+	</body>
+</html>	

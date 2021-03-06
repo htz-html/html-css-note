@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.red{background-color: red;padding: 10px;color: white;}
+			.green{background-color: #10C768;padding: 10px;}
+			.div1{background-color: #10C768;text-align: center;padding: 15px;color: white;cursor: pointer;}
+			.div2{background-color: #007AFF;padding: 50px;text-align: center;font-size: 48px;color: white;}
+			
+		</style>
+	</head>
+	<body>
+		<h2>获得内容 - text()、html() 以及 val()</h2>
+		<h3>我是被<cite>获取</cite>的内容</h3>
+		<ul>
+			<li>text() - 设置或返回所选元素的文本内容</li>
+			<li>html() - 设置或返回所选元素的内容（包括 HTML 标记）</li>
+			<li>val() - 设置或返回表单字段的值</li>
+		</ul>
+		<button id="demo1" type="button">获取text</button>
+		<button id="demo2" type="button">获取html</button>
+		
+		<script>
+			$(document).ready(function(){
+				$("#demo1").click(function(){
+					alert("获取的文本："+$("h3").text());
+				});
+				$("#demo2").click(function(){
+					alert("获取的文本："+$("h3").html());//注意:获取html是获取的h3里面有标签的,没有标签是获取不到的
+				});
+			});
+		</script>
+		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		
+		
+		
+		
+		
+		
+		
+		<p>她的名字：<input type="text" name="lalala" id="text" value="你爱的人名字" /></p>
+		<button id="demo3">你的爱人是</button><button id="demo4">获取属性</button>
+		<script>
+			$(document).ready(function(){
+				$("#demo3").click(function(){
+					alert("你喜欢的人名字是："+$("#text").val());
+				});
+				$("#demo4").click(function(){
+					alert("属性为："+$("#text").attr("name"));
+				});
+			});
+		</script>
+		
+	</body>
+</html>

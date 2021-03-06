@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<p>try语句测试代码块的错误</p>
+		<p>catch语句处理错误</p>
+		<p>throw语句是创建自定义错误</p>
+		<p>finally语句在try和catch之后，无论是否触发异常，都会执行</p>
+		<p>try和catch是成对出现的</p>
+		<button type="button" onclick="myTry()">测试代码是否有错</button>
+		<script>
+			var txt="";
+			function myTry(){
+				try{
+					adlert("欢迎来到湖北恩施咸丰！");
+				}
+				catch(err){
+					txt="本页有个错误。\n";
+					txt+="错误描述："+ err.myTry + "\n";
+					txt+="点击确认继续。";
+					alert(txt);
+				}
+			}
+		</script>
+	</body>
+</html>	

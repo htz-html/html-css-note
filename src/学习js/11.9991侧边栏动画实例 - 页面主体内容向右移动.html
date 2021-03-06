@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style>
+			body{margin: 0;padding: 0;}
+			*{box-sizing: border-box;}
+			.sidenav{
+				height: 100%;
+				width: 0;
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				background-color: #fff;
+				overflow-x: hidden;
+				padding-top: 60px;
+				transition: .5s;
+			}
+			.sidenav a {
+				padding: 8px;
+				padding-left: 32px;
+				text-decoration: none;
+				font-size: 20px;
+				color: #888;
+				display: block;
+				transition: .3s;
+			}
+			.sidenav .closebtn{
+				position: absolute;
+				top: 0;
+				right: 20px;
+				margin-left: 50px;
+				font-size: 34px;
+				cursor: pointer;
+				font-weight: bold;
+			}
+			.sidenav a:hover, .offcanvas a:focus{color: #ccc;}
+			
+			@media screen and(max-width:450px) {
+				.sidenav{padding-top: 15px;}
+				.sidenav a {font-size: 18px;}
+			}
+			#main{
+				transition: margin-left .5s;
+				padding: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0);" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="">推荐</a>
+			<a href="">军事</a>
+			<a href="">娱乐</a>
+			<a href="">体育</a>
+		</div>
+		<div id="main">
+			<h2>侧边栏动画</h2>
+			<p>侧边栏动画实例 - 页面主体内容向右移动</p>
+			<span style="font-size: 30px;cursor: pointer;" onclick="openNav()">&#9776; open</span>
+		</div>
+		
+		<script>
+			// 这是打开侧边栏
+			function openNav() {
+				document.getElementById("mySidenav").style.width = "250px"; //侧边栏动画
+				document.getElementById("main").style.marginLeft="250px"; //页面主体会随着侧边栏向右一起移动
+				document.body.style.backgroundColor="rgba(0,0,0,.4)"; //这是打开侧边栏,页面主体会覆盖一层透明背景
+			}
+			// 这是关闭侧边栏
+			function closeNav(){
+				document.getElementById("mySidenav").style.width="0";
+				document.getElementById("main").style.marginLeft="0";
+				document.body.style.backgroundColor="white";
+			}
+		</script>
+	</body>
+</html>

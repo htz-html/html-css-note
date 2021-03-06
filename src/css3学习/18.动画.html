@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.demo{
+				width: 100px;
+				height: 100px;
+				background-color: #09B75C;
+				border-radius: 50px;
+				/* 设置动画名称 */
+				animation-name:moveBaby;
+				/* 设置动画耗时 */
+				animation-duration: 2s;
+				/* 简写：animation: moveBaby 5s; */
+				/* 设置动画的播放次数2 ，可以写具体的数值 */
+				animation-iteration-count: 1;
+				/* 设置交替动画 */
+				animation-direction: alternate;
+				/* 设置动画的延迟 */
+				animation-delay: 0s;
+				/* 设置动画结束时的状态 ：默认情况会回到原始的状态
+				forwards:它会保留动画结束时的状态，在有延迟的情况下，并不会立刻进行初始状态，但backwards是可以的（侧重于结束）
+				backwards:不会保留动画结束时的状态，在添加了动画延迟的情况下，如果动画有初始状态（如：开始就加入了旋转），那么会立刻进入到初始状态（侧重于开始）
+				both:保留动画结束时的状态，在有延迟的情况下，也会立刻进入到初始状态，也就是说同时有上面两个侧重点.
+				*/
+				animation-fill-mode: both;
+				/* 动画的时间函数 ：linear是匀速*/
+				animation-timing-function: linear;
+				/* 设置动画的播放状态  paused:暂停，running：播放 */
+				animation-play-state: running;
+			}
+			
+			/* 创建动画 一定要用@keyframes*/
+			@keyframes moveBaby{ /* moveBaby是动画名称 */
+				/* 百分比是指整个动画耗时的百分比 10s */
+				0%{
+					transform: translate(0,0);
+				}
+				30%{
+					transform: translate(0, 500px);
+				}
+				60%{
+					transform: translate(500px,600px);
+				}
+				100%{
+					transform: translate(500px,0);
+				}
+				
+			}
+		</style>
+	</head>
+	<body>
+		<h2>创建动画 @keyframes</h2>
+		<h2></h2>
+		<div class="demo"></div>
+		<div style="padding-left: 200px;">
+			<input type="button" value="暂停" id="stop" />
+			<input type="button" value="播放" id="play" />
+		</div>
+		<script type="text/javascript">
+			var ddd = document.querySelector(".demo");
+			document.getElementById("stop").onclick=function(){
+				
+				ddd.style.animationPlayState="paused";
+			}
+			document.getElementById("play").onclick=function(){
+				ddd.style.animationPlayState="running";
+			}
+		</script>
+	</body>
+</html>
+

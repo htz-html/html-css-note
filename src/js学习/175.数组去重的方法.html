@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			// indexOf(数组元素) 返回该数组的索引号
+			// 核心算法:我们遍历旧数组,然后拿着旧数组元素去查找新数组,如果该元素在新数组
+			//里面没有出现过,我们就添加到新数组里面,否则不添加.
+			//封装一个去重的函数 unique-独一无二的
+			function unique(arr) {
+				var newArr = [];
+				for (var i = 0; i < arr.length; i++) {
+					if (newArr.indexOf(arr[i]) === -1) {
+						newArr.push(arr[i]);
+					}
+				}
+				return newArr;
+			}
+			console.log(unique(['a','n','f','n','a']))
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

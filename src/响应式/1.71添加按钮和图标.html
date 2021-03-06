@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+		 id="viewport" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.css" />
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.mobile-1.4.5.js" type="text/javascript" charset="utf-8"></script>
+		<title>使用jqm</title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			p {
+				margin: 10px 0;
+				line-height: 22px;
+			}
+
+			.downnav {
+				text-align: center;
+			}
+
+			.ui-controlgroup {
+				margin: 0;
+			}
+
+			.ui-controlgroup-controls {
+				width: 100%;
+
+			}
+
+			.downnav a {
+				width: 25% !important;
+				box-sizing: border-box;
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role="page" id="home">
+			<div data-role="header">
+				<a href="#" data-icon="carat-l">返回</a>
+				<h2>好邦伲七夕</h2>
+				<a href="#" data-icon="navigation" data-iconpos="right">厦门</a>
+				<div class="downnav">
+					<div data-role="controlgroup" data-type="horizontal">
+						<a href="#" data-icon="shop" data-iconpos="top" data-role="button">微淘</a>
+						<a href="#" data-icon="shop" data-iconpos="top" data-role="button">分类</a>
+						<a href="#" data-icon="shop" data-iconpos="top" data-role="button">喜欢</a>
+						<a href="#" data-icon="shop" data-iconpos="top" data-role="button">购物车</a>
+					</div>
+				</div>
+			</div>
+			<div data-role="content">
+				<ul data-role="listview" data-inset="true" data-filter="true">
+					<li data-role="list-divider">港台歌手</li>
+					<li>
+						<img src="images/1.png">
+						<h4>邓紫棋</h4>
+						<p>紫棋 编辑 讨论99+
+							邓紫棋，原名邓诗颖，1991年8月16日生于中国上海，4岁移居香港，中国香港创作型女歌手。2008年7月10日以16岁之龄出道月</p>
+					</li>
+					<li>
+						<img src="images/1.png">
+						<h4>周娜娜</h4>
+						<p>紫棋 编辑 讨论99+
+							邓紫棋，原名邓诗颖，1991年8月16日生于中国上海，4岁移居香港，中国香港创作型女歌手。2008年7月10日以16岁之龄出道月</p>
+					</li>
+					<li>黄家驹</li>
+					<li>周哒哒</li>
+					<li data-role="list-divider">大陆歌手</li>
+					<li>张杰</li>
+					<li>周如影</li>
+					<li>孙楠</li>
+				</ul>
+				<p>不用写一句代码，过滤功能就出来了（data-filter = "true"）</p>
+				<p>data-role="listview"：让其li变成行排列，线条隔开</p>
+				<p>data-inset="true"：仅不让其撑屏，上下左右有间距</p>
+				<p>data-role="list-divider"：看页面就知道什么意思了，分裂名，将其背景改成灰色</p>
+			</div>
+			<div data-role="footer" data-position="fixed">
+				<div class="downnav">
+					<div data-role="controlgroup" data-type="horizontal">
+						<a href="#" data-icon="shop" data-iconpos="top" data-role="button">微淘</a>
+						<a href="#" data-icon="shop" data-iconpos="top" data-role="button">分类</a>
+						<a href="#" data-icon="shop" data-iconpos="top" data-role="button">喜欢</a>
+						<a href="#" data-icon="shop" data-iconpos="top" data-role="button">购物车</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

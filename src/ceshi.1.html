@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<title></title>
+		<style type="text/css">
+			html {
+				font-size:10px;
+			}
+			body {
+				margin: 0;
+				font-size: 14px;
+			}
+		</style>
+	</head>
+	<body>
+		<p>let在全局作用域中，不属于window，var全局是属于window的，所以可以用window.变量名 来访问</p>
+		<p>let声明的变量不能重置，也不能重置var声明的变量</p>
+		<p>在相同作用域var不能重置let声明的变量</p>
+		<p>var可以先使用再声明，但是let不行，必须先声明</p>
+		<p>const用于可以声明多个常量，并且必须开始就要初始化，也就是赋值</p>
+		<p>const在声明的常量是数组或对象时，可以修改里面的元素，但是不能拿常量名来重新赋值，例如一下：
+		const carsName = ['红旗', '吉利', '现代'];
+		carsName[1] = '奔驰';                 // 合法的 
+		carsName = ['红旗', '奔驰', '现代'];   // 不合法
+		还可以添加元素
+		carsName.push('五菱宏光');             // 合法的 
+		</p>
+		<p>const声明的常量，不能用使用const，var ，let 来重置它的值，同时，const不能重置var和let声明的变量</p>
+		
+		
+		<script>
+			
+		</script>
+	</body>
+</html>

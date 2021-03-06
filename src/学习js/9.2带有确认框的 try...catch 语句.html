@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<p>带确认框的try..catch语句</p>
+		<button type="button" onclick="mySure()">点击我日你妈</button>
+		<script>
+			function mySure(){
+				try{
+					adlert("我操你吗，一点福气都没有!,真的是干。你麻痹，狗日的，烂几把");
+				}catch(err){
+					txt="福气呢，狗日的，操你麻痹的，滚，给劳资滚"+"\n";
+					txt+="单击确认继续\n";
+					txt+="单击取消返回\n";
+					if(confirm(txt)){
+						document.location.href="https://www.baidu.com";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>	

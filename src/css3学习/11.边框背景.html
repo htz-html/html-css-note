@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			.demo {
+				width: 300px;
+				height: 300px;
+				border:32px solid red;/* 这里要么把border改成32,要么添加一个padding:32px */
+				border-image-source: url(../img/ssss@2x.png);
+				border-image-slice: 32 fill;
+				border-image-width: 32px;
+				border-image-outset: 0px;
+				border-image-repeat: repeat;
+			}
+			.demo2 {
+				width: 300px;
+				height: 300px;
+				border:32px solid red;/* 这里要么把border改成32,要么添加一个padding:32px */
+				border-image-source: url(../img/ssss@2x.png);
+				border-image-slice: 32 fill;
+				border-image-width: 32px;
+				border-image-outset: 0px;
+				border-image-repeat: round;
+				
+				/* 缩写 */
+				/* 这是缩写的语法 border-image: source slice/width/outset repeat; */
+				/* 实际缩写的值：border-image: url(../img/ssss@2x.png) 27 / 27px /0px round; */
+			}
+		</style>
+	</head>
+	<body >
+		<h3>添加背景边框</h3>
+		<h3>border-image-source:url;添加背景图片</h3>
+		<h3>border-image-slice:让它成为九宫格，设置四个方向上的裁切距离，fill：做内容的内部填充背景。。问题：如果分别设置1.2.3.4个值代表什么意思，你去试试</h3>
+		<h3>border-image-width：边框图片的宽度，如果没有设置这个属性，那么宽度默认就是元素的原始的边框宽度。细节：边框图片是背景图，不会影响元素内容的放置，内容只会被容器的border和padding影响</h3>
+		<h3>建议一般将这个值这是为原始的边框的宽度</h3>
+		<h3>扩展边框，但是这个一般不用，因为改变了原来的大小</h3>
+		<h3>这里一定要注意border-image-repeat的两个值。一般情况下都要用round：会自动缩放完整填充。但repeat直接平铺；还有一个值是stretch：是做拉伸背景的效果。这种呢一般用在村色扁平</h3>
+		<h3>这是缩写的语法 border-image: source slice/width/outset repeat;</h3>
+		<h4>实际缩写的值：border-image: url(../img/ssss@2x.png) 27 / 27px /0px round;</h4>
+		<div class="demo">
+			首期加盟期五年，自2018年08月01日2023年07月31日，第一年加盟费6.8万元；合同签订日交纳3.3万元，2018年8月15日至2019年02月15日每月15
+		</div>
+		<div class="demo2">
+			首期加盟期五年，自2018年08月01日2023年07月31日，第一年加盟费6.8万元；合同签订日交纳3.3万元，2018年8月15日至2019年02月15日每月15
+		</div>
+	</body>
+</html>

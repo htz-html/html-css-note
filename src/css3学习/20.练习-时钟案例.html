@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.demo{
+				width: 500px;
+				height: 500px;
+				border: 20px solid deeppink;
+				border-radius: 50%;
+				margin: 100px auto;
+				position: relative;
+			}
+			.shike {
+				width: 10px;
+				height: 500px;
+				background-color: deeppink;
+				position: absolute;
+				left: 50%;
+				top: 0;
+				transform: translate(-50%,0);
+			}
+			.shike1,.shike4 {
+				width: 15px;
+			}
+			.shike1 {
+				transform: translate(-50%,0);
+			}
+			.shike2 {
+				transform: translate(-50%,0) rotate(30deg);
+			}
+			.shike3 {
+				transform: translate(-50%,0) rotate(60deg);
+			}
+			.shike4 {
+				transform: translate(-50%,0) rotate(90deg);
+			}
+			.shike5 {
+				transform: translate(-50%,0) rotate(120deg);
+			}
+			.shike6 {
+				transform: translate(-50%,0) rotate(150deg);
+			}
+			.kb {
+				width: 400px;
+				height: 400px;
+				background-color: #fff;
+				border-radius: 50%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+			.hour {
+				width: 16px;
+				height: 120px;
+				background-color: #6848CD;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-100%);
+				/* 设置旋转的轴心 */
+				transform-origin: center bottom; 				
+				/* 添加动画 */
+				animation: clockCss 4320  linear infinite;
+			}
+			.min {
+				width: 8px;
+				height: 140px;
+				background-color: orange;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-100%);
+				/* 设置旋转的轴心 */
+				transform-origin: center bottom; 				
+				/* 添加动画 */
+				animation: clockCss 360s infinite linear;
+			}
+			.sec {
+				width: 4px;
+				height: 160px;
+				background-color: #09B75C;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-100%);
+				/* 设置旋转的轴心 */
+				transform-origin: center bottom; 				
+				/* 添加动画 */
+				animation: clockCss 6s infinite steps(60);
+			}
+			/* 创建动画 */
+			@keyframes clockCss{
+				from{
+					transform: translate(-50%,-100%) rotate(0deg);
+				}
+				to{
+					transform: translate(-50%,-100%) rotate(360deg);
+				}
+				
+			}
+			.yx {
+				width: 30px;
+				height: 30px;
+				background-color: #FF0000;
+				border-radius: 50%;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%,-50%);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="demo">
+			<div class="shike shike1"></div>
+			<div class="shike shike2"></div>
+			<div class="shike shike3"></div>
+			<div class="shike shike4"></div>
+			<div class="shike shike5"></div>
+			<div class="shike shike6"></div>
+			<div class="kb"></div>
+			<div class="hour"></div>
+			<div class="min"></div>
+			<div class="sec"></div>
+			<div class="yx"></div>
+		</div>
+	</body>
+</html>
+

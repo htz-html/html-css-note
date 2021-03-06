@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+			.div2{margin-top: 150px;}
+			span{display: inline-block;position: relative;}
+			.span1{width: 30px;height: 30px;background-color: red;position: absolute;top: 200px;left: 900px;display: none;}
+			.span2{width: 30px;height: 30px;background-color: red;position: absolute;top: 150px;left: 950px;display: none;}
+			.span3{width: 30px;height: 30px;background-color: red;position: absolute;top: 150px;left: 1010px;display: none;}
+			.span4{width: 30px;height: 30px;background-color: red;position: absolute;top: 180px;left: 1070px;display: none;}
+			.span5{width: 30px;height: 30px;background-color: red;position: absolute;top: 240px;left: 1100px;display: none;}
+			.span6{width: 30px;height: 30px;background-color: red;position: absolute;top: 300px;left: 1090px;display: none;}
+			.span7{width: 30px;height: 30px;background-color: red;position: absolute;top: 350px;left: 1050px;display: none;}
+			.span8{width: 30px;height: 30px;background-color: red;position: absolute;top: 400px;left: 1020px;display: none;}
+			.span9{width: 30px;height: 30px;background-color: red;position: absolute;top: 450px;left: 960px;display: none;}
+			.span10{width: 30px;height: 30px;background-color: red;position: absolute;top: 500px;left: 900px;display: none;}
+			
+			.span11{width: 30px;height: 30px;background-color: red;position: absolute;top: 200px;left: 900px;display: none;}
+			.span12{width: 30px;height: 30px;background-color: red;position: absolute;top: 150px;left: 850px;display: none;}
+			.span13{width: 30px;height: 30px;background-color: red;position: absolute;top: 150px;left: 790px;display: none;}
+			.span14{width: 30px;height: 30px;background-color: red;position: absolute;top: 180px;left: 730px;display: none;}
+			.span15{width: 30px;height: 30px;background-color: red;position: absolute;top: 240px;left: 700px;display: none;}
+			.span16{width: 30px;height: 30px;background-color: red;position: absolute;top: 300px;left: 710px;display: none;}
+			.span17{width: 30px;height: 30px;background-color: red;position: absolute;top: 350px;left: 750px;display: none;}
+			.span18{width: 30px;height: 30px;background-color: red;position: absolute;top: 400px;left: 780px;display: none;}
+			.span19{width: 30px;height: 30px;background-color: red;position: absolute;top: 450px;left: 850px;display: none;}
+			.span20{width: 30px;height: 30px;background-color: red;position: absolute;top: 500px;left: 900px;display: none;}
+		</style>
+	</head>
+	<body>
+		<div class="div2">
+			<span class="span1"></span>
+			<span class="span2"></span>
+			<span class="span3"></span>
+			<span class="span4"></span>
+			<span class="span5"></span>
+			<span class="span6"></span>
+			<span class="span7"></span>
+			<span class="span8"></span>
+			<span class="span9"></span>
+			<span class="span10"></span>
+			
+			<span class="span11"></span>
+			<span class="span12"></span>
+			<span class="span13"></span>
+			<span class="span14"></span>
+			<span class="span15"></span>
+			<span class="span16"></span>
+			<span class="span17"></span>
+			<span class="span18"></span>
+			<span class="span19"></span>
+			<span class="span20"></span>
+		</div>
+		
+		<div style="margin-top: 600px;margin-left: 808px;">
+			<button id="demo" style="padding: 20px 40px;background-color: firebrick;font-size: 24px;color: white;">我是爱你们的</button>
+		</div>
+		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					$(".span1").fadeToggle();
+					$(".span2").fadeToggle(1000);
+					$(".span3").fadeToggle(2000);
+					$(".span4").fadeToggle(3000);
+					$(".span6").fadeToggle(4000);
+					$(".span5").fadeToggle(5000);
+					$(".span7").fadeToggle(6000);
+					$(".span8").fadeToggle(7000);
+					$(".span9").fadeToggle(8000);
+					$(".span10").fadeToggle(9000);
+					$(".span11").fadeToggle();
+					$(".span12").fadeToggle(1000);
+					$(".span13").fadeToggle(2000);
+					$(".span14").fadeToggle(3000);
+					$(".span15").fadeToggle(4000);
+					$(".span16").fadeToggle(5000);
+					$(".span17").fadeToggle(6000);
+					$(".span18").fadeToggle(7000);
+					$(".span19").fadeToggle(8000);
+					$(".span20").fadeToggle(9000);
+				});
+			});
+		</script>
+	</body>
+</html>

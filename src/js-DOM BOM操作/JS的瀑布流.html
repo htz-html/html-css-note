@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../响应式/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			.masonry {
+				position: relative;
+			}
+
+			.item {
+				padding: 10px;
+				float: left;
+			}
+
+			.pic {
+				padding: 10px;
+				box-shadow: 0 0 5px #ccc;
+				border: 1px solid #cccccc;
+				border-radius: 5px;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+			.demo {
+				width: 275px;
+				height: 150px;
+				overflow: hidden;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="masonry" id="main">
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/1.jpg">
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/11.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/1.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/3.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/2325.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/33.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/11.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/11.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/44.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/44.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<p>aaa</p>
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/1.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/1.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/1.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<div class="demo">
+						<img src="../img/22.jpg"></div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="pic">
+					<p>aaa</p>
+					<div class="demo">
+						<img src="../img/44.jpg"></div>
+				</div>
+			</div>
+		</div>
+		<script>
+			window.onload = function() {
+				waterfall("main", "item");
+			}
+
+			function waterfall(parent, item) {
+				//获取main下所有class为item的元素
+				var oParent = document.getElementById(parent);
+				var oBoxs = getByClass(oParent, item);
+				//获取列数
+				var oBoxW = oBoxs[0].offsetWidth;
+				// console.log(document.documentElement.clientWidth)
+				var cols = parseInt(screen.availWidth / oBoxW);
+				oParent.style.cssText = "width:" + oBoxW * cols + "px;margin:0 auto"
+				var hArr = []; //存放每列图片高度
+				for (let i = 0; i < oBoxs.length; i++) {
+					if (i < cols) {
+						hArr.push(oBoxs[i].offsetHeight)
+					} else {
+						var minH = Math.min.apply(null, hArr);
+						var index = getMinhIndex(hArr, minH);
+						oBoxs[i].style.position = 'absolute';
+						oBoxs[i].style.top = minH + 'px';
+						oBoxs[i].style.left = oBoxW * index + 'px';
+						hArr[index] += oBoxs[i].offsetHeight;
+					}
+				}
+			}
+
+			//根据class获取元素
+			function getByClass(parent, clsName) {
+				var itemArr = [];
+				var oElements = parent.getElementsByTagName('*');
+				for (let item of oElements) {
+					if (item.className == clsName) {
+						itemArr.push(item)
+					}
+				}
+				return itemArr;
+			}
+
+			function getMinhIndex(arr, val) {
+				for (var i in arr) {
+					if (arr[i] == val)
+						return i;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<button type="button">轮</button>
+		<button type="button">播</button>
+		<button type="button">小</button>
+		<button type="button">圆</button>
+		<button type="button">圈</button>
+		<button type="button">效</button>
+		<button type="button">果</button>
+		<script>
+			var btns = document.getElementsByTagName('button');
+			for (var i = 0; i < btns.length; i++) {
+				btns[i].onmouseover = function() {
+					for ( var i = 0; i< btns.length; i++) {
+						btns[i].style.backgroundColor = '';
+						btns[i].style.color = '#000';
+					}
+					this.style.backgroundColor = 'red';
+					this.style.color = '#fff';
+				}
+			}
+		</script>
+	</body>
+</html>

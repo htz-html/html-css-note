@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<!-- 创建对象 -->
+		<script>
+			person={firstname:"nihao",lastname:"Jond",age:55},
+			document.write(person.firstname+"你以为"+person.age);
+		</script>
+		<br />
+		<!-- 创建对象模板 -->
+		<script>
+			function person(aaa,bbb,ccc,ddd){
+				this.aaa=aaa;
+				this.bbb=bbb;
+				this.ccc=ccc;
+				this.ddd=ddd;
+			}
+			myFather=new person("woshia","myb","myc",29);
+			document.write(myFather.aaa+"//"+myFather.bbb+"//"+myFather.ddd+"//"+myFather.ccc);
+		</script>
+	</body>
+</html>	

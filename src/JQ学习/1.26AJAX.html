@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}span{line-height: 30px;}
+		</style>
+	</head>
+	<body>
+		<h1>AJAX load() 方法</h1>
+		<p>这是示例文件（"demo_test.txt"）的内容：</p>
+		
+		<div id="div1"><h2>使用 jQuery AJAX 修改文本内容</h2></div>
+		<button>获取外部内容</button>
+		
+		<script>
+			$(document).ready(function(){
+				$("button").click(function(){
+					$("#div1").load(../demo_test.txt);//里面是URL,文件路径地址;输出的是把h2的内容替换成了文件里面的内容
+				});
+			});
+		</script>
+		
+		<p><span style="color: red;font-weight: bold;">注意：</span>可以选择器添加到 URL 参数</p>
+		<p><span>例如：</span><span style="color: red;font-weight: bold;">如果文档里面的内容是(看代码)：</span></p>
+		<div style="background-color: #eee;padding: 10px;margin: 0 10px;">
+			<h1 id="demo">我不信你们都睡了！</h1>
+			<p>还有内容哦...</p>
+			<p>就是我</p>
+		</div>
+		<h3>如果只想要文档里面的一部分。可以在文档地址后面跟上id，class或者标签</h3>
+		<h3>例如：$("#div1").load(../demo_test.txt #demo);</h3>
+	</body>
+</html>

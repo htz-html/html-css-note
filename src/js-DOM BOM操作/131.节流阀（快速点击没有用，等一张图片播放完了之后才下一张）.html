@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="bannercssjs/index.css"/>
+		<script src="bannercssjs/animate.js"></script>
+		<script src="bannercssjs/index.js"></script>
+	</head>
+	<body>
+		
+		<div class="banner">
+			<a href="javascript:;" class="arrow_l"><</a>
+			<a href="javascript:;" class="arrow_r">></a>
+			<ul>
+				<li><a href="#"><img src="../img/44.jpg" ></a></li>
+				<li><a href="#"><img src="../img/22.jpg" ></a></li>
+				<li><a href="#"><img src="../img/33.jpg" ></a></li>
+			</ul>
+			<ol class="circle">
+			</ol>
+		</div>
+		<!-- 
+		在index.js里面的修改部分
+		在点击右侧按钮时
+		新增
+		var flag = true;
+		arrow_r.addEventListener("click",function(){
+			if(flag) { // 当flag为true的时候进来if
+				//在刚开始进来的时候就把flag关闭；在调用动画animate()的回调函数开启
+				flag = false;
+				if(num === ul.children.length-1) {
+					ul.style.left = 0;
+					num = 0;
+				}
+				num++;
+				// 也就是动画执行完了之后才开启上面的flag，才能有点击效果
+				animate(ul, -num*imgwidth， function(){
+					flag = true;
+				});	
+				circle++;
+				if(circle === ol.children.length) {
+					circle = 0;
+				}
+				Current();
+			}
+		}); -->
+	</body>
+</html>

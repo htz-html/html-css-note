@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body {
+				margin: 0;
+				padding: 0;
+			}
+			ul{margin: 0;padding: 0;}
+			li {
+				list-style: none;
+			}
+			.nav>li{
+				display: inline-block;
+				padding: 10px 20px;
+				float: left;
+			}
+			.nav ul {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav">
+			<li>
+				<a href="">选择省份</a>
+				<ul>
+					<li>北京</li>
+					<li>湖北</li>
+					<li>四川</li>
+				</ul>
+			</li>
+			<li>
+				<a href="">选择城市</a>
+				<ul>
+					<li>恩施</li>
+					<li>襄阳</li>
+					<li>天门</li>
+					<li>武汉</li>
+				</ul>
+			</li>
+			<li>
+				<a href="">选择区域</a>
+				<ul>
+					<li>咸丰区</li>
+					<li>碗田区</li>
+					<li>头庄区</li>
+					<li>景婞坝</li>
+				</ul>
+			</li>
+			<li>
+				<a href="">选择数量</a>
+				<ul>
+					<li>1件</li>
+					<li>2件</li>
+					<li>3件</li>
+					<li>4件</li>
+				</ul>
+			</li>
+		</ul>
+		<script>
+			var nav = document.querySelector('.nav');
+			var lis = nav.children;
+			for(var i=0;i<lis.length; i++) {
+				lis[i].onmousemove = function(){
+					this.children[1].style.display = 'block';
+				}
+				lis[i].onmouseleave = function(){
+					this.children[1].style.display = 'none';
+				}
+			}
+		</script>
+	</body>
+</html>

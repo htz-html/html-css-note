@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../响应式/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box{
+				position: absolute;
+				top: 50px;
+				left: 50px;
+				width: 200px;
+				height: 200px;
+				background: #E8314B;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">新年快乐！</div>
+		<script>
+			
+			// 以下是一个flexible.js源码分析，实现了什么
+			(function flexible(window, document) {
+				// 获取html根元素
+				var docEl = document.documentElement;
+				// dpr 物理像素比，PC端的物理像素比是1，移动端是2；
+				var dpr = window.devicePixelRatio || 1; // 意思就是查看当前的浏览器的物理像素比是多少，能拿到就dpr值 ，否则就是1。
+				
+				// 设置body的字体大小
+				function setBodyFontSize(){
+					// document.body 判断页面是有没有body这个元素
+					if(document.body) {
+						// 这里就用到了物理像素比了，在PC上就是12px，在手机上就是24了。因为手机端的物理像素比是2。
+						document.body.style.fontSize = (12 * dpr) + "px"; 
+					} else {
+						//DOMContentLoaded是等页面中主要的DOM（页面中主要的标签）加载完之后，执行后面的方法
+						// 为什么需要这个：因为我们引入的js文件都是在head里面，所以先加载的是js文件，body还没有加载出来
+						// 在执行if的时候，是找不到body的；所以需要DOMContentLoaded。
+						document.addEventListener("DOMContentLoaded", setBodyFontSize)
+					}
+				}
+				setBodyFontSize();
+				
+// ********************************************************************************************************************************
+				// 设置1rem = viewWidth / 10
+				function setRemUnit() {
+					var rem = docEl.clientWidth / 10;
+					docEl.style.fontSize = rem + "px";
+				}
+				setRemUnit();
+				
+				// 当我们页面尺寸发生变化的时候，要重新设置rem的大小
+				window.addEventListener("resize", setRemUnit);
+				// pageshow 是我们重新加载页面触发的事件
+				window.addEventListener("pageshow", function(e){
+					// e.persited 返回的是true，就是说如果这个页面是从缓存中取过来的页面，也需要重新计算一下rem的大小
+					// 课外知识：a超链接/f5或强制刷新/前进后退，都会触发load事件，为什么这里不直接用load，而用pageshow呢
+					// 因为在火狐浏览器中，前进后退会把正页面缓存起来，所以在后退的时候load不重新加载了。这里就用pageshow
+					// 来解决
+					if(e.persited) {
+						setRemUnit();
+					}
+				})
+				
+				
+				// detect 0.5px supports: 有些移动端的浏览器不支持0.5像素的写法
+				//下面是解决办法
+				if(dpr >=2){
+					var fakeBody = document.createElement("body");
+					var testElement = document.createElement("div");
+					testElement.style.border = "0.5px solid transparent";
+					fakeBody.appendChild(testElement);
+					docEl.appendChild(fakeBody);
+					if (testElement.offsetHeight === 1) {
+						docEl.classList.add("hairlines");
+					}
+					docEl.removeChild(fakeBody);
+				}
+			})(window, document);
+		</script>
+		
+	</body>
+</html>

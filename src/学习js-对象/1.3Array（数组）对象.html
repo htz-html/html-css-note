@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<div style="background-color: #ff3c3c;padding: 10px;color: white;">
+			<h3>1.创建数组</h3>
+			<script>
+				var i;
+				var mycars=new Array();
+				mycars[0]="姓名";
+				mycars[1]="性别";
+				mycars[2]="年龄";
+				mycars[3]="职业";
+				mycars[4]="团员";
+				for(i=0;i<mycars.length;i++) {
+					document.write(mycars[i] + "<br>");
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #ff3c78;padding: 10px;color: white;">
+			<h3>2.合并数组</h3>
+			<p>这里会用到一个concat(),用于连接两个或多个数组</p>
+			<script>
+				var yini=["wshi1","wshi2","wshi3"];
+				var jiangyi=["red","changfa","niuzaiku","erji"];
+				var xiaozou=["001","002"];
+				var children=yini.concat(jiangyi);//合并两个数组
+				var sanhe=yini.concat(jiangyi,xiaozou);//合并三个数组
+				// document.write(children);
+				document.write(sanhe);
+			</script>
+		</div>
+		
+		<div style="background-color: #ff3cc1;padding: 10px;color: white;">
+			<h3>3.用数组元素组成字符串</h3>
+			<p>这里会用到一个join(),用于将序列中的元素以指定的字符连接生成一个新的字符串</p>
+			<p id="demo">点击按钮吧，输出字符串</p>
+			<button onclick="myyszzczfc()">点击</button>
+			<script>
+				function myyszzczfc(){
+					var mylbjn=["red","500w","paoche"];
+					var x=document.getElementById("demo");
+					x.innerHTML=mylbjn.join();
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #dd3cff;padding: 10px;">
+			<h3>4.删除数组最后一个元素</h3>
+			<p id="demo2">这里用到了pop(),于删除并返回数组的最后一个元素</p>
+			<button onclick="myShanchu()">点击</button>
+			<script>
+				var shanchu=["red","green","blue"];
+				function myShanchu(){
+					document.getElementById("demo2").classList;
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #7c3cff;color: white;padding: 10px;">
+			<h3>单击按钮将数组反转排序</h3>
+			<p id="demo3">这里用到一个reverse(),用于颠倒数组中元素的顺序</p>
+			<button onclick="myFanzhuan()">点击</button>
+			<script>
+				var fanzhuan=["001","002","003"];
+				function myFanzhuan() {
+					fanzhuan.reverse();
+					var x=document.getElementById("demo3");
+					x.innerHTML=fanzhuan;
+				}
+			</script>
+		</div>
+		<div style="background-color: #3c4eff;color: white;padding: 10px;">
+			<h3>删除数组的第一个元素 - shift()</h3>
+			<p id="demo4">shift()用于删除数组的第一个元素</p>
+			<p id="demo5">把删除的元素赋值给一个变量</p>
+			<button onclick="myShanfirst()">点击</button>
+			<script>
+				var shanfirst=["001","002","003","004"];
+				function myShanfirst(){
+					var delell=shanfirst.shift();
+					x=document.getElementById("demo4");
+					x.innerHTML="删除后数组为："+shanfirst;
+					y=document.getElementById("demo5").innerHTML="删除的元素为："+delell;
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #3cc6ff;color: white;padding: 10px;">
+			<h3>从一个数组中的选择元素 - slice()</h3>
+			<p id="demo6">slice()从已有的数组中返回选定的元素</p>
+			<button onclick="myChoose()">点击</button>
+			<script>
+				function myChoose(){
+					var choose=["001","002","003","004"];
+					var sel=choose.slice(0,1);//前面的数字是必须的,下标开始的位置;后面的数字可选,结束的下标;
+					//切记:这里不是选定的两个下标元素,是一个区间范围.
+					var x=document.getElementById("demo6");
+					x.innerHTML=sel;
+				}
+			</script>
+		</div>
+		<div  style="background-color: #3cffd3;padding: 10px;">
+			<h3>数组排序（按字母顺序升序）- sort()</h3>
+			<p id="demo7">sort()用于对数组的元素进行排序;()里面可选填写，规定排序顺序，必须是函数</p>
+			<p id="demo8">用sort()给数字排序</p>
+			<button onclick="mySort()">字符排序</button>
+			<button onclick="myNumber()">数字排序</button>
+			<script>
+				function mySort() {
+					var paixu=["apoi","xjpoi","uggh","ckkhd"];
+					paixu.sort();
+					var x=document.getElementById("demo7");
+					x.innerHTML=paixu;
+				}
+				function myNumber() {
+					var num = [99,8,5222,44,854,520,660,11,0,55,73,38];
+					num.sort(function(a,b){return a-b});//这里是升序,如果要改成降序：return b-a;
+					var x = document.getElementById("demo8");
+					x.innerHTML=num;
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #b8ff3c;padding: 10px;">
+			<h3>在数组的第2位置添加一个元素 - splice()</h3>
+			<p>splice(index,howmany,item1,.....,itemX),index必需,规定添加/删除项目的位置;howmany必需,要删除的项目数量</p>
+			<p id="demo9"></p>
+			<button onclick="myPlace()">点击</button>
+			<script>
+				function myPlace() {
+					var place = ["001","002","003","004","005"];
+					place.splice(3,0,"007","008");
+					var x = document.getElementById("demo9");
+					x.innerHTML = place;
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #ffd83c;padding: 10px;">
+			<h3>转换数组到字符串-toString()</h3>
+			<p id="demo10">toString()，可把一个逻辑值转换为字符串，并返回结果</p>
+			<button onclick="myZhuanhuan()">点击</button>
+			<script>
+				function myZhuanhuan() {
+					var zhuanhuan = ["001","009","ban","money"];
+					var y = zhuanhuan.toString();
+					var x = document.getElementById("demo10");
+					x.innerHTML = y;
+				}
+			</script>
+		</div>
+		
+		<div style="background-color: #ffb33c;padding: 10px;">
+			<h3>在数组的开头添加新元素 - unshift()</h3>
+			<p>unshift()可向数组的开头添加一个或更多元素，并返回新的长度</p>
+			<p id="demo11"></p>
+			<button onclick="myUnshi()">点击</button>
+			<script>
+				function myUnshi() {
+					var unshi = ["001","002","003","004","005"];
+					unshi.unshift("add","uuu");
+					var x = document.getElementById("demo11");
+					x.innerHTML = unshi;
+				}
+			</script>
+		</div>
+		
+	</body>
+</html>

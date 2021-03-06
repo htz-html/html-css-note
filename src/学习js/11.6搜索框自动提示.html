@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+		<style type="text/css">
+			#myInput{background: url(../img/search.png) no-repeat;background-size: 26px; background-position: 6px 8px;width: 100%;
+			height: 44px;font-size: 16px;padding-left: 34px;border: 1px solid #aaa;border-radius: 3px;margin-bottom: 10px;}
+			#myUL{/* 移除默认的列表样式 */list-style-type: none;padding: 0;margin: 0;}
+			#myUL li a{border: 1px solid #ddd;margin-top: -1px;background-color: #f6f6f6; padding: 10px;text-decoration: none; color: black; display: block;}
+			#myUL li a.header{background-color: #e2e2e2;cursor: default;}
+			#myUL li a:hover:not(.header){background-color: #eee;} /* 这个句式很重要,除了某项其他全部 */
+		</style>
+	</head>
+	<body>
+		<input type="search" id="myInput" onkeyup="myFunction()" placeholder="搜索...">
+		
+		<ul id="myUL">
+			<li><a href="#" class="header">章若楠</a></li>
+			<li><a href="#">章若楠的悲伤逆流成河</a></li>
+			<li><a href="#">章若楠的微博</a></li>
+			<li><a href="#">章若楠淘宝模特</a></li>
+			<li><a href="#">章若楠上微博热搜</a></li>
+			
+			<li><a href="#" class="header">2019</a></li>
+			<li><a href="#">2019年是什么属性</a></li>
+			<li><a href="#">2019我能结婚吗</a></li>
+			<li><a href="#">2019最火的职业</a></li>
+			
+			<li><a href="#" class="header">庄周</a></li>
+			<li><a href="#">庄周出装怎么出</a></li>
+			<li><a href="#">庄周有哪些技巧</a></li>
+			<li><a href="#">庄周大招可以解任何控吗</a></li>
+		</ul>
+		
+		
+		
+		<script>
+			function myFunction()
+			{
+				// 声明变量
+				var input,filter,ul,li,a,i;
+				input = document.getElementById('myInput');
+				filter = input.value.toUpperCase();
+				ul = document.getElementById("myUL");
+				li = ul.getElementsByTagName('li');
+				
+				// 循环所有列表,查找匹配项
+				for (i=0;i<li.length;i++) {
+					a = li[i].getElementsByTagName("a")[0];
+					if(a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+						li[i].style.display = "";
+					} else {
+						li[i].style.display = "none";
+					}
+					
+				}
+			}
+			
+			
+		</script>
+	</body>
+</html>	

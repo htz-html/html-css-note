@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1" />
+		<link href="css/dby.css" rel="stylesheet"/>
+		<title></title>
+	</head>
+	<body>
+		<h2>重置表单</h2>
+		<form id="form1">
+			<input type="text"/><br /><br />
+			<input type="text"/><br /><br />
+			<input type="text"/><br /><br />
+			<input type="button" value="重置表单" onclick="formRR()"/>
+		</form>
+		<script>
+			function formRR(){
+				document.getElementById("form1").reset();
+			}
+		</script>
+	</body>
+</html>

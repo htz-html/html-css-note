@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no" />
+		<script src="../js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.demo{
+				width: 680px;
+				height: 500px;
+				border: 1px solid red;
+				box-sizing: border-box;
+				display: flex;/* 父容器的伸缩盒子 */
+				justify-content: space-around; /* 设置子元素在主轴上的排列方向 ；如要改变成侧轴方向，就用flex-direction来修改*/
+				/* flex-flow:是flex-wrap和flex-direction的综合 
+				flex-wrap:控制子元素是否换行显示，默认不换行
+					nowrap:不换行，则收缩
+					wrap：换行	*/
+			
+				flex-wrap: wrap;
+				/* flex-direction设置子元素的排列方向，就是用来设置主轴方向，默认主轴方向row(水平方向) */
+				flex-direction: column;
+				/* 简写方式 */
+				flex-flow: wrap row;
+			}
+			.demo1{
+				flex: 1;
+				height: 200px;
+				background-color: #007EFF;
+				/* flex-grow:可以来扩展子元素的宽度,要写在子元素里面；设置当前元素应该占据剩余空间的比例值*/
+				
+			}
+			.demo2{
+				flex: 1;
+				height: 200px;
+				background-color: orange;
+			}
+			.demo3{
+				flex: 1;
+				height: 200px;
+				background-color: pink;
+			}
+			.demo4{
+				width: 100px;
+				height: 200px;
+				background-color: red;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<h1></h1>
+		<div class="demo">
+			<div class="demo1"></div>
+			<div class="demo2"></div>
+			<div class="demo3"></div>
+			<div class="demo4"></div>
+		</div>
+	</body>
+</html>
+

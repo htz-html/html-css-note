@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="../js/jquery-3.3.1.js" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body{margin: 0;}
+		</style>
+	</head>
+	<body>
+		<h3>添加新的 HTML 内容---append() 方法</h3>
+		<h4>append()被选元素结尾插入内容</h4>
+		<h4>prepend()在被选元素的开头插入内容</h4>
+		<button id="demo1">点击我就能看到厦门的朋友有哪些了</button>
+		<p id="pp">厦门的朋友有：</p>
+		<script>
+			$(document).ready(function(){
+				$("#demo1").click(function(){
+					$("#pp").append("小仙女/2只");//这是在被选元素之后插入内容
+					$("#pp").prepend("我在");//这是在被选元素之前插入内容
+				});
+			});
+		</script>
+		
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		<br />
+		
+		
+		
+		
+		
+		<button  onclick="appendText()">点击添加内容</button>
+		<div id="div1">在我后面添加内容：</div>
+		<script>
+			function appendText(){
+				var text1="<b>小陆是傻逼</b>";
+				var text2=$("<p></p>").text("你好！");
+				var text3=document.createElement("p");
+				text3.innerHTML="我是路杨青";
+				$("#div1").append(text1,text2,text3);
+			}
+		</script>
+		
+		<p><cite><b>注意:</b></cite> 
+		<h3>after和 before也是在被选元素前/后添加内容，但与append/prepend添加内容的位置不一样</h3>
+		<div>append/prepend 是在选择元素内部嵌入。</div>
+		<div>after/before 是在元素外面追加。</div>
+		</p>
+	</body>
+</html>
